@@ -1,0 +1,6 @@
+Astatistics-0.01.tar.gz
+MANIFEST.bak
+Makefile.old
+*~
+.*.swp
+script/git_push.sh

@@ -1,0 +1,12 @@
+Run script/astatistics_server.pl to test the application.
+
+- Name: Llamadas outbound_line_1/2 entre dos fechas.
+
+- Visual: tipo de visualización (list)
+
+# - Conditions: table=cdr; show=calldate,clid,src,dst,dcontext,channel,dstchannel,lastapp,lastdata,duration,amaflags,accountcode,userfield,uniqueid,linkedid,sequence,peeraccount; where=calldate > #date#Fecha inicio# and calldate < #date#fecha_fin# and dcontext = #checkbox#Destination context(outbound_line_1|outbound_line_2)#; order_by=calldate,clid ASC;group_by=dcontext;
+
+- Conditions: table=cdr; show=calldate,src,dst,channel,dstchannel,duration,billsec,dcontext; where=calldate > #date#Fecha inicio# and calldate < #date#Fecha fin# and dcontext = #checkbox#Destination context(outbound_line_1|outbound_line_2--checked)#; order_by=calldate,clid ASC;
+
+# - Format: title=Llamadas outbound_line_1/2 entre #date#Fecha inicio# y #date#Fecha fin#; rows_per_page=20
+title=Llamadas outbound_line_1/2 entre #date#Fecha inicio# y #date#Fecha fin#; rows_per_page=#Resultados por página#10#

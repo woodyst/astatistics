@@ -1,0 +1,61 @@
+[%
+# This file is part of Astatistics.
+# Copyright (C) 2011
+#   Eurogaran Informatica, S.L.
+# 
+# Astatistics is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# Astatistics is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with Astatistics.  If not, see <http://www.gnu.org/licenses/>.
+# 
+# See the file COPYING for copying conditions.
+%]
+
+[% IF ! c.user_exists OR ! c.check_user_roles('superuser') %]
+	<form action="[% c.uri_for('/users/login') %]"
+				method="post" accept-charset="utf-8">
+		<label for="username">Username</label>
+		<input type="text" name="username" value="" id="username"/>
+		<br/><br/>
+		<label for="password">Password</label>
+		<input type="password" name="password" value="" id="password"/>
+		<p><input type="submit" value="Login &rarr;"></p>
+	</form>
+[% ELSE %]
+	<h3>New User</h3>
+	<form action="[% c.uri_for('/users/new_user') %]"
+			method="post" accept-charset="utf-8">
+		<table>
+			<tr>
+				<td><label for="username">Name</label></td>
+				<td><input type="text" name="username" value="[% c.req.params.username %]"/></td>
+			</tr>
+			<tr>
+				<td><label for="password">Password</label></td>
+				<td><input type="password" name="password" value="[% c.req.params.password %]"/></td>
+			</tr>
+			<tr>
+				<td><label for="password2">Repeat password</label></td>
+				<td><input type="password" name="password2" value="[% c.req.params.password2 %]"/></td>
+			</tr>
+		</table>
+		<input type="hidden" name="id" value="[% user_.id %]"/>
+		<input type="hidden" name="do_new" value="1"/>
+		[% FOREACH role IN roles %]
+			<br/>
+			<input type="checkbox" name="[% role.role %]" value="1"[% IF c.req.params.${role.role} %] checked="1"[% END %]/><label for="[% role.role %]">[% role.role %]</label><br/>
+		[% END %]
+		<br/>
+		<br/>
+		<input type="submit" value="Apply"/>
+		<input type="hidden" value="do_new"/>
+	</form>
+[% END %]
