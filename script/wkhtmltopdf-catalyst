@@ -1,0 +1,5 @@
+#!/bin/bash
+
+xvfb-run /usr/bin/wkhtmltopdf $* 2>&1 > /dev/null || echo "Error with wkhtmltopdf"
+
+exit 0

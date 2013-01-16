@@ -1,0 +1,86 @@
+[%
+# This file is part of Astatistics.
+# Copyright (C) 2011
+#   Eurogaran Informatica, S.L.
+# 
+# Astatistics is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# Astatistics is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with Astatistics.  If not, see <http://www.gnu.org/licenses/>.
+# 
+# See the file COPYING for copying conditions.
+%]
+
+[% IF c.user_exists %]
+	<form action='[% c.uri_for('/stats/templates') %][% IF parent_path %]/[% parent_path %][% END %]'
+						method="post" accept-charset="utf-8">
+		<input type="hidden" name="cut_parent" value="[% c.req.params.cut_parent %]">
+		<input type="hidden" name="copy" value="[% c.req.params.copy %]">
+		<input type="hidden" name="cut" value="[% c.req.params.cut %]">
+		<input type="submit" name="cancel" value="&larr; Return"/>
+	</form>
+	<h3>Delete [% IF c.req.params.class == "group" %]Group[% ELSE %]Template[% END %] [% oldname %] in [% IF localpath %][% localpath %][% ELSE %]/[% END %]?</h3>
+	<form action='[% c.uri_for('/stats/templates') %][% IF statpath %]/[% statpath %][% END %]/do_delete'
+						method="post" accept-charset="utf-8">
+		<input type="hidden" name="cut_parent" value="[% c.req.params.cut_parent %]">
+		<input type="hidden" name="copy" value="[% c.req.params.copy %]">
+		<input type="hidden" name="cut" value="[% c.req.params.cut %]">
+		<input type="hidden" name="id" value="[% c.req.params.id %]"/>
+		<input type="hidden" name="oldname" value="[% c.req.params.oldname %]"/>
+		<input type="hidden" name="class" value="[% c.req.params.class %]"/>
+		<input type="submit" name="delete" value="Delete"/>
+	</form>
+	<form action='[% c.uri_for('/stats/templates') %][% IF statpath %]/[% statpath %][% END %]'
+						method="post" accept-charset="utf-8">
+		<input type="hidden" name="cut_parent" value="[% c.req.params.cut_parent %]">
+		<input type="hidden" name="copy" value="[% c.req.params.copy %]">
+		<input type="hidden" name="cut" value="[% c.req.params.cut %]">
+		<label for="class">Class:</label>
+		<input type="radio" name="class" value="group"[% IF c.req.params.class == "group" %] checked[% END %]>Group</input>
+		<input type="radio" name="class" value="template"[% IF c.req.params.class == "template" %] checked[% END %]>Template</input>
+		<br/>
+		<br/>
+		<label for="name">Name:</label>
+		<input type="input" name="name" value="[% c.req.params.name %]" />
+		<input type="hidden" name="oldname" value="[% oldname %]" />
+		<input type="hidden" name="id" value="[% c.req.params.id %]" />
+		<br/>
+		<br/>
+		<h4>Next fields only for templates:</h4>
+		<label for="visual">Visual:</label>
+		<input type="radio" name="visual" value="list"[% IF c.req.params.visual == "list" %] checked[% END %]>List</input>
+		<input type="radio" name="visual" value="bars"[% IF c.req.params.visual == "bars" %] checked[% END %]>Bars</input>
+		<input type="radio" name="visual" value="lines"[% IF c.req.params.visual == "lines" %] checked[% END %]>Lines</input>
+		<input type="radio" name="visual" value="area"[% IF c.req.params.visual == "area" %] checked[% END %]>Area</input>
+		<input type="radio" name="visual" value="pie"[% IF c.req.params.visual == "pie" %] checked[% END %]>Pie</input>
+		<input type="radio" name="visual" value="bubble"[% IF c.req.params.visual == "bubble" %] checked[% END %]>Bubble</input>
+		<input type="radio" name="visual" value="point"[% IF c.req.params.visual == "point" %] checked[% END %]>Point</input>
+		<input type="radio" name="visual" value="polararea"[% IF c.req.params.visual == "polararea" %] checked[% END %]>PolarArea</input>
+		<!--input type="radio" name="visual" value="candlestick"[% IF c.req.params.visual == "candlestick" %] checked[% END %]>CandleStick</input-->
+		<br/>
+		<br/>
+		<label for="conditions">Conditions:</label>
+		<br/>
+		<br/>
+		<textarea name="conditions" cols="80" rows="5">[% c.req.params.conditions %]</textarea>
+		<br/>
+		<br/>
+		<label for="format">Format:</label>
+		<br/>
+		<br/>
+		<textarea name="format" cols="80" rows="5">[% c.req.params.format %]</textarea>
+		<br/>
+		<br/>
+		<input type="submit" name="go" value="Do not delete, please"/>
+	</form>
+[% ELSE %]
+	<h3>Please, login</h3>
+[% END %]

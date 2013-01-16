@@ -1,0 +1,34 @@
+[%
+# This file is part of Astatistics.
+# Copyright (C) 2011
+#   Eurogaran Informatica, S.L.
+# 
+# Astatistics is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# Astatistics is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with Astatistics.  If not, see <http://www.gnu.org/licenses/>.
+# 
+# See the file COPYING for copying conditions.
+%]
+
+[% IF ! c.user_exists %]
+	<form action="[% c.uri_for('/users/login') %]"
+				method="post" accept-charset="utf-8">
+		<label for="username">Username</label>
+		<input type="text" name="username" value="" id="username"/>
+		<br/><br/>
+		<label for="password">Password</label>
+		<input type="password" name="password" value="" id="password"/>
+		<p><input type="submit" value="Login &rarr;"></p>
+	</form>
+[% ELSE %]
+	<p>You are already logged in.</p>
+[% END %]

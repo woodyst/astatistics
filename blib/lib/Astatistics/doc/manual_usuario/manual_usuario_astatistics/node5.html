@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Configurando MySQL y Asterisk</TITLE>
+<META NAME="description" CONTENT="Configurando MySQL y Asterisk">
+<META NAME="keywords" CONTENT="manual_usuario_astatistics">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="manual_usuario_astatistics.css">
+
+<LINK REL="next" HREF="node6.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html98"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html94"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html88"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html96"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html99"
+  HREF="node6.html">Instalando requisitos de m&#195;&#179;dulos</A>
+<B> Up:</B> <A NAME="tex2html95"
+  HREF="node3.html">Instalaci&#195;&#179;n de Astatistics (Administrador</A>
+<B> Previous:</B> <A NAME="tex2html89"
+  HREF="node4.html">Requisitos de instalaci&#195;&#179;n</A>
+ &nbsp; <B>  <A NAME="tex2html97"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00320000000000000000">
+Configurando MySQL y Asterisk</A>
+</H1>
+Primero se ha de configurar el m&#195;&#179;dulo res_mysql.so editando el fichero de configuraci&#195;&#179;n res_mysql.conf del directorio de configuraci&#195;&#179;n de Asterisk. En dicho fichero, en la secci&#195;&#179;n ``general'' se deber&#195;&#161; de introducir la informaci&#195;&#179;n para acceder a la base de datos de Asterisk en el MySQL.
+
+<P>
+Se deber&#195;&#161; de crear la base de datos de Asterisk y las tablas. Para ello se incluye un dise&#195;&#177;o en el fichero asterisk-mysql.sql del directorio ``db'' del paquete de instalaci&#195;&#179;n. Los pasos a realizar ser&#195;&#173;an los siguientes (modificar seg&#195;&#186;n conveniencia):
+
+<OL>
+<LI>Accedemos a mysql y hacemos:
+<BR>
+<BR>
+mysql&gt;create database asterisk;
+<BR>
+Query OK, 1 row affected (0.01 sec)
+<BR>
+mysql&gt;quit
+<BR>
+Bye
+<BR>
+<BR>
+Con esta operaci&#195;&#179;n habremos creado la base de datos ``asterisk''.
+</LI>
+<LI>Cargamos el contenido del fichero asterisk-mysql.sql desde el directorio ra&#195;&#173;z del paquete:
+<BR>
+<BR>$ mysql -u root -ppassword -e "<SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$\backslash$"></SPAN>. ./db/asterisk-mysql.sql"
+<BR>
+<BR>
+Con ello habremos creado las tablas dentro de la base de datos.
+</LI>
+<LI>Definimos y concedemos permisos de acceso al usuario que hemos configurado anteriormente en el res_mysql.conf:
+<BR>
+<BR>$ mysql -u root -ppassword -e "grant all privileges on asterisk.* to 'usuario'@'localhost'
+</LI>
+</OL>
+
+<P>
+Ahora ya tendremos creada la base de datos y configurado el acceso desde Asterisk.
+
+<P>
+A su vez es necesario configurar la salida del CDR de asterisk, as&#195;&#173; como del queue_log y queue_memebers a una base de datos MySQL de la siguiente forma:
+
+<OL>
+<LI>Generamos un fichero (o modificamos el existente) ``/etc/asterisk/cdr_mysql.conf'' con el siguiente contenido:
+<BR>
+<BR>``global''
+<BR>
+hostname=localhost
+<BR>
+dbname=asterisk
+<BR>
+password=passwd
+<BR>
+user=asterisk
+<BR>
+<BR>
+Modificando los datos con los que hemos usado anteriormente.
+</LI>
+<LI>Modificamos los valores siguientes en la secci&#195;&#179;n ``settings'' del fichero /etc/asterisk/extconfig.conf:
+<BR>
+<BR>
+queue_members =&gt;mysql,general,queue_members
+<BR>
+queue_log =&gt;mysql,general,queue_log
+</LI>
+</OL>
+
+<P>
+Seguidamente haremos una recarga de la configuraci&#195;&#179;n de asterisk de la siguiente manera:
+<BR>
+<BR># asterisk -rx "reload"
+
+<P>
+Tras este proceso Asterisk deber&#195;&#173;a de estar volcando ya la informaci&#195;&#179;n de las llamadas y colas a las tablas creadas en MySQL. Se han inclu&#195;&#173;do, a su vez, tablas de informaci&#195;&#179;n de estado en tiempo real para la monitorizaci&#195;&#179;n en vivo y otras facilidades.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html98"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html94"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html88"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html96"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html99"
+  HREF="node6.html">Instalando requisitos de m&#195;&#179;dulos</A>
+<B> Up:</B> <A NAME="tex2html95"
+  HREF="node3.html">Instalaci&#195;&#179;n de Astatistics (Administrador</A>
+<B> Previous:</B> <A NAME="tex2html89"
+  HREF="node4.html">Requisitos de instalaci&#195;&#179;n</A>
+ &nbsp; <B>  <A NAME="tex2html97"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2012-12-11
+</ADDRESS>
+</BODY>
+</HTML>

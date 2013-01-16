@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Par&#195;&#161;metros de consulta</TITLE>
+<META NAME="description" CONTENT="Par&#195;&#161;metros de consulta">
+<META NAME="keywords" CONTENT="manual_usuario_astatistics">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="manual_usuario_astatistics.css">
+
+<LINK REL="next" HREF="node15.html">
+<LINK REL="previous" HREF="node13.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node15.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html210"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html206"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html200"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html208"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html211"
+  HREF="node15.html">Organizaci&#195;&#179;n de men&#195;&#186;s e</A>
+<B> Up:</B> <A NAME="tex2html207"
+  HREF="node13.html">Definici&#195;&#179;n de plantillas y</A>
+<B> Previous:</B> <A NAME="tex2html201"
+  HREF="node13.html">Definici&#195;&#179;n de plantillas y</A>
+ &nbsp; <B>  <A NAME="tex2html209"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00541000000000000000">
+Par&#195;&#161;metros de consulta</A>
+</H2>
+Astatistics permite definir par&#195;&#161;metros variables en las plantillas cuyos valores ser&#195;&#161;n solicitados al usuario cuando solicite la visualizaci&#195;&#179;n de un informe. Pueden ser usados en general en ``Conditions'' y ``Format''. Dichos par&#195;&#161;metros pueden ser de los siguientes tipos y se introducen con la siguiente sintaxis:
+
+<UL>
+<LI>texto: Campo input de formulario web, en el que se puede introducir un texto cualquiera. Su sintaxis es:
+<BR>	
+<BR>	#text#nombre a mostrar#valor por omisi&#195;&#179;n#
+<BR>	
+<BR>
+Para un valor por omisi&#195;&#179;n en blanco se mostrar&#195;&#161; vac&#195;&#173;o el campo.
+<BR>	
+<BR>
+Un ejemplo podr&#195;&#173;a ser: #text#Usuario#Javier#
+<BR>	
+<BR>
+En algunos casos como el par&#195;&#161;metro ``rows_per_page'' o ``refresh'' no se ha de especificar el tipo.
+<BR>	
+<BR>
+Un ejemplo para ``refresh'' podr&#195;&#173;a ser: #Refresco#5#
+</LI>
+<LI>date: Campo input de formulario que mostrar&#195;&#161; un desplegable con un calendario para introducci&#195;&#179;n de fechas. Su formato es:
+<BR>	
+<BR>	#date#Nombre a mostrar#valor por omisi&#195;&#179;n# 
+<BR>	
+<BR>
+Si no se especifica valor por omisi&#195;&#179;n (#date#Nombre#) se usar&#195;&#161; de fecha del momento en el que se consulta (fecha de hoy).
+</LI>
+<LI>checkbox: Campo que permite seleccionar uno o varios valores de una lista. Se mostrar&#195;&#161;n casillas de selecci&#195;&#179;n para cada uno de los valores y el usuario podr&#195;&#161; marcar los que desee. Su sintaxis es:
+<BR>	
+<BR>
+<BR>
+<IMG
+ WIDTH="658" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="\begin{lstlisting}
+...">
+<BR>
+
+<P>
+<BR>
+<IMG
+ WIDTH="816" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="\begin{lstlisting}
+Ejemplo:  ...">
+<BR>
+</LI>
+<LI>radio: Campo similar al anterior pero que solo permite una selecci&#195;&#179;n simult&#195;&#161;nea. La sintaxis es:
+<BR>	
+<BR>
+<BR>
+<IMG
+ WIDTH="625" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="\begin{lstlisting}
+...">
+<BR>
+
+<P>
+Tan solo un valor puede estar marcado como ``checked'' (seleccionado).
+<BR>
+<P>
+<BR>
+<IMG
+ WIDTH="614" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="\begin{lstlisting}
+Ejemplo:  ...">
+<BR>
+</LI>
+</UL>
+
+<P>
+Un par&#195;&#161;metro puede repetirse para ser utilizado en diferentes partes del dise&#195;&#177;o de la plantilla. Por ejemplo, un rango de fechas podr&#195;&#173;a ser especificado con #date#Fecha inicio# y #date#Fecha fin# en ``title'' y ``where'' de la siguiente forma:
+
+<P>
+En Conditions:
+<BR>
+<IMG
+ WIDTH="770" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="\begin{lstlisting}
+where=calldate &gt;  ...">
+<BR>
+En Format:
+<BR>
+<IMG
+ WIDTH="667" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.png"
+ ALT="\begin{lstlisting}
+title=Llamadas entre  ...">
+<BR>
+
+<P>
+Tan solo se solicitar&#195;&#173;a una vez que el usuario rellenara dichos par&#195;&#161;metros al hacer la consulta, us&#195;&#161;ndose luego dicho valor en ambas apariciones en el dise&#195;&#177;o, es decir, se a&#195;&#177;adir&#195;&#173;an dichas fechas al t&#195;&#173;tulo y se usar&#195;&#173;an para las condiciones de consulta a la base de datos.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html210"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html206"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html200"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html208"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html211"
+  HREF="node15.html">Organizaci&#195;&#179;n de men&#195;&#186;s e</A>
+<B> Up:</B> <A NAME="tex2html207"
+  HREF="node13.html">Definici&#195;&#179;n de plantillas y</A>
+<B> Previous:</B> <A NAME="tex2html201"
+  HREF="node13.html">Definici&#195;&#179;n de plantillas y</A>
+ &nbsp; <B>  <A NAME="tex2html209"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+
+2012-12-11
+</ADDRESS>
+</BODY>
+</HTML>

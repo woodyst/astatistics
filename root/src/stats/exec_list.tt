@@ -1,0 +1,275 @@
+[%
+# This file is part of Astatistics.
+# Copyright (C) 2011
+#   Eurogaran Informatica, S.L.
+# 
+# Astatistics is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# Astatistics is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with Astatistics.  If not, see <http://www.gnu.org/licenses/>.
+# 
+# See the file COPYING for copying conditions.
+%]
+
+[% IF c.user_exists %]
+	<p>
+	<table>
+		<tr>
+			[% IF ! no_buttons %]
+				<td align="left">
+					<form action='[% c.uri_for('/stats/show') %][% IF localpath %]/[% localpath %][% END %]'
+								method="post" accept-charset="utf-8">
+						<input type="hidden" name="localpath" value="[% localpath %]"/>
+						<input type="submit" value="&larr; Exit"[% IF level == 1 %] disabled="disabled"[% END %]/>
+					</form>
+				</td>
+				<td align="left">
+					<form action='/[% c.request.path %]'
+								method="post" accept-charset="utf-8">
+						<input type="submit" value="Refresh"/>
+						[% FOR param IN param_keys %]
+							<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
+						[% END %]
+					</form>
+				</td>
+				<td align="left">
+					<form action='[% localpath %]'
+								method="post" accept-charset="utf-8">
+						<input type="hidden" name="repeat" value="1"/>
+						<input type="submit" value="Repeat"/>
+						[% FOR param IN param_keys %]
+							<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
+						[% END %]
+					</form>
+				</td>
+				<td align="left">
+					<form action='[% localpath %]'
+								method="post" accept-charset="utf-8">
+						<input type="hidden" name="pdf_export" value="1"/>
+						<input type="submit" value="PDF Export"/>
+						[% FOR param IN param_keys %]
+							<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
+						[% END %]
+					</form>
+				</td>
+				<td align="left">
+					<form action='[% localpath %]'
+								method="post" accept-charset="utf-8">
+						<input type="hidden" name="csv_export" value="1"/>
+						<input type="submit" value="CSV Export"/>
+						[% FOR param IN param_keys %]
+							<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
+						[% END %]
+					</form>
+				</td>
+			[% END %]
+		</table>
+	</p>
+	<h3>[% title %]</h3>
+	[% IF visual == 'list' %]
+		[% IF !no_results_found %]
+			<table width="100%">
+				<tr>
+					<td align="left">Showing results from [% first_entry %] to [% last_entry %] of [% total_entries %]</td>
+					[% IF ! no_page %]
+						<td align="right">Page [% current_page %] of [% last_page %]</td>
+					[% END %]
+				</tr>
+			</table>
+			[% IF current_page != last_page OR ! no_page %]
+				<table border="0" width="100%">
+					<tr>
+						<td align="left" width=1>
+							<form action='[% first_page_uri %]'
+										method="post" accept-charset="utf-8">
+								<input type="submit" value="|&larr;"[% IF !prev_page %] disabled="disabled"[% END %]/>
+								[% FOR param IN param_keys %]
+									<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
+								[% END %]
+							</form>
+						</td>
+						<td align="left" width=1>
+							<form action='[% prev_20_page_uri %]'
+										method="post" accept-charset="utf-8">
+								<input type="submit" value="&larr;&larr;"[% IF !prev_20_page %] disabled="disabled"[% END %]/>
+								[% FOR param IN param_keys %]
+									<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
+								[% END %]
+							</form>
+						</td>
+						<td align="left" width=1>
+							<form action='[% prev_page_uri %]'
+										method="post" accept-charset="utf-8">
+								<input type="submit" value="&larr;"[% IF !prev_page %] disabled="disabled"[% END %]/>
+								[% FOR param IN param_keys %]
+									<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
+								[% END %]
+							</form>
+						</td>
+						<td></td>
+						<td align="right" width=1>
+							<form action='[% next_page_uri %]'
+										method="post" accept-charset="utf-8">
+								<input type="submit" value="&rarr;"[% IF !next_page %] disabled="disabled"[% END %]/>
+								[% FOR param IN param_keys %]
+									<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
+								[% END %]
+							</form>
+						</td>
+						<td align="right" width=1>
+							<form action='[% next_20_page_uri %]'
+										method="post" accept-charset="utf-8">
+								<input type="submit" value="&rarr;&rarr;"[% IF !next_20_page %] disabled="disabled"[% END %]/>
+								[% FOR param IN param_keys %]
+									<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
+								[% END %]
+							</form>
+						</td>
+						<td align="right" width=1>
+							<form action='[% last_page_uri %]'
+										method="post" accept-charset="utf-8">
+								<input type="submit" value="&rarr;|"[% IF !next_page %] disabled="disabled"[% END %]/>
+								[% FOR param IN param_keys %]
+									<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
+								[% END %]
+							</form>
+						</td>
+					</tr>
+				</table>
+			[% END %]
+					
+			<table width="100%" border="1" cellspacing="0">
+				<tr>
+					[% FOR column IN template_columns %]
+						<th class="result_header">
+							[% column %]
+							<!-- Sorting stuff form action='[% localpath %]/sort_by_[% column %]_asc'
+										method="post" accept-charset="utf-8">
+								<input type="submit" value="&darr;"/>
+								[% FOR param IN param_keys %]
+									<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
+								[% END %]
+							</form>
+							<form action='[% localpath %]/sort_by_[% column %]_dsc'
+										method="post" accept-charset="utf-8">
+								<input type="submit" value="&uarr;"/>
+								[% FOR param IN param_keys %]
+									<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
+								[% END %]
+							</form-->
+						</th>
+					[% END %]
+				</tr>
+				[% odd = 1 %]
+				[% FOR row IN result %]
+					<tr>
+					[% IF odd %]
+						[% class="result_odd" %]
+						[% odd = 0 %]
+					[% ELSE %]
+						[% class="result_even" %]
+						[% odd = 1 %]
+					[% END %]
+						[% FOR column IN template_columns %]
+							<td class="[% class %]">[% row.$column %]</td>
+						[% END %]
+					</tr>
+				[% END %]
+			</table>
+			[% IF current_page != last_page %]
+				<table border="0" width="100%">
+					<tr>
+						<td align="left" width=1>
+							<form action='[% first_page_uri %]'
+										method="post" accept-charset="utf-8">
+								<input type="submit" value="|&larr;"[% IF !prev_page %] disabled="disabled"[% END %]/>
+								[% FOR param IN param_keys %]
+									<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
+								[% END %]
+							</form>
+						</td>
+						<td align="left" width=1>
+							<form action='[% prev_20_page_uri %]'
+										method="post" accept-charset="utf-8">
+								<input type="submit" value="&larr;&larr;"[% IF !prev_20_page %] disabled="disabled"[% END %]/>
+								[% FOR param IN param_keys %]
+									<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
+								[% END %]
+							</form>
+						</td>
+						<td align="left" width=1>
+							<form action='[% prev_page_uri %]'
+										method="post" accept-charset="utf-8">
+								<input type="submit" value="&larr;"[% IF !prev_page %] disabled="disabled"[% END %]/>
+								[% FOR param IN param_keys %]
+									<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
+								[% END %]
+							</form>
+						</td>
+						<td></td>
+						<td align="right" width=1>
+							<form action='[% next_page_uri %]'
+										method="post" accept-charset="utf-8">
+								<input type="submit" value="&rarr;"[% IF !next_page %] disabled="disabled"[% END %]/>
+								[% FOR param IN param_keys %]
+									<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
+								[% END %]
+							</form>
+						</td>
+						<td align="right" width=1>
+							<form action='[% next_20_page_uri %]'
+										method="post" accept-charset="utf-8">
+								<input type="submit" value="&rarr;&rarr;"[% IF !next_20_page %] disabled="disabled"[% END %]/>
+								[% FOR param IN param_keys %]
+									<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
+								[% END %]
+							</form>
+						</td>
+						<td align="right" width=1>
+							<form action='[% last_page_uri %]'
+										method="post" accept-charset="utf-8">
+								<input type="submit" value="&rarr;|"[% IF !next_page %] disabled="disabled"[% END %]/>
+								[% FOR param IN param_keys %]
+									<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
+								[% END %]
+							</form>
+						</td>
+					</tr>
+				</table>
+			[% END %]
+			<table width="100%">
+				<tr>
+					<td align="left">Showing results from [% first_entry %] to [% last_entry %] of [% total_entries %]</td>
+					[% IF ! no_page %]
+						<td align="right">Page [% current_page %] of [% last_page %]</td>
+					[% END %]
+				</tr>
+			</table>
+			<br/>
+		[% END %]
+	[% END %]
+	<!-- DEBUG>
+	<h3>Parameters for '[% name %]'</h3>
+	<table border="1" border-spacing="1px">
+		<tr>
+			<td><b>Visual</b></td><td>[% visual %]</td>
+		</tr>
+		<tr>
+			<td><b>Conditions</b></td><td>[% conditions %]</td>
+		</tr>
+		<tr>
+			<td><b>Format</b></td><td>[% format %]</td>
+		</tr>
+	</table>
+	<END DEBUG-->
+[% ELSE %]
+	<h3>Please, login</h3>
+[% END %]

@@ -1,0 +1,71 @@
+---
+abstract: 'Catalyst based application'
+author:
+  - ',,,'
+build_requires:
+  ExtUtils::MakeMaker: 6.36
+  Test::More: 0.88
+configure_requires:
+  ExtUtils::MakeMaker: 6.36
+distribution_type: module
+dynamic_config: 1
+generated_by: 'Module::Install version 1.06'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Astatistics
+no_index:
+  directory:
+    - inc
+    - t
+requires:
+  Catalyst::Action::RenderView: 0
+  Catalyst::Authentication::Store::DBIx::Class: 0.1503
+  Catalyst::Devel: 1.37
+  Catalyst::Helper::View::Graphics::Primitive: 0
+  Catalyst::Helper::View::JSON: 0
+  Catalyst::Helper::View::Wkhtmltopdf: 0
+  Catalyst::Plugin::Authorization::Roles: 0.06
+  Catalyst::Plugin::ConfigLoader: 0
+  Catalyst::Plugin::Session::State::Cookie: 0.17
+  Catalyst::Plugin::Session::Store::FastMmap: 0.16
+  Catalyst::Plugin::Static::Simple: 0
+  Catalyst::Restarter: 0
+  Catalyst::Runtime: 5.80025
+  Catalyst::Script::Server: 0
+  Catalyst::ScriptRole: 0
+  Catalyst::ScriptRunner: 0
+  Catalyst::View::TT: 0.39
+  Catalyst::View::Wkhtmltopdf: 0
+  CatalystX::Component::Traits: 0.16
+  Chart::Clicker: 0
+  Class::CSV: 0
+  Class::DBI: 0
+  Config::General: 0
+  DBD::SQLite: 0
+  DBIx::Class: 0
+  DBIx::Class::ResultSet: 0
+  DBIx::Class::Schema::Loader: 0
+  DateTime: 0
+  DateTime::Format::MySQL: 0
+  DateTime::Format::SQLite: 0
+  File::Remove: 0
+  Graphics::Color::RGB: 0
+  Graphics::Primitive: 0
+  Hash::MultiValue: 0
+  Layout::Manager: 0
+  Module::Runtime: 0
+  Moose: 2.06020
+  Object::Signature: 0
+  Paper::Specs: 0
+  Params::Validate: 0.97
+  SQL::Translator: 0
+  Task::Catalyst: 0
+  Test::NoWarnings: 0
+  Test::Output: 0
+  YAML::Tiny: 0
+  namespace::autoclean: 0.13
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.01
