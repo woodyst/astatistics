@@ -1,0 +1,21 @@
+Astatistics 0.01
+----------------
+
+(c) 2011-2013 EUROGARAN Informatica, S.L.  <informatica@eurogaran.com>
+
+Astatistics is a generic database analysis tool originally conceived for extracting information from the Asterisk software PBX log files.
+
+Main difference between Astatistics and other similar tools being that Astatistics was designed so that users can elaborate on existing templates to customize presentation.
+
+Astatistics can therefore be adapted to extract the info needed in precisely the desired format -including listings and graphics- allowing export as CSV or PDF for later processing by standard methods, like spreadsheets.
+
+Astatistics is not limited to Asterisk, but could operate on any MySQL database. It could be applied in the foreseeble future even to other database engines.
+
+Astatistics has a powerful hierarchy of menus for organizing information along the desired operation guidelines, and a user and role management apt for use in corporate environments.
+
+Based on the Catalyst framework for Perl programming, it is free software with a GPL license (see COPYING).
+
+For installing instructions see INSTALL.
+
+A manual is included in the 'doc' folder. Initially in spanish, but will be translated soon.
+
