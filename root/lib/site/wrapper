@@ -1,5 +1,6 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-	"http://www.w3.org/TR/html4/loose.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -17,6 +18,38 @@
 		[% IF ajax_refresh %]
 		<script src=/static/jquery/jquery.js
 						type="text/javascript">
+		</script>
+
+		<!-- Ajax example to use it as template -->
+		<script type="text/javascript">
+			//<![CDATA[
+				jQuery(function($) {
+					// #convenient is a <p id="convenient"> block
+					$("#convenient")
+						.css({cursor:"pointer"})
+						.click(function(){
+									 $.ajax({
+													 type: "GET"
+													,url: "[% c.uri_for("ajax") %]"
+													,dataType: "json"
+													,cache: false
+													,success: function(json){
+																			 var $pq = $("<span>" + json.quote + "</span>");
+																			 // quote (json.quote) is got from a Controller:
+																			 //		my $quote = ...;
+																			 //		$c->stash->(quote => $quote);
+																			 //		$c->detach->( $c->view("JSON") );
+																			 $pq.hide();
+																			 // .reuseable is a <div class="reuseable"> 
+																			 if ( $(".reuseable").children().size() > 0 )
+																							$(".reuseable").append(" &middot; ");
+																			 $(".reuseable").append($pq);
+																			 $pq.fadeIn();
+																		}
+													 });
+						 });
+				});
+			//]]>
 		</script>
 		[% END %]
 		[% IF jsdatepicker_header %]
