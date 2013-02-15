@@ -1970,6 +1970,24 @@ sub stat_show :Chained :Path("/stats/exec") :Args(2) {
 		}
 	}
 
+	my $title_ajax_refresh;
+	if (exists $conditions{'ajax_refresh'}) {
+		if ($conditions{'ajax_refresh'} =~ /(?<!\\)#([^#]+)(?<!\\)#([^#]+)?(?<!\\)#?/) {
+			while ($conditions{'ajax_refresh'} =~ m/(?<!\\)#([^#]+)(?<!\\)#([^#]+)?(?<!\\)#?/g) {
+				my ($title, $default) = ($1,$2);
+				push (@params,$title);
+				$title_ajax_refresh = $title;
+				$param_class{$title} = "text";
+				$default = "5" if !$default;
+				$c->req->params->{"repeat"} = 1 if !$c->req->params->{"$title"};
+				$c->req->params->{"$title"} = $default if (!$c->req->params->{"$title"});
+				$c->stash->{ajax_refresh} = $c->req->params->{"$title"};
+			}
+		} else {
+			$c->stash->{ajax_refresh} = $conditions{'ajax_refresh'};
+		}
+	}
+
 	$c->stash->{'params'} = \@params;
 	$c->stash->{'param_class'} = \%param_class;
 	$c->stash->{'param_params'} = \%param_params;
@@ -2075,6 +2093,7 @@ sub stat_show :Chained :Path("/stats/exec") :Args(2) {
 
 	if (!$params_ok) {
 		$c->stash->{'refresh'} = "";	# No refresh when asking for params
+		$c->stash->{'ajax_refresh'} = "";	# No refresh when asking for params
 		return 0;
 	}
 

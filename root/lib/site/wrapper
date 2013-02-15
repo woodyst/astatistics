@@ -21,7 +21,7 @@
 		</script>
 
 		<!-- Ajax example to use it as template -->
-		<script type="text/javascript">
+		<!-- script type="text/javascript">
 			//<![CDATA[
 				jQuery(function($) {
 					// #convenient is a <p id="convenient"> block
@@ -48,6 +48,20 @@
 																		}
 													 });
 						 });
+				});
+			//]]>
+		</script-->
+		<script type="text/javascript">
+			//<![CDATA[
+				jQuery(function($) {
+					setInterval(function(){
+						$.ajax({
+								 type: "GET"
+								,url: "/[% c.request.path %]"
+								,dataType: "HTML"
+								,cache: false
+						});
+					},[% ajax_refresh %]000);
 				});
 			//]]>
 		</script>
