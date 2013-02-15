@@ -52,7 +52,7 @@
 				</td>
 				<td align="left">
 					<form action='[% localpath %]'
-								method="post" accept-charset="utf-8">
+								method="post" accept-charset="utf-8" target="_blank">
 						<input type="hidden" name="pdf_export" value="1"/>
 						<input type="submit" value="PDF Export"/>
 						[% FOR param IN param_keys %]
@@ -62,7 +62,7 @@
 				</td>
 				<td align="left">
 					<form action='[% localpath %]'
-								method="post" accept-charset="utf-8">
+								method="post" accept-charset="utf-8" target="_blank">
 						<input type="hidden" name="csv_export" value="1"/>
 						<input type="submit" value="CSV Export"/>
 						[% FOR param IN param_keys %]
