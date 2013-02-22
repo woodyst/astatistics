@@ -1690,6 +1690,7 @@ sub queuelogvirt_list :Private {
 	my $show = $conditions{show};
 	$params{show} = $show if (defined $show and $show);
 	my $series_by = $conditions{series_by};
+	$params{where} = $conditions{where};
 	$params{series_by} = $series_by if (defined $series_by and $series_by);
 
 	# date_from y to
@@ -1859,9 +1860,12 @@ sub stat_show :Chained :Path("/stats/exec") :Args(2) {
 	if (exists $conditions{'table'} and ($conditions{'table'} eq 'queuelog_virt' or $conditions{'table'} eq 'queue_log_virt')) {
 		$where = $conditions{'where'} if (defined $conditions{'where'} and $conditions{'where'});
 		if ((exists $conditions{'date_from'} and $conditions{'date_from'}) or (exists $conditions{'date_to'} and $conditions{'date_to'})) {
+			# We add date parameters to conditions so it will be asked for user. In model it would
+			# be eliminated so won't be interpreted as part of where conditions.
 			$where .= "XXXDATESQLOGVIRTXXX";
 			$where .= $conditions{'date_from'} if (exists $conditions{'date_from'});
 			$where .= $conditions{'date_to'} if (exists $conditions{'date_to'});
+			$where .= "XXXDATESQLOGVIRTXXX";
 		}
 	} else {
 		$where = $conditions{'where'} if (exists $conditions{'where'} and $conditions{'where'});

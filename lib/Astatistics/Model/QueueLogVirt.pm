@@ -238,15 +238,17 @@ sub BUILD {
 		push @{$events{'-or'}}, { event => $event };
 	}
 
-	$event_query{'-and'} = [ $self->where, \%events ];
+	my $where = $self->where;
+	$where =~ s/XXXDATESQLOGVIRTXXX.*XXXDATESQLOGVIRTXXX//;	# This was for asking for parameters, but is passed as individual conditions so hasn't to be in where.
+	$event_query{'-and'} = [ $where, \%events ];
 
 	my %date_from_query = ( 'time+0' => { '>', $self->epoch_from } );	# `field`+0 for numeric
 	my %date_to_query = ( 'time+0' => { '<', $self->epoch_to } );			# 					threatement
 
-	my %query = ( -and => [ \%event_query, \%date_from_query, \%date_to_query ]);
-	if ($self->where) {
-		push @{$query{'-and'}}, $self->where;
-	}
+	# FIXME: (see explanation)
+	my %query = ( -and => [ \%events, \%date_from_query, \%date_to_query ]);
+	# Next includes where condition from template, but requires parsing and converting to hash format of DBIx::Class.
+	#my %query = ( -and => [ \%event_query, \%date_from_query, \%date_to_query ]);
 
 	my %query_params;
 	$query_params{'order_by'} = 'time+0,id,callid+0';	# `field`+0 for numeric sort
