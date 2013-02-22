@@ -1637,7 +1637,7 @@ sub queuelogvirt_test :Chained :Path("/queuelogvirt_test") :Args(0) {
 	$c->stash->{'template'} = "stats/queuelogvirt_list.tt";
 
 	my $model = $c->model('Asterisk::QueueLog');
-	my $qlogvirt = $c->model('QueueLogVirt')->new(show => "wait_time,max_call_duration,calls_answered,calls", series_by => "agent,call", date_from => "1995-01-01", date_to => "2012-12-31");
+	my $qlogvirt = $c->model('QueueLogVirt')->new(show => "wait_time,max_call_duration,calls_answered,calls", series_by => "agent,call", date_from => "1995-01-01", date_to => "2034-12-31");
 
 	$c->log->info("QLOGVIRTMSG: ".$qlogvirt->msg);
 	$c->stash->{'qlogvirt'} = $qlogvirt;
