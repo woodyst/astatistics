@@ -1,0 +1,2 @@
+- Fix admin user modification without password confirmation.
+- Fix number of results in function as MAX(billsec).
