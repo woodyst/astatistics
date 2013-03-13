@@ -1,2 +1,1 @@
-- Fix admin user modification without password confirmation.
-- Fix number of results in function as MAX(billsec).
+- Fix number of results in function as MAX(billsec). It is incorrectly managed by rs->pager in Stats.pm controller.
