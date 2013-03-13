@@ -6,7 +6,7 @@
 #
 #       ANY CHANGES MADE HERE WILL BE LOST!
 #
-#   MakeMaker ARGV: (q[build])
+#   MakeMaker ARGV: ()
 #
 
 #   MakeMaker Parameters:
@@ -20,7 +20,7 @@
 #     LICENSE => q[perl]
 #     NAME => q[Astatistics]
 #     NO_META => q[1]
-#     PREREQ_PM => { DateTime=>q[0], DateTime::Format::MySQL=>q[0], File::Remove=>q[0], Catalyst::Plugin::ConfigLoader=>q[0], Catalyst::Devel=>q[1.37], Layout::Manager=>q[0], Test::NoWarnings=>q[0], Chart::Clicker=>q[0], Catalyst::View::Wkhtmltopdf=>q[0], Catalyst::Plugin::Session::Store::FastMmap=>q[0.16], CatalystX::Component::Traits=>q[0.16], Catalyst::Plugin::Session::State::Cookie=>q[0.17], Catalyst::Plugin::Authorization::Roles=>q[0.06], Catalyst::ScriptRole=>q[0], Config::General=>q[0], Catalyst::Helper::View::Graphics::Primitive=>q[0], Catalyst::Authentication::Store::DBIx::Class=>q[0.1503], Catalyst::View::TT=>q[0.39], Catalyst::Helper::View::Wkhtmltopdf=>q[0], ExtUtils::MakeMaker=>q[6.36], Class::DBI=>q[0], Test::More=>q[0.88], DateTime::Format::SQLite=>q[0], Catalyst::Restarter=>q[0], DBD::SQLite=>q[0], DBIx::Class::ResultSet=>q[0], Module::Runtime=>q[0], Catalyst::Script::Server=>q[0], Catalyst::ScriptRunner=>q[0], Graphics::Primitive=>q[0], Test::Output=>q[0], DBIx::Class::Schema::Loader=>q[0], DBIx::Class=>q[0], Moose=>q[2.06020], Hash::MultiValue=>q[0], Paper::Specs=>q[0], namespace::autoclean=>q[0.13], SQL::Translator=>q[0], Graphics::Color::RGB=>q[0], Catalyst::Plugin::Static::Simple=>q[0], YAML::Tiny=>q[0], Class::CSV=>q[0], Catalyst::Helper::View::JSON=>q[0], Object::Signature=>q[0], Catalyst::Action::RenderView=>q[0], Params::Validate=>q[0.97], Catalyst::Runtime=>q[5.80025], Task::Catalyst=>q[0] }
+#     PREREQ_PM => { DateTime=>q[0], DateTime::Format::MySQL=>q[0], File::Remove=>q[0], Catalyst::Plugin::ConfigLoader=>q[0], Catalyst::Devel=>q[1.37], Layout::Manager=>q[0], Test::NoWarnings=>q[0], Chart::Clicker=>q[0], Catalyst::View::Wkhtmltopdf=>q[0], Catalyst::Plugin::Session::Store::FastMmap=>q[0.16], CatalystX::Component::Traits=>q[0.16], Catalyst::Plugin::Session::State::Cookie=>q[0.17], Catalyst::Plugin::Authorization::Roles=>q[0.06], Catalyst::ScriptRole=>q[0], Config::General=>q[0], Catalyst::Helper::View::Graphics::Primitive=>q[0], Catalyst::Authentication::Store::DBIx::Class=>q[0.1503], Catalyst::View::TT=>q[0.39], Catalyst::Helper::View::Wkhtmltopdf=>q[0], ExtUtils::MakeMaker=>q[6.36], Class::DBI=>q[0], Test::More=>q[0.88], DateTime::Format::SQLite=>q[0], Catalyst::Restarter=>q[0], DBD::SQLite=>q[0], DBIx::Class::ResultSet=>q[0], Module::Runtime=>q[0], Catalyst::Script::Server=>q[0], Catalyst::ScriptRunner=>q[0], Graphics::Primitive=>q[0], Test::Output=>q[0], DBIx::Class::Schema::Loader=>q[0], DBIx::Class=>q[0], Moose=>q[2.06020], Hash::MultiValue=>q[0], Paper::Specs=>q[0], namespace::autoclean=>q[0.13], SQL::Translator=>q[0], Graphics::Color::RGB=>q[0], Catalyst::Plugin::Static::Simple=>q[0], YAML::Tiny=>q[0], Class::CSV=>q[0], Catalyst::Helper::View::JSON=>q[0], Object::Signature=>q[0], Catalyst::Action::RenderView=>q[0], Catalyst::Plugin::Unicode=>q[0], Params::Validate=>q[0.97], Catalyst::Plugin::I18N=>q[0], Catalyst::Runtime=>q[5.80025], Task::Catalyst=>q[0] }
 #     VERSION => q[0.01]
 #     VERSION_FROM => q[lib/Astatistics.pm]
 #     dist => { PREOP=>q[$(PERL) -I. "-MModule::Install::Admin" -e "dist_preop(q($(DISTVNAME)))"] }
@@ -225,6 +225,8 @@ TO_INST_PM = lib/Astatistics.pm \
 	lib/Astatistics/Controller/Root.pm \
 	lib/Astatistics/Controller/Stats.pm \
 	lib/Astatistics/Controller/Users.pm \
+	lib/Astatistics/I18N/es.po \
+	lib/Astatistics/I18N/messages.pot \
 	lib/Astatistics/Model/Astatistics.pm \
 	lib/Astatistics/Model/Astatistics.pm.new \
 	lib/Astatistics/Model/Asterisk.pm \
@@ -259,6 +261,8 @@ PM_TO_BLIB = lib/Asterisk/Schema/Result/QueueMemberTable.pm \
 	blib/lib/Asterisk/Schema/Result/QueueMemberTable.pm \
 	lib/Astatistics/Model/Astatistics.pm \
 	blib/lib/Astatistics/Model/Astatistics.pm \
+	lib/Astatistics/I18N/messages.pot \
+	blib/lib/Astatistics/I18N/messages.pot \
 	lib/Asterisk/Schema/Result/QueueTable.pm \
 	blib/lib/Asterisk/Schema/Result/QueueTable.pm \
 	lib/Astatistics/Model/Astatistics.pm.new \
@@ -305,6 +309,8 @@ PM_TO_BLIB = lib/Asterisk/Schema/Result/QueueMemberTable.pm \
 	blib/lib/Astatistics/View/GP.pm \
 	lib/Astatistics/Schema/Result/Role.pm \
 	blib/lib/Astatistics/Schema/Result/Role.pm \
+	lib/Astatistics/I18N/es.po \
+	blib/lib/Astatistics/I18N/es.po \
 	lib/Asterisk/Schema/Result/CallStatus.pm \
 	blib/lib/Asterisk/Schema/Result/CallStatus.pm \
 	lib/Asterisk/Schema/Result/QueueLog.pm \
@@ -797,7 +803,7 @@ distdir : create_distdir
 
 # --- MakeMaker dist_test section:
 disttest : distdir
-	cd $(DISTVNAME) && $(ABSPERLRUN) Makefile.PL "build"
+	cd $(DISTVNAME) && $(ABSPERLRUN) Makefile.PL 
 	cd $(DISTVNAME) && $(MAKE) $(PASTHRU)
 	cd $(DISTVNAME) && $(MAKE) test $(PASTHRU)
 
@@ -961,7 +967,7 @@ $(FIRST_MAKEFILE) : Makefile.PL $(CONFIGDEP)
 	-$(NOECHO) $(RM_F) $(MAKEFILE_OLD)
 	-$(NOECHO) $(MV)   $(FIRST_MAKEFILE) $(MAKEFILE_OLD)
 	- $(MAKE) $(USEMAKEFILE) $(MAKEFILE_OLD) clean $(DEV_NULL)
-	$(PERLRUN) Makefile.PL "build"
+	$(PERLRUN) Makefile.PL 
 	$(NOECHO) $(ECHO) "==> Your Makefile has been rebuilt. <=="
 	$(NOECHO) $(ECHO) "==> Please rerun the $(MAKE) command.  <=="
 	$(FALSE)
@@ -982,8 +988,7 @@ $(MAKE_APERL_FILE) : $(FIRST_MAKEFILE) pm_to_blib
 	$(NOECHO) $(PERLRUNINST) \
 		Makefile.PL DIR= \
 		MAKEFILE=$(MAKE_APERL_FILE) LINKTYPE=static \
-		MAKEAPERL=1 NORECURS=1 CCCDLFLAGS= \
-		build
+		MAKEAPERL=1 NORECURS=1 CCCDLFLAGS=
 
 
 # --- MakeMaker test section:
@@ -1029,9 +1034,11 @@ ppd :
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Catalyst::Helper::View::Wkhtmltopdf" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Catalyst::Plugin::Authorization::Roles" VERSION="0.06" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Catalyst::Plugin::ConfigLoader" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Catalyst::Plugin::I18N" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Catalyst::Plugin::Session::State::Cookie" VERSION="0.17" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Catalyst::Plugin::Session::Store::FastMmap" VERSION="0.16" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Catalyst::Plugin::Static::Simple" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Catalyst::Plugin::Unicode" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Catalyst::Restarter" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Catalyst::Runtime" VERSION="5.80025" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Catalyst::Script::Server" />' >> $(DISTNAME).ppd
@@ -1079,6 +1086,7 @@ pm_to_blib : $(FIRST_MAKEFILE) $(TO_INST_PM)
 	$(NOECHO) $(ABSPERLRUN) -MExtUtils::Install -e 'pm_to_blib({@ARGV}, '\''$(INST_LIB)/auto'\'', q[$(PM_FILTER)], '\''$(PERM_DIR)'\'')' -- \
 	  lib/Asterisk/Schema/Result/QueueMemberTable.pm blib/lib/Asterisk/Schema/Result/QueueMemberTable.pm \
 	  lib/Astatistics/Model/Astatistics.pm blib/lib/Astatistics/Model/Astatistics.pm \
+	  lib/Astatistics/I18N/messages.pot blib/lib/Astatistics/I18N/messages.pot \
 	  lib/Asterisk/Schema/Result/QueueTable.pm blib/lib/Asterisk/Schema/Result/QueueTable.pm \
 	  lib/Astatistics/Model/Astatistics.pm.new blib/lib/Astatistics/Model/Astatistics.pm.new \
 	  lib/Astatistics/Schema.pm blib/lib/Astatistics/Schema.pm \
@@ -1102,12 +1110,14 @@ pm_to_blib : $(FIRST_MAKEFILE) $(TO_INST_PM)
 	  lib/Asterisk/Schema/Result/AgentStatus.pm blib/lib/Asterisk/Schema/Result/AgentStatus.pm \
 	  lib/Astatistics/View/GP.pm blib/lib/Astatistics/View/GP.pm \
 	  lib/Astatistics/Schema/Result/Role.pm blib/lib/Astatistics/Schema/Result/Role.pm \
+	  lib/Astatistics/I18N/es.po blib/lib/Astatistics/I18N/es.po \
 	  lib/Asterisk/Schema/Result/CallStatus.pm blib/lib/Asterisk/Schema/Result/CallStatus.pm \
 	  lib/Asterisk/Schema/Result/QueueLog.pm blib/lib/Asterisk/Schema/Result/QueueLog.pm \
 	  lib/Asterisk/Schema/Result/Cdr.pm blib/lib/Asterisk/Schema/Result/Cdr.pm \
 	  lib/Astatistics/Controller/Users.pm blib/lib/Astatistics/Controller/Users.pm \
 	  lib/Astatistics/Model/QueueLogVirt.pm blib/lib/Astatistics/Model/QueueLogVirt.pm \
-	  lib/Astatistics/Schema/Result/StGroupsToStGroup.pm blib/lib/Astatistics/Schema/Result/StGroupsToStGroup.pm \
+	  lib/Astatistics/Schema/Result/StGroupsToStGroup.pm blib/lib/Astatistics/Schema/Result/StGroupsToStGroup.pm 
+	$(NOECHO) $(ABSPERLRUN) -MExtUtils::Install -e 'pm_to_blib({@ARGV}, '\''$(INST_LIB)/auto'\'', q[$(PM_FILTER)], '\''$(PERM_DIR)'\'')' -- \
 	  lib/Astatistics/Schema/Result/StGroup.pm blib/lib/Astatistics/Schema/Result/StGroup.pm \
 	  lib/Astatistics.pm blib/lib/Astatistics.pm 
 	$(NOECHO) $(TOUCH) pm_to_blib
@@ -1151,20 +1161,20 @@ checkdeps ::
 	$(PERL) Makefile.PL --checkdeps
 
 installdeps ::
-	$(NOECHO) $(NOOP)
+	$(PERL) Makefile.PL --config= --installdeps=Catalyst::Plugin::Unicode,0
 
 installdeps_notest ::
-	$(NOECHO) $(NOOP)
+	$(PERL) Makefile.PL --config=notest,1 --installdeps=Catalyst::Plugin::Unicode,0
 
 upgradedeps ::
-	$(PERL) Makefile.PL --config= --upgradedeps=Test::More,0.88,DateTime,0,DateTime::Format::MySQL,0,Params::Validate,0.97,Class::CSV,0,Test::Output,0,Test::NoWarnings,0,Module::Runtime,0,Hash::MultiValue,0,namespace::autoclean,0.13,YAML::Tiny,0,DBD::SQLite,0,DateTime::Format::SQLite,0,SQL::Translator,0,Class::DBI,0,DBIx::Class,0,Object::Signature,0,File::Remove,0,Task::Catalyst,0,Catalyst::Runtime,5.80025,Catalyst::Plugin::ConfigLoader,0,Catalyst::Plugin::Static::Simple,0,Catalyst::Action::RenderView,0,Catalyst::ScriptRole,0,Catalyst::Script::Server,0,Catalyst::View::TT,0.39,CatalystX::Component::Traits,0.16,Catalyst::Devel,1.37,Catalyst::Plugin::Session::Store::FastMmap,0.16,Catalyst::Plugin::Session::State::Cookie,0.17,Catalyst::Plugin::Authorization::Roles,0.06,Catalyst::Authentication::Store::DBIx::Class,0.1503,Catalyst::View::Wkhtmltopdf,0,Catalyst::Helper::View::Wkhtmltopdf,0,Catalyst::Helper::View::JSON,0,Catalyst::ScriptRunner,0,Catalyst::Restarter,0,Moose,2.06020,Graphics::Color::RGB,0,Graphics::Primitive,0,Catalyst::Helper::View::Graphics::Primitive,0,Layout::Manager,0,Paper::Specs,0,DBIx::Class::ResultSet,0,DBIx::Class::Schema::Loader,0,Chart::Clicker,0,Config::General,0
+	$(PERL) Makefile.PL --config= --upgradedeps=Catalyst::Plugin::Unicode,0,Test::More,0.88,DateTime,0,DateTime::Format::MySQL,0,Params::Validate,0.97,Class::CSV,0,Test::Output,0,Test::NoWarnings,0,Module::Runtime,0,Hash::MultiValue,0,namespace::autoclean,0.13,YAML::Tiny,0,DBD::SQLite,0,DateTime::Format::SQLite,0,SQL::Translator,0,Class::DBI,0,DBIx::Class,0,Object::Signature,0,File::Remove,0,Task::Catalyst,0,Catalyst::Runtime,5.80025,Catalyst::Plugin::ConfigLoader,0,Catalyst::Plugin::Static::Simple,0,Catalyst::Action::RenderView,0,Catalyst::ScriptRole,0,Catalyst::Script::Server,0,Catalyst::View::TT,0.39,CatalystX::Component::Traits,0.16,Catalyst::Devel,1.37,Catalyst::Plugin::Session::Store::FastMmap,0.16,Catalyst::Plugin::Session::State::Cookie,0.17,Catalyst::Plugin::Authorization::Roles,0.06,Catalyst::Authentication::Store::DBIx::Class,0.1503,Catalyst::View::Wkhtmltopdf,0,Catalyst::Helper::View::Wkhtmltopdf,0,Catalyst::Helper::View::JSON,0,Catalyst::ScriptRunner,0,Catalyst::Restarter,0,Catalyst::Plugin::I18N,0,Moose,2.06020,Graphics::Color::RGB,0,Graphics::Primitive,0,Catalyst::Helper::View::Graphics::Primitive,0,Layout::Manager,0,Paper::Specs,0,DBIx::Class::ResultSet,0,DBIx::Class::Schema::Loader,0,Chart::Clicker,0,Config::General,0
 
 upgradedeps_notest ::
-	$(PERL) Makefile.PL --config=notest,1 --upgradedeps=Test::More,0.88,DateTime,0,DateTime::Format::MySQL,0,Params::Validate,0.97,Class::CSV,0,Test::Output,0,Test::NoWarnings,0,Module::Runtime,0,Hash::MultiValue,0,namespace::autoclean,0.13,YAML::Tiny,0,DBD::SQLite,0,DateTime::Format::SQLite,0,SQL::Translator,0,Class::DBI,0,DBIx::Class,0,Object::Signature,0,File::Remove,0,Task::Catalyst,0,Catalyst::Runtime,5.80025,Catalyst::Plugin::ConfigLoader,0,Catalyst::Plugin::Static::Simple,0,Catalyst::Action::RenderView,0,Catalyst::ScriptRole,0,Catalyst::Script::Server,0,Catalyst::View::TT,0.39,CatalystX::Component::Traits,0.16,Catalyst::Devel,1.37,Catalyst::Plugin::Session::Store::FastMmap,0.16,Catalyst::Plugin::Session::State::Cookie,0.17,Catalyst::Plugin::Authorization::Roles,0.06,Catalyst::Authentication::Store::DBIx::Class,0.1503,Catalyst::View::Wkhtmltopdf,0,Catalyst::Helper::View::Wkhtmltopdf,0,Catalyst::Helper::View::JSON,0,Catalyst::ScriptRunner,0,Catalyst::Restarter,0,Moose,2.06020,Graphics::Color::RGB,0,Graphics::Primitive,0,Catalyst::Helper::View::Graphics::Primitive,0,Layout::Manager,0,Paper::Specs,0,DBIx::Class::ResultSet,0,DBIx::Class::Schema::Loader,0,Chart::Clicker,0,Config::General,0
+	$(PERL) Makefile.PL --config=notest,1 --upgradedeps=Catalyst::Plugin::Unicode,0,Test::More,0.88,DateTime,0,DateTime::Format::MySQL,0,Params::Validate,0.97,Class::CSV,0,Test::Output,0,Test::NoWarnings,0,Module::Runtime,0,Hash::MultiValue,0,namespace::autoclean,0.13,YAML::Tiny,0,DBD::SQLite,0,DateTime::Format::SQLite,0,SQL::Translator,0,Class::DBI,0,DBIx::Class,0,Object::Signature,0,File::Remove,0,Task::Catalyst,0,Catalyst::Runtime,5.80025,Catalyst::Plugin::ConfigLoader,0,Catalyst::Plugin::Static::Simple,0,Catalyst::Action::RenderView,0,Catalyst::ScriptRole,0,Catalyst::Script::Server,0,Catalyst::View::TT,0.39,CatalystX::Component::Traits,0.16,Catalyst::Devel,1.37,Catalyst::Plugin::Session::Store::FastMmap,0.16,Catalyst::Plugin::Session::State::Cookie,0.17,Catalyst::Plugin::Authorization::Roles,0.06,Catalyst::Authentication::Store::DBIx::Class,0.1503,Catalyst::View::Wkhtmltopdf,0,Catalyst::Helper::View::Wkhtmltopdf,0,Catalyst::Helper::View::JSON,0,Catalyst::ScriptRunner,0,Catalyst::Restarter,0,Catalyst::Plugin::I18N,0,Moose,2.06020,Graphics::Color::RGB,0,Graphics::Primitive,0,Catalyst::Helper::View::Graphics::Primitive,0,Layout::Manager,0,Paper::Specs,0,DBIx::Class::ResultSet,0,DBIx::Class::Schema::Loader,0,Chart::Clicker,0,Config::General,0
 
 listdeps ::
-	@$(PERL) -le "print for @ARGV" 
+	@$(PERL) -le "print for @ARGV" Catalyst::Plugin::Unicode
 
 listalldeps ::
-	@$(PERL) -le "print for @ARGV" Test::More DateTime DateTime::Format::MySQL Params::Validate Class::CSV Test::Output Test::NoWarnings Module::Runtime Hash::MultiValue namespace::autoclean YAML::Tiny DBD::SQLite DateTime::Format::SQLite SQL::Translator Class::DBI DBIx::Class Object::Signature File::Remove Task::Catalyst Catalyst::Runtime Catalyst::Plugin::ConfigLoader Catalyst::Plugin::Static::Simple Catalyst::Action::RenderView Catalyst::ScriptRole Catalyst::Script::Server Catalyst::View::TT CatalystX::Component::Traits Catalyst::Devel Catalyst::Plugin::Session::Store::FastMmap Catalyst::Plugin::Session::State::Cookie Catalyst::Plugin::Authorization::Roles Catalyst::Authentication::Store::DBIx::Class Catalyst::View::Wkhtmltopdf Catalyst::Helper::View::Wkhtmltopdf Catalyst::Helper::View::JSON Catalyst::ScriptRunner Catalyst::Restarter Moose Graphics::Color::RGB Graphics::Primitive Catalyst::Helper::View::Graphics::Primitive Layout::Manager Paper::Specs DBIx::Class::ResultSet DBIx::Class::Schema::Loader Chart::Clicker Config::General
+	@$(PERL) -le "print for @ARGV" Catalyst::Plugin::Unicode Test::More DateTime DateTime::Format::MySQL Params::Validate Class::CSV Test::Output Test::NoWarnings Module::Runtime Hash::MultiValue namespace::autoclean YAML::Tiny DBD::SQLite DateTime::Format::SQLite SQL::Translator Class::DBI DBIx::Class Object::Signature File::Remove Task::Catalyst Catalyst::Runtime Catalyst::Plugin::ConfigLoader Catalyst::Plugin::Static::Simple Catalyst::Action::RenderView Catalyst::ScriptRole Catalyst::Script::Server Catalyst::View::TT CatalystX::Component::Traits Catalyst::Devel Catalyst::Plugin::Session::Store::FastMmap Catalyst::Plugin::Session::State::Cookie Catalyst::Plugin::Authorization::Roles Catalyst::Authentication::Store::DBIx::Class Catalyst::View::Wkhtmltopdf Catalyst::Helper::View::Wkhtmltopdf Catalyst::Helper::View::JSON Catalyst::ScriptRunner Catalyst::Restarter Catalyst::Plugin::I18N Moose Graphics::Color::RGB Graphics::Primitive Catalyst::Helper::View::Graphics::Primitive Layout::Manager Paper::Specs DBIx::Class::ResultSet DBIx::Class::Schema::Loader Chart::Clicker Config::General
 

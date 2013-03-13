@@ -66,6 +66,8 @@ requires 'Catalyst::Helper::View::Wkhtmltopdf';
 requires 'Catalyst::Helper::View::JSON';
 requires 'Catalyst::ScriptRunner';
 requires 'Catalyst::Restarter';
+requires 'Catalyst::Plugin::I18N';
+requires 'Catalyst::Plugin::Unicode';
 requires 'Moose' => '2.06020';
 requires 'Graphics::Color::RGB';
 requires 'Graphics::Primitive';

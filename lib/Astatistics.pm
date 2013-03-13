@@ -41,6 +41,8 @@ use Catalyst qw/
 		Session
 		Session::State::Cookie
 		Session::Store::FastMmap
+		I18N
+		Unicode
 /;
 
 # Note: FastMmap can not be used in a load balanced cluster environment.
