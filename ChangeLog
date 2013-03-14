@@ -1,0 +1,244 @@
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-03-14
+
+    modified:   lib/Astatistics/I18N/es.po
+    modified:   lib/Astatistics/I18N/messages.pot
+    modified:   root/src/stats/show.tt
+    modified:   root/src/stats/template_edit.tt
+    modified:   root/src/stats/templates.tt
+    modified:   script/xgettext_update.sh
+    
+    More translation code and Spanish translations.
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-03-14
+
+    modified:   lib/Astatistics/I18N/es.po
+    modified:   root/src/stats/exec_gp.tt
+    modified:   root/src/stats/exec_list.tt
+    modified:   root/src/stats/queuelogvirt_list.tt
+    modified:   root/src/stats/queuelogvirt_test.tt
+    modified:   root/src/stats/queuelogvirt_test_2.tt
+    modified:   root/src/stats/show.tt
+    modified:   root/src/stats/template_del.tt
+    modified:   root/src/stats/template_edit.tt
+    modified:   root/src/stats/templates.tt
+    
+    Template localization code.
+
+Merge: bb0d9ef b647779
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-03-14
+
+    Merge branch 'multilang' of github.com:woodyst/astatistics into multilang
+    
+    Conflicts:
+lib/Astatistics/I18N/es.po           
+lib/Astatistics/Model/Astatistics.pm           
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-03-14
+
+    modified:   lib/Astatistics/Model/Astatistics.pm
+    
+    Fixed DBIx::Class SQLITE Unicode issue introduced in previous commit.
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-03-14
+
+    modified:   db/astatistics.db
+    modified:   lib/Astatistics/I18N/es.po
+    modified:   lib/Astatistics/I18N/messages.pot
+    modified:   lib/Astatistics/Model/Astatistics.pm
+    modified:   root/lib/site/wrapper
+    
+    Translation issues. This commit introduces a bug: Now information from
+    SQLITE Astatistics database shows unicode non ascii chars incorrectly,
+    as it was interpreted as ISO. This bug was introduced when adding
+    Unicode to wrapper so menu can contain accents.
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-03-14
+
+    modified:   db/astatistics.db
+    modified:   lib/Astatistics/I18N/es.po
+    modified:   lib/Astatistics/I18N/messages.pot
+    modified:   lib/Astatistics/Model/Astatistics.pm
+    modified:   root/lib/site/wrapper
+    
+    Translation issues. This commit introduces a bug: Now information from
+    SQLITE Astatistics database shows unicode non ascii chars incorrectly,
+    as it was interpreted as ISO. This bug was introduced when adding
+    Unicode to wrapper so menu can contain accents.
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-03-14
+
+    modified:   lib/Astatistics/Controller/Root.pm
+    modified:   lib/Astatistics/I18N/es.po
+    modified:   lib/Astatistics/I18N/messages.pot
+    new file:   root/src/error/404.tt
+    
+    Fixed 404 error page.
+    Translations and translation issues.
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-03-14
+
+    modified:   db/astatistics.db
+    modified:   lib/Astatistics/Controller/Stats.pm
+    modified:   lib/Astatistics/Controller/Users.pm
+    modified:   lib/Astatistics/I18N/es.po
+    modified:   lib/Astatistics/I18N/messages.pot
+    
+    Translation code and Spanish translations.
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-03-14
+
+    modified:   META.yml
+    modified:   MYMETA.json
+    modified:   MYMETA.yml
+    deleted:    inc/Module/Install/Can.pm
+    deleted:    inc/Module/Install/Fetch.pm
+    deleted:    inc/Module/Install/Win32.pm
+    deleted:    inc/Module/Install/WriteAll.pm
+    modified:   lib/Astatistics/Controller/Users.pm
+    modified:   lib/Astatistics/I18N/es.po
+    modified:   lib/Astatistics/I18N/messages.pot
+    modified:   root/lib/site/wrapper
+    modified:   root/src/stats/exec_error.tt
+    modified:   root/src/stats/exec_get_params.tt
+    modified:   root/src/stats/exec_gp.tt
+    modified:   root/src/stats/exec_list.tt
+    modified:   root/src/stats/queuelogvirt_list.tt
+    modified:   root/src/stats/queuelogvirt_test.tt
+    modified:   root/src/stats/queuelogvirt_test_2.tt
+    modified:   root/src/stats/template_del.tt
+    modified:   root/src/stats/template_edit.tt
+    modified:   root/src/stats/templates.tt
+    modified:   root/src/users/admin.tt
+    modified:   root/src/users/edit.tt
+    modified:   root/src/users/login.tt
+    modified:   root/src/users/logout.tt
+    modified:   root/src/users/new.tt
+    modified:   root/src/users/role_edit.tt
+    modified:   root/src/users/role_new.tt
+    modified:   root/src/users/roles.tt
+    new file:   script/apacherestart_and_see.sh
+    modified:   script/xgettext_newlang.sh
+    modified:   script/xgettext_update.sh
+    
+    Some translations to spanish and po and pot files management scripts.
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-03-13
+
+    Signed-off-by: Eduardo García-Mádico Portabella <edi@eurogaran.com>
+    
+    modified:   Makefile
+    modified:   Makefile.PL
+    modified:   lib/Astatistics.pm
+    new file:   lib/Astatistics/I18N/es.po
+    new file:   lib/Astatistics/I18N/messages.pot
+    modified:   root/src/stats/show.tt
+    new file:   script/xgettext_newlang.sh
+    new file:   script/xgettext_update.sh
+    
+    gettext stuff
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-03-13
+
+modified:   TODO           
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-03-13
+
+    modified:   TODO
+    Added bugs:
+- Fix admin user modification without password confirmation.           
+- Fix number of results in function as MAX(billsec).           
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-02-22
+
+    modified:   db/astatistics.db
+    modified:   lib/Astatistics/Controller/Stats.pm
+    
+    New ending date of queuelogvirt_test to 2034-12-31 so results update.
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-02-22
+
+    modified:   db/astatistics.db
+    More db updates.
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-02-22
+
+    modified:   db/astatistics.db
+    (added Agent Queue stat, that has a where clause).
+    
+    modified:   lib/Astatistics/Controller/Stats.pm
+    modified:   lib/Astatistics/Model/QueueLogVirt.pm
+					(where in QueueLogVirt queries stuff)           
+    
+    where condition in QueueLogVirt queries do not work properly enought
+    because it needs parsing and DBIx::Class hash query mode conversion
+    before it works. As parsing can introduce coding errors and not
+    predicted cases, we have to think carefully how we solve this issue.
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-02-22
+
+    modified:   db/asterisk-mysql.sql
+    new file:   db/trigger_bi_queueEvents.sql
+    
+    Added queue information in agent_status table via
+    asterisk.bi_queueEvents trigger in MySQL DB so queue information is
+    showed correctly in that table.
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-02-15
+
+    modified:   db/astatistics.db
+edited default templates           
+    modified:   root/src/stats/exec_gp.tt
+    modified:   root/src/stats/exec_list.tt
+    modified:   root/src/stats/queuelogvirt_list.tt
+added target="_blank" to export forms (pdf and csv) so user do not           
+need to click back button in browser after closing file opened by           
+browser plugin.           
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-02-15
+
+    new file:   script/db_writeable_apache.sh
+    that fixes permissions of sqlite database when deploying with Apache2
+    and fastcgi.
+
+Juanjo Garcia <juanjo@eurogaran.com>	2013-02-08
+
+    new file:   README
+    english version
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-02-08
+
+    modified:   .gitignore
+    do not include blib directory in git.
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-02-08
+
+    deleted blib from git
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-02-08
+
+    modified:   TODO (README tasks done)
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-02-08
+
+    renamed:    README -> NOTES (development notes, not ReadMe)
+    new file:   README.ES (Spanish version of README. English one pending)
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-01-16
+
+    new file:   TODO
+
+Merge: 8039818 64366f3
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-01-16
+
+    Merge branch 'master' of github.com:woodyst/astatistics
+    
+    Conflicts:
+.gitignore           
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-01-16
+
+    Initial commit
+
+Eduardo García-Mádico Portabella <edi@eurogaran.com>	2013-01-16
+
+    Initial commit
