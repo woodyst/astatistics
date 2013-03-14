@@ -29,10 +29,7 @@ __PACKAGE__->config(
         dsn => 'dbi:SQLite:db/astatistics.db',
         user => '',
         password => '',
-				{
-					sqlite_unicode => 1,
-					unicode => 1,
-				},
+				sqlite_unicode => 1,
     }
 );
 
