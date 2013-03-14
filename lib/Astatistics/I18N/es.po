@@ -76,8 +76,7 @@ msgstr ", pero no pudo ser borrado del grupo id %1 (acción cortar)"
 #: lib/Astatistics/Controller/Stats.pm:469
 #: lib/Astatistics/Controller/Stats.pm:575
 msgid ". Nevertheless it wasn't possible adding parent, so undoing."
-msgstr ""
-". Sin embargo no fue posible añadir padre, así que se deshace la acción."
+msgstr ". Sin embargo no fue posible añadir padre, así que se deshace la acción."
 
 #: lib/Astatistics/Controller/Stats.pm:352
 msgid "Class not correctly set"
@@ -110,8 +109,7 @@ msgstr "Error borrando %1 %2 (id %3)"
 
 #: lib/Astatistics/Controller/Stats.pm:1846
 msgid "Error parsing stat conditions: missing required conditions "
-msgstr ""
-"Error parseando conditions en la estadística: faltan condiciones requeridas "
+msgstr "Error parseando conditions en la estadística: faltan condiciones requeridas "
 
 #. ($class, $name, $id)
 #: lib/Astatistics/Controller/Stats.pm:786
@@ -179,6 +177,10 @@ msgstr "Nueva plantilla %1 en %2 no fue añadida con éxito"
 #: lib/Astatistics/Controller/Stats.pm:1594
 msgid "No results found"
 msgstr "No se encontraron resultados"
+
+#: lib/Astatistics/Controller/Root.pm:66 lib/Astatistics/Controller/Root.pm:68
+msgid "Page not found"
+msgstr "Página no encontrada"
 
 #: root/src/users/login.tt:32
 msgid "Password"
@@ -265,6 +267,10 @@ msgstr "La plantilla id %1 no exite."
 #: lib/Astatistics/Controller/Stats.pm:549
 msgid "Template name %1 already used. Please, try another."
 msgstr "Nombre de plantilla %1 ya usado. Por favor, escoja otro distinto."
+
+#: root/src/error/404.tt:26
+msgid "The URL you are visiting does not have a corresponding page in this server."
+msgstr "La URL que está visitando no tiene una página asociada en este servidor."
 
 #. ($username)
 #: lib/Astatistics/Controller/Users.pm:302

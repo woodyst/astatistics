@@ -164,6 +164,10 @@ msgstr ""
 msgid "No results found"
 msgstr ""
 
+#: lib/Astatistics/Controller/Root.pm:66 lib/Astatistics/Controller/Root.pm:68
+msgid "Page not found"
+msgstr ""
+
 #: root/src/users/login.tt:32
 msgid "Password"
 msgstr ""
@@ -240,6 +244,10 @@ msgstr ""
 #. ($name)
 #: lib/Astatistics/Controller/Stats.pm:549
 msgid "Template name %1 already used. Please, try another."
+msgstr ""
+
+#: root/src/error/404.tt:26
+msgid "The URL you are visiting does not have a corresponding page in this server."
 msgstr ""
 
 #. ($username)

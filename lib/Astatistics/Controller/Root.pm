@@ -63,7 +63,9 @@ Standard 404 error page
 
 sub default :Path {
     my ( $self, $c ) = @_;
-    $c->response->body( 'Page not found' );
+		#$c->response->body($c->localize('Page not found'));
+		$c->stash->{'template'} = 'error/404.tt';
+    $c->stash->{'message'} = $c->localize('Page not found');
     $c->response->status(404);
 }
 
