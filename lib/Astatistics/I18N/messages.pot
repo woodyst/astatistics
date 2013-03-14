@@ -15,8 +15,33 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: lib/Astatistics/Controller/Users.pm:217 lib/Astatistics/Controller/Users.pm:319
+#. ($oldname, $id, $parent)
+#: lib/Astatistics/Controller/Stats.pm:831
+msgid " %1 (id %2) deleted successfully from %3"
+msgstr ""
+
+#. ($name, $id)
+#: lib/Astatistics/Controller/Stats.pm:472 lib/Astatistics/Controller/Stats.pm:578 lib/Astatistics/Controller/Stats.pm:729
+msgid " %1 (id %2) updated successfully"
+msgstr ""
+
+#. ($cut_parent)
+#: lib/Astatistics/Controller/Stats.pm:895 lib/Astatistics/Controller/Stats.pm:924
+msgid " and deleted from group id %1"
+msgstr ""
+
+#: lib/Astatistics/Controller/Stats.pm:490 lib/Astatistics/Controller/Stats.pm:515 lib/Astatistics/Controller/Stats.pm:596 lib/Astatistics/Controller/Stats.pm:621 lib/Astatistics/Controller/Stats.pm:747 lib/Astatistics/Controller/Stats.pm:772 lib/Astatistics/Controller/Users.pm:217 lib/Astatistics/Controller/Users.pm:319
 msgid " but roles could not be added"
+msgstr ""
+
+#. ($id, $parent)
+#: lib/Astatistics/Controller/Stats.pm:827
+msgid " id %1 does not exist in %2."
+msgstr ""
+
+#. ($id)
+#: lib/Astatistics/Controller/Stats.pm:676
+msgid " id %1 does not exist."
 msgstr ""
 
 #: lib/Astatistics/Controller/Users.pm:150
@@ -27,12 +52,116 @@ msgstr ""
 msgid " is a system role so could not be edited"
 msgstr ""
 
+#: lib/Astatistics/Controller/Stats.pm:721
+msgid " not correctly set"
+msgstr ""
+
+#. ($cut_parent)
+#: lib/Astatistics/Controller/Stats.pm:897 lib/Astatistics/Controller/Stats.pm:926
+msgid ", but could not be deleted from group id %1 (cut action)"
+msgstr ""
+
+#: lib/Astatistics/Controller/Stats.pm:469 lib/Astatistics/Controller/Stats.pm:575
+msgid ". Nevertheless it wasn't possible adding parent, so undoing."
+msgstr ""
+
+#: lib/Astatistics/Controller/Stats.pm:352
+msgid "Class not correctly set"
+msgstr ""
+
+#: lib/Astatistics/Controller/Stats.pm:303
+msgid "Clipboard has no contents"
+msgstr ""
+
+#. ($class)
+#: lib/Astatistics/Controller/Stats.pm:1026
+msgid "Coordinates for %1 axis not found in conditions"
+msgstr ""
+
+#. ($username)
 #: lib/Astatistics/Controller/Users.pm:299
-msgid "Could not create user $username in database"
+msgid "Could not create user %1 in database"
+msgstr ""
+
+#. ($cut_class, $clipboard_id)
+#: lib/Astatistics/Controller/Stats.pm:316 lib/Astatistics/Controller/Stats.pm:332
+msgid "Could not found %1 %2"
+msgstr ""
+
+#. ($class, $oldname, $id)
+#: lib/Astatistics/Controller/Stats.pm:848
+msgid "Error deleting %1 %2 (id %3)"
+msgstr ""
+
+#: lib/Astatistics/Controller/Stats.pm:1846
+msgid "Error parsing stat conditions: missing required conditions "
+msgstr ""
+
+#. ($class, $name, $id)
+#: lib/Astatistics/Controller/Stats.pm:786
+msgid "Error updating %1 %2\t(id %3)"
+msgstr ""
+
+#. ($name, $id, $parent)
+#: lib/Astatistics/Controller/Stats.pm:890
+msgid "Group %1 (id %2) added to group %3"
+msgstr ""
+
+#. ($name, $id, $parent)
+#: lib/Astatistics/Controller/Stats.pm:901
+msgid "Group %1 (id %2) could not be added to group %3"
+msgstr ""
+
+#. ($name, $id)
+#: lib/Astatistics/Controller/Stats.pm:884
+msgid "Group %1 (id %2) is already in this group"
+msgstr ""
+
+#. ($name)
+#: lib/Astatistics/Controller/Stats.pm:444
+msgid "Group name %1 already used. Please, try another."
+msgstr ""
+
+#. ($id)
+#: lib/Astatistics/Controller/Stats.pm:905
+msgid "Group with id %1 was deleted before paste action"
 msgstr ""
 
 #: lib/Astatistics/Controller/Users.pm:72
 msgid "Invalid login."
+msgstr ""
+
+#: lib/Astatistics/Controller/Stats.pm:355
+msgid "Name not correctly set"
+msgstr ""
+
+#. ($cut_class, $clipboard_id)
+#: lib/Astatistics/Controller/Stats.pm:336
+msgid "New %1 copied from id %2"
+msgstr ""
+
+#. ($name, $parent, $id)
+#: lib/Astatistics/Controller/Stats.pm:564
+msgid "New Template %1 in %2 added successfully (id %3)"
+msgstr ""
+
+#. ($name, $parent, $id)
+#: lib/Astatistics/Controller/Stats.pm:459
+msgid "New group %1 in %2 added successfully (id %3)"
+msgstr ""
+
+#. ($name, $parent)
+#: lib/Astatistics/Controller/Stats.pm:530
+msgid "New group %1 in %2 was not successfully added"
+msgstr ""
+
+#. ($name, $parent)
+#: lib/Astatistics/Controller/Stats.pm:636
+msgid "New template %1 in %2 was not successfully added"
+msgstr ""
+
+#: lib/Astatistics/Controller/Stats.pm:1594
+msgid "No results found"
 msgstr ""
 
 #: root/src/users/login.tt:32
@@ -51,24 +180,71 @@ msgstr ""
 msgid "Please, login"
 msgstr ""
 
+#. ($role)
 #: lib/Astatistics/Controller/Users.pm:348
-msgid "Role $role already exists"
+msgid "Role %1 already exists"
 msgstr ""
 
+#. ($role)
 #: lib/Astatistics/Controller/Users.pm:355
-msgid "Role $role could not be created successfully"
+msgid "Role %1 could not be created successfully"
 msgstr ""
 
+#. ($role)
 #: lib/Astatistics/Controller/Users.pm:352
-msgid "Role $role created successfully"
+msgid "Role %1 created successfully"
 msgstr ""
 
 #: lib/Astatistics/Controller/Users.pm:139 lib/Astatistics/Controller/Users.pm:154
 msgid "Role not found"
 msgstr ""
 
+#: lib/Astatistics/Controller/Stats.pm:1357
+msgid "Rows per page"
+msgstr ""
+
+#. ($name, $id, $parent)
+#: lib/Astatistics/Controller/Stats.pm:919
+msgid "Stat %1 (id %2) added to group %3"
+msgstr ""
+
+#. ($name, $id, $parent)
+#: lib/Astatistics/Controller/Stats.pm:930
+msgid "Stat %1 (id %2) could not be added to group %3"
+msgstr ""
+
+#. ($name, $id)
+#: lib/Astatistics/Controller/Stats.pm:914
+msgid "Stat %1 (id %2) is already in this group"
+msgstr ""
+
+#. ($stat)
+#: lib/Astatistics/Controller/Stats.pm:1800
+msgid "Stat id %1 could not be retrieved"
+msgstr ""
+
+#. ($id)
+#: lib/Astatistics/Controller/Stats.pm:934
+msgid "Stat with id %1 was deleted before paste action"
+msgstr ""
+
+#: lib/Astatistics/Controller/Stats.pm:363
+msgid "Template class not found"
+msgstr ""
+
+#. ($id)
+#: lib/Astatistics/Controller/Stats.pm:714
+msgid "Template id %1 does not exist."
+msgstr ""
+
+#. ($name)
+#: lib/Astatistics/Controller/Stats.pm:549
+msgid "Template name %1 already used. Please, try another."
+msgstr ""
+
+#. ($username)
 #: lib/Astatistics/Controller/Users.pm:302
-msgid "User $username created successfully"
+msgid "User %1 created successfully"
 msgstr ""
 
 #: lib/Astatistics/Controller/Users.pm:244
@@ -87,12 +263,17 @@ msgstr ""
 msgid "User deleted successfully"
 msgstr ""
 
+#. ($username)
 #: lib/Astatistics/Controller/Users.pm:285
-msgid "User with name $username already exists"
+msgid "User with name %1 already exists"
 msgstr ""
 
 #: root/src/users/login.tt:29
 msgid "Username"
+msgstr ""
+
+#: lib/Astatistics/Controller/Stats.pm:543
+msgid "Visual not correctly set"
 msgstr ""
 
 #: lib/Astatistics/Controller/Users.pm:64
@@ -101,4 +282,8 @@ msgstr ""
 
 #: lib/Astatistics/Controller/Users.pm:82
 msgid "You have been logged out."
+msgstr ""
+
+#: lib/Astatistics/Controller/Stats.pm:809
+msgid "You have to delete group contents first"
 msgstr ""

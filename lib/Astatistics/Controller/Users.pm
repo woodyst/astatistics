@@ -282,7 +282,7 @@ sub new_user :Local :Args(0) {
 		my $user_exists_rs = $c->model('Astatistics::User')->find({ username => $username });
 
 		if ($user_exists_rs) {
-			$c->stash->{'message'} = $c->localize("User with name $username already exists");
+			$c->stash->{'message'} = $c->localize("User with name [_1] already exists", $username);
 		} else {
 			if ($password != $password2) {
 				$c->stash->{'message'} = $c->localize("Passwords do not match");
@@ -296,10 +296,10 @@ sub new_user :Local :Args(0) {
 							}
 						);
 				if (!$user_rs->in_storage) {
-					$c->stash->{'message'} = $c->localize("Could not create user $username in database");
+					$c->stash->{'message'} = $c->localize("Could not create user [_1] in database", $username);
 					$done = 0;
 				} else {
-					$c->stash->{'message'} = $c->localize("User $username created successfully");
+					$c->stash->{'message'} = $c->localize("User [_1] created successfully", $username);
 					my $roles_rs = $c->model('Astatistics::Role')->search;
 					while (my $role_row = $roles_rs->next) {
 						my $role = $role_row->role;
@@ -345,14 +345,14 @@ sub new_role :Path("/users/new_role") :Args('0') {
 		my $role = $c->req->params->{'role'};
 		my $roles_rs = $c->model('Astatistics::Role')->find({ role => $role });
 		if ($roles_rs) {
-			$c->stash->{'message'} = $c->localize("Role $role already exists");
+			$c->stash->{'message'} = $c->localize("Role [_1] already exists", $role);
 		} else {
 			$roles_rs = $c->model('Astatistics::Role')->create({ role => $role });
 			if ($roles_rs->in_storage) {
-				$c->stash->{'message'} = $c->localize("Role $role created successfully");
+				$c->stash->{'message'} = $c->localize("Role [_1] created successfully", $role);
 				$c->detach('/users/roles');
 			} else {
-				$c->stash->{'message'} = $c->localize("Role $role could not be created successfully");
+				$c->stash->{'message'} = $c->localize("Role [_1] could not be created successfully", $role);
 			}
 		}
 	}

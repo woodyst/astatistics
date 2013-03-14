@@ -12,14 +12,48 @@ msgstr ""
 "Language-Team: Spanish\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#. ($oldname, $id, $parent)
+#: lib/Astatistics/Controller/Stats.pm:831
+msgid " %1 (id %2) deleted successfully from %3"
+msgstr " %1 (id %2) borrado con éxito de %3"
+
+#. ($name, $id)
+#: lib/Astatistics/Controller/Stats.pm:472
+#: lib/Astatistics/Controller/Stats.pm:578
+#: lib/Astatistics/Controller/Stats.pm:729
+msgid " %1 (id %2) updated successfully"
+msgstr "%1 (id %2) actualizado con éxito"
+
+#. ($cut_parent)
+#: lib/Astatistics/Controller/Stats.pm:895
+#: lib/Astatistics/Controller/Stats.pm:924
+msgid " and deleted from group id %1"
+msgstr " y eliminado del grupo id %1"
+
+#: lib/Astatistics/Controller/Stats.pm:490
+#: lib/Astatistics/Controller/Stats.pm:515
+#: lib/Astatistics/Controller/Stats.pm:596
+#: lib/Astatistics/Controller/Stats.pm:621
+#: lib/Astatistics/Controller/Stats.pm:747
+#: lib/Astatistics/Controller/Stats.pm:772
 #: lib/Astatistics/Controller/Users.pm:217
 #: lib/Astatistics/Controller/Users.pm:319
 msgid " but roles could not be added"
 msgstr " pero no puedieron ser añadidos roles"
+
+#. ($id, $parent)
+#: lib/Astatistics/Controller/Stats.pm:827
+msgid " id %1 does not exist in %2."
+msgstr " id %1 no existe en %2."
+
+#. ($id)
+#: lib/Astatistics/Controller/Stats.pm:676
+msgid " id %1 does not exist."
+msgstr " id %1 no existe."
 
 #: lib/Astatistics/Controller/Users.pm:150
 msgid " is a system role so could not be deleted"
@@ -29,13 +63,122 @@ msgstr " es un rol de sistema, por lo que no pudo ser eliminado"
 msgid " is a system role so could not be edited"
 msgstr " es un rol de sistema, por lo que no puede ser editado"
 
+#: lib/Astatistics/Controller/Stats.pm:721
+msgid " not correctly set"
+msgstr " no especificado correctamente"
+
+#. ($cut_parent)
+#: lib/Astatistics/Controller/Stats.pm:897
+#: lib/Astatistics/Controller/Stats.pm:926
+msgid ", but could not be deleted from group id %1 (cut action)"
+msgstr ", pero no pudo ser borrado del grupo id %1 (acción cortar)"
+
+#: lib/Astatistics/Controller/Stats.pm:469
+#: lib/Astatistics/Controller/Stats.pm:575
+msgid ". Nevertheless it wasn't possible adding parent, so undoing."
+msgstr ""
+". Sin embargo no fue posible añadir padre, así que se deshace la acción."
+
+#: lib/Astatistics/Controller/Stats.pm:352
+msgid "Class not correctly set"
+msgstr "Clase no especificada correctamente"
+
+#: lib/Astatistics/Controller/Stats.pm:303
+msgid "Clipboard has no contents"
+msgstr "El portapapeles está vacío"
+
+#. ($class)
+#: lib/Astatistics/Controller/Stats.pm:1026
+msgid "Coordinates for %1 axis not found in conditions"
+msgstr "Las coordenadas para el eje %1 no fueron encontradas en conditions"
+
+#. ($username)
 #: lib/Astatistics/Controller/Users.pm:299
-msgid "Could not create user $username in database"
-msgstr "No se pudo crear el usuario $username en la base de datos"
+msgid "Could not create user %1 in database"
+msgstr "No se pudo crear el usuario %1 en la base de datos"
+
+#. ($cut_class, $clipboard_id)
+#: lib/Astatistics/Controller/Stats.pm:316
+#: lib/Astatistics/Controller/Stats.pm:332
+msgid "Could not found %1 %2"
+msgstr "No se encontró %1 %2"
+
+#. ($class, $oldname, $id)
+#: lib/Astatistics/Controller/Stats.pm:848
+msgid "Error deleting %1 %2 (id %3)"
+msgstr "Error borrando %1 %2 (id %3)"
+
+#: lib/Astatistics/Controller/Stats.pm:1846
+msgid "Error parsing stat conditions: missing required conditions "
+msgstr ""
+"Error parseando conditions en la estadística: faltan condiciones requeridas "
+
+#. ($class, $name, $id)
+#: lib/Astatistics/Controller/Stats.pm:786
+msgid "Error updating %1 %2\t(id %3)"
+msgstr "Error actualizando %1 %2\t(id %3)"
+
+#. ($name, $id, $parent)
+#: lib/Astatistics/Controller/Stats.pm:890
+msgid "Group %1 (id %2) added to group %3"
+msgstr "Grupo %1 (id %2) añadido al grupo %3"
+
+#. ($name, $id, $parent)
+#: lib/Astatistics/Controller/Stats.pm:901
+msgid "Group %1 (id %2) could not be added to group %3"
+msgstr "Grupo %1 (id %2) no pudo ser añadido al grupo %3"
+
+#. ($name, $id)
+#: lib/Astatistics/Controller/Stats.pm:884
+msgid "Group %1 (id %2) is already in this group"
+msgstr "Grupo %1 (id %2) ya está presente en este grupo"
+
+#. ($name)
+#: lib/Astatistics/Controller/Stats.pm:444
+msgid "Group name %1 already used. Please, try another."
+msgstr "Nombre de grupo %1 ya usado. Por favor, escoja otro nombre distinto."
+
+#. ($id)
+#: lib/Astatistics/Controller/Stats.pm:905
+msgid "Group with id %1 was deleted before paste action"
+msgstr "Grupo con id %1 fue borrado antes de la operación de pegar"
 
 #: lib/Astatistics/Controller/Users.pm:72
 msgid "Invalid login."
 msgstr "Login inválido."
+
+#: lib/Astatistics/Controller/Stats.pm:355
+msgid "Name not correctly set"
+msgstr "Nombre no especificado correctamente"
+
+#. ($cut_class, $clipboard_id)
+#: lib/Astatistics/Controller/Stats.pm:336
+msgid "New %1 copied from id %2"
+msgstr "Nuevo %1 copiado de id %2"
+
+#. ($name, $parent, $id)
+#: lib/Astatistics/Controller/Stats.pm:564
+msgid "New Template %1 in %2 added successfully (id %3)"
+msgstr "Nueva Plantilla %1 en %2 añadida con éxito (id %3)"
+
+#. ($name, $parent, $id)
+#: lib/Astatistics/Controller/Stats.pm:459
+msgid "New group %1 in %2 added successfully (id %3)"
+msgstr "Nuevo grupo %1 en %2 añadido con éxito (id %3)"
+
+#. ($name, $parent)
+#: lib/Astatistics/Controller/Stats.pm:530
+msgid "New group %1 in %2 was not successfully added"
+msgstr "Nuevo grupo %1 en %2 no fue añadido con éxito"
+
+#. ($name, $parent)
+#: lib/Astatistics/Controller/Stats.pm:636
+msgid "New template %1 in %2 was not successfully added"
+msgstr "Nueva plantilla %1 en %2 no fue añadida con éxito"
+
+#: lib/Astatistics/Controller/Stats.pm:1594
+msgid "No results found"
+msgstr "No se encontraron resultados"
 
 #: root/src/users/login.tt:32
 msgid "Password"
@@ -60,26 +203,73 @@ msgstr "Permiso denegado"
 msgid "Please, login"
 msgstr "Por favor, ingrese al sistema (Login)"
 
+#. ($role)
 #: lib/Astatistics/Controller/Users.pm:348
-msgid "Role $role already exists"
-msgstr "El rol $role ya existe"
+msgid "Role %1 already exists"
+msgstr "El rol %1 ya existe"
 
+#. ($role)
 #: lib/Astatistics/Controller/Users.pm:355
-msgid "Role $role could not be created successfully"
-msgstr "El rol $role no pudo ser creado"
+msgid "Role %1 could not be created successfully"
+msgstr "El rol %1 no pudo ser creado con éxito"
 
+#. ($role)
 #: lib/Astatistics/Controller/Users.pm:352
-msgid "Role $role created successfully"
-msgstr "El rol $role ha sido creado con éxito"
+msgid "Role %1 created successfully"
+msgstr "Rol %1 creado con éxito"
 
 #: lib/Astatistics/Controller/Users.pm:139
 #: lib/Astatistics/Controller/Users.pm:154
 msgid "Role not found"
 msgstr "Rol no encontrado"
 
+#: lib/Astatistics/Controller/Stats.pm:1357
+msgid "Rows per page"
+msgstr "Filas por página"
+
+#. ($name, $id, $parent)
+#: lib/Astatistics/Controller/Stats.pm:919
+msgid "Stat %1 (id %2) added to group %3"
+msgstr "Estadística %1 (id %2) añadida a grupo %3"
+
+#. ($name, $id, $parent)
+#: lib/Astatistics/Controller/Stats.pm:930
+msgid "Stat %1 (id %2) could not be added to group %3"
+msgstr "Estadística %1 (id %2) no pudo ser añadida al grupo %3"
+
+#. ($name, $id)
+#: lib/Astatistics/Controller/Stats.pm:914
+msgid "Stat %1 (id %2) is already in this group"
+msgstr "Estadística %1 (id %2) ya está en este grupo"
+
+#. ($stat)
+#: lib/Astatistics/Controller/Stats.pm:1800
+msgid "Stat id %1 could not be retrieved"
+msgstr "Estadística id %1 no pudo ser obtenida"
+
+#. ($id)
+#: lib/Astatistics/Controller/Stats.pm:934
+msgid "Stat with id %1 was deleted before paste action"
+msgstr "Estadística con id %1 fue borrada antes de la operación de pegado"
+
+#: lib/Astatistics/Controller/Stats.pm:363
+msgid "Template class not found"
+msgstr "Clase de plantilla no encontrada"
+
+#. ($id)
+#: lib/Astatistics/Controller/Stats.pm:714
+msgid "Template id %1 does not exist."
+msgstr "La plantilla id %1 no exite."
+
+#. ($name)
+#: lib/Astatistics/Controller/Stats.pm:549
+msgid "Template name %1 already used. Please, try another."
+msgstr "Nombre de plantilla %1 ya usado. Por favor, escoja otro distinto."
+
+#. ($username)
 #: lib/Astatistics/Controller/Users.pm:302
-msgid "User $username created successfully"
-msgstr "El usuario $username ha sido creado con éxito"
+msgid "User %1 created successfully"
+msgstr "Usuario %1 creado con éxito"
 
 #: lib/Astatistics/Controller/Users.pm:244
 msgid "User could not be deleted"
@@ -97,13 +287,18 @@ msgstr "Usuario borrado pero la asociación de rol no pudo ser borrada"
 msgid "User deleted successfully"
 msgstr "Usuario borrado con éxito"
 
+#. ($username)
 #: lib/Astatistics/Controller/Users.pm:285
-msgid "User with name $username already exists"
-msgstr "Ya existe un usuario con nombre $username"
+msgid "User with name %1 already exists"
+msgstr "Ya existe un usuario con nombre %1"
 
 #: root/src/users/login.tt:29
 msgid "Username"
 msgstr "Usuario"
+
+#: lib/Astatistics/Controller/Stats.pm:543
+msgid "Visual not correctly set"
+msgstr "Visual no especificado correctamente"
 
 #: lib/Astatistics/Controller/Users.pm:64
 msgid "You are now logged in."
@@ -112,3 +307,7 @@ msgstr "Ud ya está logado."
 #: lib/Astatistics/Controller/Users.pm:82
 msgid "You have been logged out."
 msgstr "Ha sido desconectado del sistema."
+
+#: lib/Astatistics/Controller/Stats.pm:809
+msgid "You have to delete group contents first"
+msgstr "Ha de ser borrado antes el contenido del grupo"

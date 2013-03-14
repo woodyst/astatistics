@@ -300,7 +300,7 @@ sub templates :Chained :Path("/stats/templates") :Args() {
 		} elsif ($copy) {
 			$clipboard_id = $copy;
 		} else {
-			$c->stash->{'message'} = "Clipboard has no contents";
+			$c->stash->{'message'} = $c->localize("Clipboard has no contents");
 			return 0;
 		}
 		if ($cut_class eq "group") {
@@ -313,7 +313,7 @@ sub templates :Chained :Path("/stats/templates") :Args() {
 					$c->req->params->{$role->role} = 1;
 				}
 			} else {
-				$c->stash->{'message'} = "Could not found $cut_class $clipboard_id";
+				$c->stash->{'message'} = $c->localize("Could not found [_1] [_2]", $cut_class, $clipboard_id);
 				return 0;
 			}
 		} elsif ($cut_class eq "template") {
@@ -329,11 +329,11 @@ sub templates :Chained :Path("/stats/templates") :Args() {
 					$c->req->params->{$role->role} = 1;
 				}
 			} else {
-				$c->stash->{'message'} = "Could not found $cut_class $clipboard_id";
+				$c->stash->{'message'} = $c->localize("Could not found [_1] [_2]", $cut_class, $clipboard_id);
 				return 0;
 			}
 		}
-		$c->stash->{'message'} = "New $cut_class copied from id $clipboard_id";
+		$c->stash->{'message'} = $c->localize("New [_1] copied from id [_2]", $cut_class, $clipboard_id);
 		$c->req->params->{"new"} = "new";
 		$new = "new";
 		$c->stash->{'action'} = 'new';
@@ -349,10 +349,10 @@ sub templates :Chained :Path("/stats/templates") :Args() {
 		if ($do_new) {
 			$c->stash->{'action'} = "new";
 			if (!$class) {
-				$c->stash->{'message'} = "Class not correctly set";
+				$c->stash->{'message'} = $c->localize("Class not correctly set");
 				$c->stash->{'template'} = 'stats/template_edit.tt';
 			} elsif (!$name) {
-				$c->stash->{'message'} = "Name not correctly set";
+				$c->stash->{'message'} = $c->localize("Name not correctly set");
 				$c->stash->{'template'} = 'stats/template_edit.tt';
 			} elsif ($class eq "group") {
 				$c->forward('do_new_group');
@@ -360,7 +360,7 @@ sub templates :Chained :Path("/stats/templates") :Args() {
 				$c->forward('do_new_stat');
 			} else {
 				$c->stash->{'template'} = 'stats/template_do_new.tt';
-				$c->stash->{'message'} = "Template class not found";
+				$c->stash->{'message'} = $c->localize("Template class not found");
 			}
 		} elsif ($do_edit) {
 			$c->stash->{'template'} = 'stats/template_edit.tt';
@@ -386,7 +386,7 @@ sub templates :Chained :Path("/stats/templates") :Args() {
 	} elsif ($paste) {
 		$c->stash->{'template'} = 'stats/templates.tt';
 		$c->forward('do_paste');
-	} elsif ($action =~ /(template|group)_(up|down)/) {
+	} elsif (defined $action and $action and $action =~ /(template|group)_(up|down)/) {
 		$c->forward('set_position');
 	}
 	# End Actions
@@ -441,7 +441,7 @@ sub do_new_group :Private {
 
 	my $group_rs = $c->model('Astatistics::StGroup')->find({ name => $name });
 	if (defined $group_rs) {
-		$c->stash->{'message'} = "Group name $name already used. Please, try another.";
+		$c->stash->{'message'} = $c->localize("Group name [_1] already used. Please, try another.", $name);
 		$c->stash->{'template'} = 'stats/template_edit.tt';
 	} else {
 		my $group_rs = $c->model('Astatistics::StGroup')->create(
@@ -456,7 +456,7 @@ sub do_new_group :Private {
 			# Get ID
 			$group_rs = $c->model('Astatistics::StGroup')->find({ name => $name });
 			my $id = $group_rs->id;
-			$c->stash->{'message'} = "New group $name in $parent added successfully (id $id)";
+			$c->stash->{'message'} = $c->localize("New group [_1] in [_2] added successfully (id [_3])", $name, $parent, $id);
 			my $grouptogroup_rs = $c->model('Astatistics::StGroupsToStGroup')->search({ -or => [ group_id => $id, parent_group_id => $id ]});
 			$grouptogroup_rs->delete if (defined $grouptogroup_rs);
 			$grouptogroup_rs = $c->model('Astatistics::StGroupsToStGroup')->create(
@@ -466,10 +466,10 @@ sub do_new_group :Private {
 																								position						=> 0
 																							});
 			if (!$grouptogroup_rs->in_storage) {
-				$c->stash->{'message'} .= ". Nevertheless it wasn't possible adding parent, so undoing.";
+				$c->stash->{'message'} .= $c->localize(". Nevertheless it wasn't possible adding parent, so undoing.");
 				$group_rs = $c->model('Astatistics::StGroup')->delete($id);
 			} else {
-				$c->stash->{'message'} = ucfirst($class) . " $name (id $id) updated successfully";
+				$c->stash->{'message'} = ucfirst($class) . $c->localize(" [_1] (id [_2]) updated successfully", $name, $id);
 				my $roles_rs = $c->model('Astatistics::Role')->search;
 				while (my $role_row = $roles_rs->next) {
 					my $role = $role_row->role;
@@ -487,7 +487,7 @@ sub do_new_group :Private {
 														}
 													);
 								if (!$st_group_to_role_rs->in_storage) {
-									$c->stash->{'message'} .= " but roles could not be added";
+									$c->stash->{'message'} .= $c->localize(" but roles could not be added");
 								}
 							}
 						} else {
@@ -512,7 +512,7 @@ sub do_new_group :Private {
 														}
 													);
 								if (!$stat_to_role_rs->in_storage) {
-									$c->stash->{'message'} .= " but roles could not be added";
+									$c->stash->{'message'} .= $c->localize(" but roles could not be added");
 								}
 							}
 						} else {
@@ -527,7 +527,7 @@ sub do_new_group :Private {
 				}
 			}
 		} else {
-			$c->stash->{'message'} = "New group $name in $parent was not successfully added";
+			$c->stash->{'message'} = $c->localize("New group [_1] in [_2] was not successfully added", $name, $parent);
 		}
 	}
 }
@@ -540,13 +540,13 @@ sub do_new_stat :Private {
 	my $parent = $c->stash->{'parent'};
 
 	if (!$visual) {
-		$c->stash->{'message'} = "Visual not correctly set";
+		$c->stash->{'message'} = $c->localize("Visual not correctly set");
 		$c->stash->{'template'} = 'stats/template_edit.tt';
 	} else {
 		# Do-New Template
 		my $stat_rs = $c->model('Astatistics::Stat')->find({ name => $name });
 		if (defined $stat_rs) {
-			$c->stash->{'message'} = "Template name $name already used. Please, try another.";
+			$c->stash->{'message'} = $c->localize("Template name [_1] already used. Please, try another.", $name);
 			$c->stash->{'template'} = 'stats/template_edit.tt';
 		} else {
 			my $stat_rs = $c->model('Astatistics::Stat')->create(
@@ -561,7 +561,7 @@ sub do_new_stat :Private {
 				# Get ID
 				$stat_rs = $c->model('Astatistics::Stat')->find({ name => $name });
 				my $id = $stat_rs->id;
-				$c->stash->{'message'} = "New Template $name in $parent added successfully (id $id)";
+				$c->stash->{'message'} = $c->localize("New Template [_1] in [_2] added successfully (id [_3])", $name, $parent, $id);
 				my $stattogroup_rs = $c->model('Astatistics::StatsToStGroup')->search({ stat_id => $id });
 				$stattogroup_rs->delete if (defined $stattogroup_rs);
 				$c->log->debug("Stat to Group addition: ID -> $id, Parent -> $parent");
@@ -572,10 +572,10 @@ sub do_new_stat :Private {
 																									position					=> 0,
 																								});
 				if (!$stattogroup_rs->in_storage) {
-					$c->stash->{'message'} .= ". Nevertheless it wasn't possible adding parent, so undoing.";
+					$c->stash->{'message'} .= $c->localize(". Nevertheless it wasn't possible adding parent, so undoing.");
 					$stat_rs = $c->model('Astatistics::Stat')->delete($id);
 				} else {
-					$c->stash->{'message'} = ucfirst($class) . " $name (id $id) updated successfully";
+					$c->stash->{'message'} = ucfirst($class) . $c->localize(" [_1] (id [_2]) updated successfully", $name, $id);
 					my $roles_rs = $c->model('Astatistics::Role')->search;
 					while (my $role_row = $roles_rs->next) {
 						my $role = $role_row->role;
@@ -593,7 +593,7 @@ sub do_new_stat :Private {
 															}
 														);
 									if (!$st_group_to_role_rs->in_storage) {
-										$c->stash->{'message'} .= " but roles could not be added";
+										$c->stash->{'message'} .= $c->localize(" but roles could not be added");
 									}
 								}
 							} else {
@@ -618,7 +618,7 @@ sub do_new_stat :Private {
 															}
 														);
 									if (!$stat_to_role_rs->in_storage) {
-										$c->stash->{'message'} .= " but roles could not be added";
+										$c->stash->{'message'} .= $c->localize(" but roles could not be added");
 									}
 								}
 							} else {
@@ -633,7 +633,7 @@ sub do_new_stat :Private {
 					}
 				}
 			} else {
-				$c->stash->{'message'} = "New template $name in $parent was not successfully added";
+				$c->stash->{'message'} = $c->localize("New template [_1] in [_2] was not successfully added", $name, $parent);
 			}
 		}
 	}
@@ -673,7 +673,7 @@ sub edit :Private {
 	%{$c->stash->{'has_role'}} = %has_role;
 
 	if (!defined $rs) {
-		$c->stash->{'message'} = ucfirst($class) . " id $id does not exist.";
+		$c->stash->{'message'} = ucfirst($class) . $c->localize(" id [_1] does not exist.", $id);
 		$c->stash->{'template'} = 'stats/templates.tt';
 	} else {
 		my $name = $rs->name;
@@ -711,14 +711,14 @@ sub do_edit :Private {
 	}
 
 	if (!defined $rs) {
-		$c->stash->{'message'} = "Template id $id does not exist.";
+		$c->stash->{'message'} = $c->localize("Template id [_1] does not exist.", $id);
 		$c->stash->{'template'} = 'stats/templates.tt';
 	} else {
 		my ($name,$visual,$conditions,$format) = ($c->req->params->{'name'},$c->req->params->{'visual'},$c->req->params->{'conditions'},$c->req->params->{'format'});
 		my @not_defined;
 		push (@not_defined, "Name") if ! $name;
 		push (@not_defined, "Visual") if (! $visual and $class eq "template");
-		$c->stash->{'message'} = join(",", @not_defined) . " not correctly set" if @not_defined;
+		$c->stash->{'message'} = join(",", @not_defined) . $c->localize(" not correctly set") if @not_defined;
 		$rs->name($name);
 		if ($class eq "template") {
 			$rs->visual($visual);
@@ -726,7 +726,7 @@ sub do_edit :Private {
 			$rs->format($format);
 		}
 		if ($rs->update) {
-			$c->stash->{'message'} = ucfirst($class) . " $name (id $id) updated successfully";
+			$c->stash->{'message'} = ucfirst($class) . $c->localize(" [_1] (id [_2]) updated successfully", $name, $id);
 			my $roles_rs = $c->model('Astatistics::Role')->search;
 			while (my $role_row = $roles_rs->next) {
 				my $role = $role_row->role;
@@ -744,7 +744,7 @@ sub do_edit :Private {
 													}
 												);
 							if (!$st_group_to_role_rs->in_storage) {
-								$c->stash->{'message'} .= " but roles could not be added";
+								$c->stash->{'message'} .= $c->localize(" but roles could not be added");
 							}
 						}
 					} else {
@@ -769,7 +769,7 @@ sub do_edit :Private {
 													}
 												);
 							if (!$stat_to_role_rs->in_storage) {
-								$c->stash->{'message'} .= " but roles could not be added";
+								$c->stash->{'message'} .= $c->localize(" but roles could not be added");
 							}
 						}
 					} else {
@@ -783,7 +783,7 @@ sub do_edit :Private {
 				}
 			}
 		} else {
-			$c->stash->{'message'} = "Error updating $class $name (id $id)";
+			$c->stash->{'message'} = $c->localize("Error updating [_1] [_2]	(id [_3])", $class, $name, $id);
 		}
 		$c->stash->{'template'} = 'stats/templates.tt';
 	}
@@ -806,7 +806,7 @@ sub do_delete :Private {
 	if ($class eq "group") {
 		my $child_rs = $c->model('Astatistics::StGroupsToStGroup')->find({ parent_group_id => $id });
 		if (defined $child_rs) {
-			$c->stash->{'message'} = "You have to delete group contents first";
+			$c->stash->{'message'} = $c->localize("You have to delete group contents first");
 			return 0;
 		} else {
 			$rs = $c->model('Astatistics::StGroupsToStGroup')->search({ -and =>
@@ -824,11 +824,11 @@ sub do_delete :Private {
 	}
 
 	if (!defined $rs) {
-		$c->stash->{'message'} = ucfirst($class) . " id $id does not exist in $parent.";
+		$c->stash->{'message'} = ucfirst($class) . $c->localize(" id [_1] does not exist in [_2].", $id, $parent);
 		$c->stash->{'template'} = 'stats/templates.tt';
 	} else {
 		if ($rs->delete) {
-			$c->stash->{'message'} = ucfirst($class) . " $oldname (id $id) deleted successfully from $parent";
+			$c->stash->{'message'} = ucfirst($class) . $c->localize(" [_1] (id [_2]) deleted successfully from [_3]", $oldname, $id, $parent);
 			if ($class eq "group") {
 				my $is_present = $c->model('Astatistics::StGroupsToStGroup')->search(
 																				{ group_id => $id })->find;
@@ -845,7 +845,7 @@ sub do_delete :Private {
 				}
 			}
 		} else {
-			$c->stash->{'message'} = "Error deleting $class $oldname (id $id)";
+			$c->stash->{'message'} = $c->localize("Error deleting [_1] [_2] (id [_3])", $class, $oldname, $id);
 		}
 		$c->stash->{'template'} = 'stats/templates.tt';
 	}
@@ -881,28 +881,28 @@ sub do_paste :Private {
 			my $child_rs = $c->model('Astatistics::StGroupsToStGroup')->find(
 				{ group_id => $id, parent_group_id => $parent });
 			if (defined $child_rs) {
-				$c->stash->{'message'} = "Group $name (id $id) is already in this group";
+				$c->stash->{'message'} = $c->localize("Group [_1] (id [_2]) is already in this group", $name, $id);
 				return 0;
 			} else {
 				$rs = $c->model('Astatistics::StGroupsToStGroup')->create(
 					{	group_id => $id, parent_group_id => $parent } );
 				if ($rs->in_storage) {
-					$c->stash->{'message'} = "Group $name (id $id) added to group $parent";
+					$c->stash->{'message'} = $c->localize("Group [_1] (id [_2]) added to group [_3]", $name, $id, $parent);
 					if ($cut) {
 						my $child_rs = $c->model('Astatistics::StGroupsToStGroup')->search(
 							{ group_id => $id, parent_group_id => $cut_parent })->next;
 						if ($child_rs->delete) {
-							$c->stash->{'message'} .= " and deleted from group id $cut_parent";
+							$c->stash->{'message'} .= $c->localize(" and deleted from group id [_1]", $cut_parent);
 						} else {
-							$c->stash->{'message'} .= ", but could not be deleted from group id $cut_parent (cut action)";
+							$c->stash->{'message'} .= $c->localize(", but could not be deleted from group id [_1] (cut action)", $cut_parent);
 						}
 					}
 				} else {
-					$c->stash->{'message'} = "Group $name (id $id) could not be added to group $parent";
+					$c->stash->{'message'} = $c->localize("Group [_1] (id [_2]) could not be added to group [_3]", $name, $id, $parent);
 				}
 			}
 		} else {
-			$c->stash->{'message'} = "Group with id $id was deleted before paste action";
+			$c->stash->{'message'} = $c->localize("Group with id [_1] was deleted before paste action", $id);
 		}
 	} elsif ($cut_class eq "template") {
 		my $stat_row = $c->model('Astatistics::Stat')->find($id);
@@ -911,27 +911,27 @@ sub do_paste :Private {
 			$rs = $c->model('Astatistics::StatsToStGroup')->find(
 				{ stat_id => $id,	group_id => $parent	});
 			if (defined $rs) {
-				$c->stash->{'message'} = "Stat $name (id $id) is already in this group";
+				$c->stash->{'message'} = $c->localize("Stat [_1] (id [_2]) is already in this group", $name, $id);
 			} else {
 				$rs = $c->model('Astatistics::StatsToStGroup')->create(
 					{ stat_id => $id, group_id => $parent });
 				if ($rs->in_storage) {
-					$c->stash->{'message'} = "Stat $name (id $id) added to group $parent";
+					$c->stash->{'message'} = $c->localize("Stat [_1] (id [_2]) added to group [_3]", $name, $id, $parent);
 					if ($cut) {
 						my $child_rs = $c->model('Astatistics::StatsToStGroup')->search(
 							{ stat_id => $id, group_id => $cut_parent })->next;
 						if ($child_rs->delete) {
-							$c->stash->{'message'} .= " and deleted from group id $cut_parent";
+							$c->stash->{'message'} .= $c->localize(" and deleted from group id [_1]", $cut_parent);
 						} else {
-							$c->stash->{'message'} .= ", but could not be deleted from group id $cut_parent (cut action)";
+							$c->stash->{'message'} .= $c->localize(", but could not be deleted from group id [_1] (cut action)", $cut_parent);
 						}
 					}
 				} else {
-					$c->stash->{'message'} = "Stat $name (id $id) could not be added to group $parent";
+					$c->stash->{'message'} = $c->localize("Stat [_1] (id [_2]) could not be added to group [_3]", $name, $id, $parent);
 				}
 			}
 		} else {
-			$c->stash->{'message'} = "Stat with id $id was deleted before paste action";
+			$c->stash->{'message'} = $c->localize("Stat with id [_1] was deleted before paste action", $id);
 		}
 	}
 }
@@ -1023,7 +1023,7 @@ sub stat_show_gp :Private {
 
 		for my $class ('x','y') {
 			if (!exists $xy{$class}) {
-				$c->stash->{'message'} = "Coordinates for $class axis not found in conditions";
+				$c->stash->{'message'} = $c->localize("Coordinates for [_1] axis not found in conditions", $class);
 				return 0;
 			}
 		}
@@ -1354,7 +1354,7 @@ sub stat_show_list :Private {
 	my $query = $c->stash->{'query'};
 	my $title_rows_per_page = $c->stash->{'title_rows_per_page'};
 	if (!defined $title_rows_per_page) {
-		$title_rows_per_page = "Rows per page";
+		$title_rows_per_page = $c->localize("Rows per page");
 	}
 
 	my $pdf_export = "";
@@ -1591,7 +1591,7 @@ sub stat_show_list :Private {
 	}
 
 	if (!$c->stash->{'graph'} and !$pager->last) {
-		$c->stash->{'message'} = "No results found";
+		$c->stash->{'message'} = $c->localize("No results found");
 		$c->stash->{'no_results_found'} = 1;
 	} elsif ($pdf_export or $csv_export) {
 		my $template = $c->stash->{'template'};
@@ -1797,7 +1797,7 @@ sub stat_show :Chained :Path("/stats/exec") :Args(2) {
 	my $stat_row = $c->model('Astatistics::Stat')->find($stat);
 
 	if (!$stat_row) {
-		$c->stash->message("Stat id $stat could not be retrieved");
+		$c->stash->message($c->localize("Stat id [_1] could not be retrieved", $stat));
 		return 0;
 	}
 
@@ -1843,7 +1843,7 @@ sub stat_show :Chained :Path("/stats/exec") :Args(2) {
 		}
 	}
 	if (@missing_reqs) {
-		$c->stash->{'message'} = "Error parsing stat conditions: missing required conditions ".join(",",@missing_reqs);
+		$c->stash->{'message'} = $c->localize("Error parsing stat conditions: missing required conditions ").join(",",@missing_reqs);
 		$c->stash->{'template'} = "stats/exec_error.tt";
 		return 0;
 	}
