@@ -76,7 +76,28 @@ msgstr ", pero no pudo ser borrado del grupo id %1 (acción cortar)"
 #: lib/Astatistics/Controller/Stats.pm:469
 #: lib/Astatistics/Controller/Stats.pm:575
 msgid ". Nevertheless it wasn't possible adding parent, so undoing."
-msgstr ". Sin embargo no fue posible añadir padre, así que se deshace la acción."
+msgstr ""
+". Sin embargo no fue posible añadir padre, así que se deshace la acción."
+
+#: root/src/stats/template_edit.tt:77
+msgid "Area"
+msgstr "Area"
+
+#: root/src/stats/template_edit.tt:75
+msgid "Bars"
+msgstr "Barras"
+
+#: root/src/stats/template_edit.tt:79
+msgid "Bubble"
+msgstr "Burbuja"
+
+#: root/src/stats/exec_list.tt:71 root/src/stats/queuelogvirt_list.tt:73
+msgid "CSV Export"
+msgstr "Exportar a CSV"
+
+#: root/src/stats/template_edit.tt:82
+msgid "CandleStick"
+msgstr ""
 
 #: lib/Astatistics/Controller/Stats.pm:352
 msgid "Class not correctly set"
@@ -91,6 +112,10 @@ msgstr "El portapapeles está vacío"
 msgid "Coordinates for %1 axis not found in conditions"
 msgstr "Las coordenadas para el eje %1 no fueron encontradas en conditions"
 
+#: root/src/stats/templates.tt:128 root/src/stats/templates.tt:59
+msgid "Copy"
+msgstr "Copiar"
+
 #. ($username)
 #: lib/Astatistics/Controller/Users.pm:299
 msgid "Could not create user %1 in database"
@@ -102,6 +127,19 @@ msgstr "No se pudo crear el usuario %1 en la base de datos"
 msgid "Could not found %1 %2"
 msgstr "No se encontró %1 %2"
 
+#: root/src/stats/templates.tt:135 root/src/stats/templates.tt:66
+msgid "Cut"
+msgstr "Cortar"
+
+#: root/src/stats/template_edit.tt:45
+msgid "Delete"
+msgstr "Eliminar"
+
+#: root/src/stats/template_edit.tt:35 root/src/stats/templates.tt:146
+#: root/src/stats/templates.tt:78
+msgid "Edit"
+msgstr "Editar"
+
 #. ($class, $oldname, $id)
 #: lib/Astatistics/Controller/Stats.pm:848
 msgid "Error deleting %1 %2 (id %3)"
@@ -109,12 +147,26 @@ msgstr "Error borrando %1 %2 (id %3)"
 
 #: lib/Astatistics/Controller/Stats.pm:1846
 msgid "Error parsing stat conditions: missing required conditions "
-msgstr "Error parseando conditions en la estadística: faltan condiciones requeridas "
+msgstr ""
+"Error parseando conditions en la estadística: faltan condiciones requeridas "
 
 #. ($class, $name, $id)
 #: lib/Astatistics/Controller/Stats.pm:786
 msgid "Error updating %1 %2\t(id %3)"
 msgstr "Error actualizando %1 %2\t(id %3)"
+
+#: root/src/stats/show.tt:62
+msgid "Execute"
+msgstr "Ejecutar"
+
+#: root/src/stats/exec_gp.tt:34 root/src/stats/exec_list.tt:35
+#: root/src/stats/queuelogvirt_list.tt:37
+msgid "Exit"
+msgstr "Salir"
+
+#: root/src/stats/template_edit.tt:35 root/src/stats/template_edit.tt:55
+msgid "Group"
+msgstr "Grupo"
 
 #. ($name, $id, $parent)
 #: lib/Astatistics/Controller/Stats.pm:890
@@ -145,6 +197,14 @@ msgstr "Grupo con id %1 fue borrado antes de la operación de pegar"
 msgid "Invalid login."
 msgstr "Login inválido."
 
+#: root/src/stats/template_edit.tt:76
+msgid "Lines"
+msgstr "Líneas"
+
+#: root/src/stats/template_edit.tt:74
+msgid "List"
+msgstr "Lista"
+
 #: root/lib/site/wrapper:48
 msgid "Login"
 msgstr "Acceder"
@@ -153,9 +213,18 @@ msgstr "Acceder"
 msgid "Logout"
 msgstr "Salir"
 
+#: root/src/stats/template_edit.tt:59
+msgid "Name"
+msgstr "Nombre"
+
 #: lib/Astatistics/Controller/Stats.pm:355
 msgid "Name not correctly set"
 msgstr "Nombre no especificado correctamente"
+
+#: root/src/stats/template_edit.tt:35 root/src/stats/templates.tt:114
+#: root/src/stats/templates.tt:181
+msgid "New"
+msgstr "Nuevo"
 
 #. ($cut_class, $clipboard_id)
 #: lib/Astatistics/Controller/Stats.pm:336
@@ -182,13 +251,27 @@ msgstr "Nuevo grupo %1 en %2 no fue añadido con éxito"
 msgid "New template %1 in %2 was not successfully added"
 msgstr "Nueva plantilla %1 en %2 no fue añadida con éxito"
 
+#: root/src/stats/template_edit.tt:72
+msgid "Next fields only for templates"
+msgstr "Siguientes campos solo para plantillas"
+
 #: lib/Astatistics/Controller/Stats.pm:1594
 msgid "No results found"
 msgstr "No se encontraron resultados"
 
+#: root/src/stats/exec_gp.tt:60 root/src/stats/exec_list.tt:61
+#: root/src/stats/queuelogvirt_list.tt:63
+msgid "PDF Export"
+msgstr "Exportar a PDF"
+
 #: lib/Astatistics/Controller/Root.pm:66 lib/Astatistics/Controller/Root.pm:68
 msgid "Page not found"
 msgstr "Página no encontrada"
+
+#. (name)
+#: root/src/stats/exec_gp.tt:71 root/src/stats/exec_list.tt:264
+msgid "Parameters for '%1'"
+msgstr "Parámetros para '%1'"
 
 #: root/src/users/login.tt:32
 msgid "Password"
@@ -203,19 +286,51 @@ msgstr "Las contraseñas no coinciden"
 msgid "Permission denied"
 msgstr "Permiso denegado"
 
+#: root/src/stats/queuelogvirt_test.tt:91
+#: root/src/stats/queuelogvirt_test_2.tt:92
+msgid "Permission denied. You must be administrator to access this page."
+msgstr ""
+"Permiso denegado. Se requiere el rol de administrador para acceder a esta "
+"página."
+
+#: root/src/stats/template_edit.tt:78
+msgid "Pie"
+msgstr "Sectores"
+
 #: root/src/stats/exec_error.tt:47 root/src/stats/exec_get_params.tt:77
 #: root/src/stats/exec_gp.tt:85 root/src/stats/exec_list.tt:278
 #: root/src/stats/queuelogvirt_list.tt:144
 #: root/src/stats/queuelogvirt_test.tt:94
 #: root/src/stats/queuelogvirt_test_2.tt:95 root/src/stats/show.tt:69
-#: root/src/stats/template_del.tt:89 root/src/stats/template_edit.tt:100
-#: root/src/stats/templates.tt:184
+#: root/src/stats/template_edit.tt:100 root/src/stats/templates.tt:184
 msgid "Please, login"
 msgstr "Por favor, ingrese al sistema (Login)"
+
+#: root/src/stats/template_edit.tt:80
+msgid "Point"
+msgstr "Puntos"
+
+#: root/src/stats/template_edit.tt:81
+msgid "PolarArea"
+msgstr "Área Polar"
 
 #: root/lib/site/wrapper:44
 msgid "QLVT"
 msgstr "QLVT"
+
+#: root/src/stats/exec_gp.tt:40 root/src/stats/exec_list.tt:41
+#: root/src/stats/queuelogvirt_list.tt:43
+msgid "Refresh"
+msgstr "Refrescar"
+
+#: root/src/stats/exec_gp.tt:50 root/src/stats/exec_list.tt:51
+#: root/src/stats/queuelogvirt_list.tt:53
+msgid "Repeat"
+msgstr "Repetir"
+
+#: root/src/stats/template_edit.tt:33
+msgid "Return"
+msgstr "Volver"
 
 #. ($role)
 #: lib/Astatistics/Controller/Users.pm:348
@@ -237,7 +352,7 @@ msgstr "Rol %1 creado con éxito"
 msgid "Role not found"
 msgstr "Rol no encontrado"
 
-#: root/lib/site/wrapper:41
+#: root/lib/site/wrapper:41 root/src/stats/template_edit.tt:63
 msgid "Roles"
 msgstr "Roles"
 
@@ -270,9 +385,13 @@ msgstr "Estadística id %1 no pudo ser obtenida"
 msgid "Stat with id %1 was deleted before paste action"
 msgstr "Estadística con id %1 fue borrada antes de la operación de pegado"
 
-#: root/lib/site/wrapper:35
+#: root/lib/site/wrapper:35 root/src/stats/show.tt:27
 msgid "Statistics"
 msgstr "Estad&iacute;sticas"
+
+#: root/src/stats/template_edit.tt:35 root/src/stats/template_edit.tt:56
+msgid "Template"
+msgstr "Plantilla"
 
 #: lib/Astatistics/Controller/Stats.pm:363
 msgid "Template class not found"
@@ -288,13 +407,15 @@ msgstr "La plantilla id %1 no exite."
 msgid "Template name %1 already used. Please, try another."
 msgstr "Nombre de plantilla %1 ya usado. Por favor, escoja otro distinto."
 
-#: root/lib/site/wrapper:37
+#: root/lib/site/wrapper:37 root/src/stats/templates.tt:27
 msgid "Templates"
 msgstr "Plantillas"
 
 #: root/src/error/404.tt:26
-msgid "The URL you are visiting does not have a corresponding page in this server."
-msgstr "La URL que está visitando no tiene una página asociada en este servidor."
+msgid ""
+"The URL you are visiting does not have a corresponding page in this server."
+msgstr ""
+"La URL que está visitando no tiene una página asociada en este servidor."
 
 #. ($username)
 #: lib/Astatistics/Controller/Users.pm:302
@@ -330,6 +451,10 @@ msgstr "Usuario"
 msgid "Users"
 msgstr "Usuarios"
 
+#: root/src/stats/template_edit.tt:73
+msgid "Visual"
+msgstr "Visual"
+
 #: lib/Astatistics/Controller/Stats.pm:543
 msgid "Visual not correctly set"
 msgstr "Visual no especificado correctamente"
@@ -345,3 +470,21 @@ msgstr "Ha sido desconectado del sistema."
 #: lib/Astatistics/Controller/Stats.pm:809
 msgid "You have to delete group contents first"
 msgstr "Ha de ser borrado antes el contenido del grupo"
+
+#: root/src/stats/queuelogvirt_list.tt:122
+#: root/src/stats/queuelogvirt_test.tt:69
+#: root/src/stats/queuelogvirt_test_2.tt:70
+msgid "converted from epoch"
+msgstr "convertido de epoch"
+
+#: root/src/stats/template_edit.tt:35
+msgid "in"
+msgstr "en"
+
+#: root/src/stats/show.tt:33
+msgid "parent"
+msgstr "padre"
+
+#: root/src/stats/template_edit.tt:35
+msgid "root"
+msgstr "raíz"

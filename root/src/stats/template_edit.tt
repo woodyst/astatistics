@@ -30,7 +30,7 @@ END; %]
 		<input type="hidden" name="cut_parent" value="[% c.req.params.cut_parent %]">
 		<input type="hidden" name="copy" value="[% c.req.params.copy %]">
 		<input type="hidden" name="cut" value="[% c.req.params.cut %]">
-		<input type="submit" name="cancel" value="&larr; Return"/>
+		<input type="submit" name="cancel" value="&larr; [% l('Return') %]"/>
 	</form>
 	<h3>[% IF action == "new" %][% l('New') %][% ELSE %][% l('Edit') %][% END %] [% IF c.req.params.class == "group" %][% l('Group') %][% ELSE %][% l('Template') %][% END %] [% UNLESS action == "new" %][% oldname %] [% END %][% l('in') %] [% IF localpath %][% localpath %][% ELSE %][% l('root') %][% END %]</h3>
 	[% IF action == "edit_group" OR action == "edit_template" %]

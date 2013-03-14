@@ -65,6 +65,26 @@ msgstr ""
 msgid ". Nevertheless it wasn't possible adding parent, so undoing."
 msgstr ""
 
+#: root/src/stats/template_edit.tt:77
+msgid "Area"
+msgstr ""
+
+#: root/src/stats/template_edit.tt:75
+msgid "Bars"
+msgstr ""
+
+#: root/src/stats/template_edit.tt:79
+msgid "Bubble"
+msgstr ""
+
+#: root/src/stats/exec_list.tt:71 root/src/stats/queuelogvirt_list.tt:73
+msgid "CSV Export"
+msgstr ""
+
+#: root/src/stats/template_edit.tt:82
+msgid "CandleStick"
+msgstr ""
+
 #: lib/Astatistics/Controller/Stats.pm:352
 msgid "Class not correctly set"
 msgstr ""
@@ -78,6 +98,10 @@ msgstr ""
 msgid "Coordinates for %1 axis not found in conditions"
 msgstr ""
 
+#: root/src/stats/templates.tt:128 root/src/stats/templates.tt:59
+msgid "Copy"
+msgstr ""
+
 #. ($username)
 #: lib/Astatistics/Controller/Users.pm:299
 msgid "Could not create user %1 in database"
@@ -86,6 +110,18 @@ msgstr ""
 #. ($cut_class, $clipboard_id)
 #: lib/Astatistics/Controller/Stats.pm:316 lib/Astatistics/Controller/Stats.pm:332
 msgid "Could not found %1 %2"
+msgstr ""
+
+#: root/src/stats/templates.tt:135 root/src/stats/templates.tt:66
+msgid "Cut"
+msgstr ""
+
+#: root/src/stats/template_edit.tt:45
+msgid "Delete"
+msgstr ""
+
+#: root/src/stats/template_edit.tt:35 root/src/stats/templates.tt:146 root/src/stats/templates.tt:78
+msgid "Edit"
 msgstr ""
 
 #. ($class, $oldname, $id)
@@ -100,6 +136,18 @@ msgstr ""
 #. ($class, $name, $id)
 #: lib/Astatistics/Controller/Stats.pm:786
 msgid "Error updating %1 %2\t(id %3)"
+msgstr ""
+
+#: root/src/stats/show.tt:62
+msgid "Execute"
+msgstr ""
+
+#: root/src/stats/exec_gp.tt:34 root/src/stats/exec_list.tt:35 root/src/stats/queuelogvirt_list.tt:37
+msgid "Exit"
+msgstr ""
+
+#: root/src/stats/template_edit.tt:35 root/src/stats/template_edit.tt:55
+msgid "Group"
 msgstr ""
 
 #. ($name, $id, $parent)
@@ -131,6 +179,14 @@ msgstr ""
 msgid "Invalid login."
 msgstr ""
 
+#: root/src/stats/template_edit.tt:76
+msgid "Lines"
+msgstr ""
+
+#: root/src/stats/template_edit.tt:74
+msgid "List"
+msgstr ""
+
 #: root/lib/site/wrapper:48
 msgid "Login"
 msgstr ""
@@ -139,8 +195,16 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
+#: root/src/stats/template_edit.tt:59
+msgid "Name"
+msgstr ""
+
 #: lib/Astatistics/Controller/Stats.pm:355
 msgid "Name not correctly set"
+msgstr ""
+
+#: root/src/stats/template_edit.tt:35 root/src/stats/templates.tt:114 root/src/stats/templates.tt:181
+msgid "New"
 msgstr ""
 
 #. ($cut_class, $clipboard_id)
@@ -168,12 +232,25 @@ msgstr ""
 msgid "New template %1 in %2 was not successfully added"
 msgstr ""
 
+#: root/src/stats/template_edit.tt:72
+msgid "Next fields only for templates"
+msgstr ""
+
 #: lib/Astatistics/Controller/Stats.pm:1594
 msgid "No results found"
 msgstr ""
 
+#: root/src/stats/exec_gp.tt:60 root/src/stats/exec_list.tt:61 root/src/stats/queuelogvirt_list.tt:63
+msgid "PDF Export"
+msgstr ""
+
 #: lib/Astatistics/Controller/Root.pm:66 lib/Astatistics/Controller/Root.pm:68
 msgid "Page not found"
+msgstr ""
+
+#. (name)
+#: root/src/stats/exec_gp.tt:71 root/src/stats/exec_list.tt:264
+msgid "Parameters for '%1'"
 msgstr ""
 
 #: root/src/users/login.tt:32
@@ -188,12 +265,40 @@ msgstr ""
 msgid "Permission denied"
 msgstr ""
 
-#: root/src/stats/exec_error.tt:47 root/src/stats/exec_get_params.tt:77 root/src/stats/exec_gp.tt:85 root/src/stats/exec_list.tt:278 root/src/stats/queuelogvirt_list.tt:144 root/src/stats/queuelogvirt_test.tt:94 root/src/stats/queuelogvirt_test_2.tt:95 root/src/stats/show.tt:69 root/src/stats/template_del.tt:89 root/src/stats/template_edit.tt:100 root/src/stats/templates.tt:184
+#: root/src/stats/queuelogvirt_test.tt:91 root/src/stats/queuelogvirt_test_2.tt:92
+msgid "Permission denied. You must be administrator to access this page."
+msgstr ""
+
+#: root/src/stats/template_edit.tt:78
+msgid "Pie"
+msgstr ""
+
+#: root/src/stats/exec_error.tt:47 root/src/stats/exec_get_params.tt:77 root/src/stats/exec_gp.tt:85 root/src/stats/exec_list.tt:278 root/src/stats/queuelogvirt_list.tt:144 root/src/stats/queuelogvirt_test.tt:94 root/src/stats/queuelogvirt_test_2.tt:95 root/src/stats/show.tt:69 root/src/stats/template_edit.tt:100 root/src/stats/templates.tt:184
 msgid "Please, login"
+msgstr ""
+
+#: root/src/stats/template_edit.tt:80
+msgid "Point"
+msgstr ""
+
+#: root/src/stats/template_edit.tt:81
+msgid "PolarArea"
 msgstr ""
 
 #: root/lib/site/wrapper:44
 msgid "QLVT"
+msgstr ""
+
+#: root/src/stats/exec_gp.tt:40 root/src/stats/exec_list.tt:41 root/src/stats/queuelogvirt_list.tt:43
+msgid "Refresh"
+msgstr ""
+
+#: root/src/stats/exec_gp.tt:50 root/src/stats/exec_list.tt:51 root/src/stats/queuelogvirt_list.tt:53
+msgid "Repeat"
+msgstr ""
+
+#: root/src/stats/template_edit.tt:33
+msgid "Return"
 msgstr ""
 
 #. ($role)
@@ -215,7 +320,7 @@ msgstr ""
 msgid "Role not found"
 msgstr ""
 
-#: root/lib/site/wrapper:41
+#: root/lib/site/wrapper:41 root/src/stats/template_edit.tt:63
 msgid "Roles"
 msgstr ""
 
@@ -248,8 +353,12 @@ msgstr ""
 msgid "Stat with id %1 was deleted before paste action"
 msgstr ""
 
-#: root/lib/site/wrapper:35
+#: root/lib/site/wrapper:35 root/src/stats/show.tt:27
 msgid "Statistics"
+msgstr ""
+
+#: root/src/stats/template_edit.tt:35 root/src/stats/template_edit.tt:56
+msgid "Template"
 msgstr ""
 
 #: lib/Astatistics/Controller/Stats.pm:363
@@ -266,7 +375,7 @@ msgstr ""
 msgid "Template name %1 already used. Please, try another."
 msgstr ""
 
-#: root/lib/site/wrapper:37
+#: root/lib/site/wrapper:37 root/src/stats/templates.tt:27
 msgid "Templates"
 msgstr ""
 
@@ -308,6 +417,10 @@ msgstr ""
 msgid "Users"
 msgstr ""
 
+#: root/src/stats/template_edit.tt:73
+msgid "Visual"
+msgstr ""
+
 #: lib/Astatistics/Controller/Stats.pm:543
 msgid "Visual not correctly set"
 msgstr ""
@@ -322,4 +435,20 @@ msgstr ""
 
 #: lib/Astatistics/Controller/Stats.pm:809
 msgid "You have to delete group contents first"
+msgstr ""
+
+#: root/src/stats/queuelogvirt_list.tt:122 root/src/stats/queuelogvirt_test.tt:69 root/src/stats/queuelogvirt_test_2.tt:70
+msgid "converted from epoch"
+msgstr ""
+
+#: root/src/stats/template_edit.tt:35
+msgid "in"
+msgstr ""
+
+#: root/src/stats/show.tt:33
+msgid "parent"
+msgstr ""
+
+#: root/src/stats/template_edit.tt:35
+msgid "root"
 msgstr ""

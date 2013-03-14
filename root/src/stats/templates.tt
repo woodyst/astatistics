@@ -24,7 +24,7 @@
 END; %]
 
 [% IF c.user_exists %]
-	<h3>Templates</h3>
+	<h3>[% l('Templates') %]</h3>
 	[% #IF level != 1 %]
 		<p>
 		<form action='[% c.uri_for('/stats/templates') %][% IF parent_dir %]/[% parent_dir %][% END %]'
