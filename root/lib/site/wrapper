@@ -32,20 +32,20 @@ END; %]
 			[% IF ! no_navbar %]
 				<div id="navbar">
 					[% IF c.user_exists() %]
-						<a href="[% c.uri_for('/stats/show') %]">Statistics</a>
+						<a href="[% c.uri_for('/stats/show') %]">[% l('Statistics') %]</a>
 						[% IF c.check_user_roles( 'can_design' ) OR c.check_user_roles( 'superuser' ) %]
-							<a href="[% c.uri_for('/stats/templates') %]">Templates</a>
+							<a href="[% c.uri_for('/stats/templates') %]">[% l('Templates') %]</a>
 						[% END %]
-						<a href="[% c.uri_for('/users/admin') %]">Users</a>
+						<a href="[% c.uri_for('/users/admin') %]">[% l('Users') %]</a>
 						[% IF c.check_user_roles( 'can_design' ) OR c.check_user_roles( 'superuser' ) %]
-							<a href="[% c.uri_for('/users/roles') %]">Roles</a>
+							<a href="[% c.uri_for('/users/roles') %]">[% l('Roles') %]</a>
 						[% END %]
 						[% IF c.check_user_roles( 'superuser' ) %]
-							<a href="[% c.uri_for('/queuelogvirt_test') %]">QLVT</a>
+							<a href="[% c.uri_for('/queuelogvirt_test') %]">[% l('QLVT') %]</a>
 						[% END %]
-						<a href="[% c.uri_for('/users/logout') %]">Logout</a>
+						<a href="[% c.uri_for('/users/logout') %]">[% l('Logout') %]</a>
 					[% ELSE %]
-						<a href="[% c.uri_for('/users/login') %]">Login</a>
+						<a href="[% c.uri_for('/users/login') %]">[% l('Login') %]</a>
 					[% END %]
 				</div>
 			[% END %]
