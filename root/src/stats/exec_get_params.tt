@@ -19,6 +19,10 @@
 # See the file COPYING for copying conditions.
 %]
 
+[% MACRO l(text, args) BLOCK;
+	c.localize(text, args);
+END; %]
+
 [% IF c.user_exists %]
 	<p>
 	<form action='[% c.uri_for('/stats/show') %][% IF localpath %]/[% localpath %][% END %]'
@@ -70,5 +74,5 @@
 		</tr>
 	</table>
 [% ELSE %]
-	<h3>Please, login</h3>
+	<h3>[% l('Please, login') %]</h3>
 [% END %]

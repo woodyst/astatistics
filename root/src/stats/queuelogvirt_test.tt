@@ -19,6 +19,10 @@
 # See the file COPYING for copying conditions.
 %]
 
+[% MACRO l(text, args) BLOCK;
+	c.localize(text, args);
+END; %]
+
 [% debug=1 %]
 [% show_resultset=1 %]
 [% IF c.user_exists %]
@@ -87,5 +91,5 @@
 		<h3>Permission denied. You must be administrator to access this page.</h3>
 	[% END %]
 [% ELSE %]
-	<h3>Please login</h3>
+	<h3>[% l('Please, login') %]</h3>
 [% END %]

@@ -61,7 +61,7 @@ sub login :Local :Args(0) {
 				}) )
 		{
 			## user is signed in
-			$c->stash->{'message'} = "You are now logged in.";
+			$c->stash->{'message'} = $c->localize("You are now logged in.");
 			$c->response->redirect(
 				$c->uri_for($c->controller('Stats')->action_for('show') )
 			);
@@ -69,7 +69,7 @@ sub login :Local :Args(0) {
 			return;
 		}
 		else {
-			$c->stash->{'message'} = "Invalid login.";
+			$c->stash->{'message'} = $c->localize("Invalid login.");
 		}
 	}
 }
@@ -79,7 +79,7 @@ sub logout :Local :Args(0) {
 	#$c->stash->{'template'} = 'users/logout.tt';
 	$c->stash->{'template'} = 'users/login.tt';
 	$c->logout();
-	$c->stash->{'message'} = "You have been logged out.";
+	$c->stash->{'message'} = $c->localize("You have been logged out.");
 }
 
 sub admin :Local :Args(0) {
@@ -114,7 +114,7 @@ sub roles :Local :Args(0) {
 																{ order_by => 'id ASC' } );
 			@{$c->stash->{'roles'}} = $roles_rs->all;
 		} else {
-			$c->stash->{'message'} = "Permission denied";
+			$c->stash->{'message'} = $c->localize("Permission denied");
 		}
 	}
 }
@@ -133,10 +133,10 @@ sub role_edit :Local :Args(0) {
 				my $role = $c->req->params->{'role'};
 				my $role_rs = $c->model('Astatistics::Role')->find($id);
 				if ($c->stash->{'system_roles'}->{$role}) {
-					$c->stash->{'message'} = ucfirst($role) . " is a system role so could not be edited";
+					$c->stash->{'message'} = ucfirst($role) . $c->localize(" is a system role so could not be edited");
 				} else {
 					if (!$role_rs) {
-						$c->stash->{'message'} = 'Role not found';
+						$c->stash->{'message'} = $c->localize('Role not found');
 					} else {
 						$role_rs->role($role);
 						$role_rs->update;
@@ -147,11 +147,11 @@ sub role_edit :Local :Args(0) {
 				my $id = $c->req->params->{'id'};
 				my $role = $c->req->params->{'role'};
 				if ($c->stash->{'system_roles'}->{$role}) {
-					$c->stash->{'message'} = ucfirst($role) . " is a system role so could not be deleted";
+					$c->stash->{'message'} = ucfirst($role) . $c->localize(" is a system role so could not be deleted");
 				} else {
 					my $role_rs = $c->model('Astatistics::Role')->find($id);
 					if (!$role_rs) {
-						$c->stash->{'message'} = 'Role not found';
+						$c->stash->{'message'} = $c->localize('Role not found');
 					} else {
 						$role_rs->delete;
 						$c->detach('/users/roles');
@@ -191,13 +191,13 @@ sub edit :Local :Args(0) {
 								my $crypted = crypt($c->req->params->{'password'}, $salt);
 								$user_rs->password($crypted);
 							} else {
-								$c->stash->{'message'} = "Passwords do not match";
+								$c->stash->{'message'} = $c->localize("Passwords do not match");
 								$ok = 0;
 							}
 						}
 						if ($ok) {
 							$user_rs->update();
-							$c->stash->{'message'} = "User data updated";
+							$c->stash->{'message'} = $c->localize("User data updated");
 							my $roles_rs = $c->model('Astatistics::Role')->search;
 							while (my $role_row = $roles_rs->next) {
 								my $role = $role_row->role;
@@ -214,7 +214,7 @@ sub edit :Local :Args(0) {
 																}
 															);
 										if (!$user_to_role_rs->in_storage) {
-											$c->stash->{'message'} .= " but roles could not be added";
+											$c->stash->{'message'} .= $c->localize(" but roles could not be added");
 										}
 									}
 								} else {
@@ -236,12 +236,12 @@ sub edit :Local :Args(0) {
 								$done = 0 if (!$role_row->delete);
 							}
 							if ($done) {
-								$c->stash->{'message'} = "User deleted successfully";
+								$c->stash->{'message'} = $c->localize("User deleted successfully");
 							} else {
-								$c->stash->{'message'} = "User deleted but role association could not be deleted";
+								$c->stash->{'message'} = $c->localize("User deleted but role association could not be deleted");
 							}
 						} else {
-								$c->stash->{'message'} = "User could not be deleted";
+								$c->stash->{'message'} = $c->localize("User could not be deleted");
 						}
 						$c->detach("/users/admin");
 					}
@@ -282,10 +282,10 @@ sub new_user :Local :Args(0) {
 		my $user_exists_rs = $c->model('Astatistics::User')->find({ username => $username });
 
 		if ($user_exists_rs) {
-			$c->stash->{'message'} = "User with name $username already exists";
+			$c->stash->{'message'} = $c->localize("User with name $username already exists");
 		} else {
 			if ($password != $password2) {
-				$c->stash->{'message'} = "Passwords do not match";
+				$c->stash->{'message'} = $c->localize("Passwords do not match");
 				$done = 0;
 			} else {
 				my $salt = "astatistics";
@@ -296,10 +296,10 @@ sub new_user :Local :Args(0) {
 							}
 						);
 				if (!$user_rs->in_storage) {
-					$c->stash->{'message'} = "Could not create user $username in database";
+					$c->stash->{'message'} = $c->localize("Could not create user $username in database");
 					$done = 0;
 				} else {
-					$c->stash->{'message'} = "User $username created successfully";
+					$c->stash->{'message'} = $c->localize("User $username created successfully");
 					my $roles_rs = $c->model('Astatistics::Role')->search;
 					while (my $role_row = $roles_rs->next) {
 						my $role = $role_row->role;
@@ -316,7 +316,7 @@ sub new_user :Local :Args(0) {
 														}
 													);
 								if (!$user_to_role_rs->in_storage) {
-									$c->stash->{'message'} .= " but roles could not be added";
+									$c->stash->{'message'} .= $c->localize(" but roles could not be added");
 								}
 							}
 						} else {
@@ -345,14 +345,14 @@ sub new_role :Path("/users/new_role") :Args('0') {
 		my $role = $c->req->params->{'role'};
 		my $roles_rs = $c->model('Astatistics::Role')->find({ role => $role });
 		if ($roles_rs) {
-			$c->stash->{'message'} = "Role $role already exists";
+			$c->stash->{'message'} = $c->localize("Role $role already exists");
 		} else {
 			$roles_rs = $c->model('Astatistics::Role')->create({ role => $role });
 			if ($roles_rs->in_storage) {
-				$c->stash->{'message'} = "Role $role created successfully";
+				$c->stash->{'message'} = $c->localize("Role $role created successfully");
 				$c->detach('/users/roles');
 			} else {
-				$c->stash->{'message'} = "Role $role could not be created successfully";
+				$c->stash->{'message'} = $c->localize("Role $role could not be created successfully");
 			}
 		}
 	}

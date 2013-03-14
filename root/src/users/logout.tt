@@ -19,4 +19,8 @@
 # See the file COPYING for copying conditions.
 %]
 
+[% MACRO l(text, args) BLOCK;
+	c.localize(text, args);
+END; %]
+
 <h3>You are logged out</h3>

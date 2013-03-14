@@ -15,15 +15,90 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: lib/Astatistics.pm:127
-msgid "Guest"
+#: lib/Astatistics/Controller/Users.pm:217 lib/Astatistics/Controller/Users.pm:319
+msgid " but roles could not be added"
 msgstr ""
 
-#: root/src/stats/show.tt:69
+#: lib/Astatistics/Controller/Users.pm:150
+msgid " is a system role so could not be deleted"
+msgstr ""
+
+#: lib/Astatistics/Controller/Users.pm:136
+msgid " is a system role so could not be edited"
+msgstr ""
+
+#: lib/Astatistics/Controller/Users.pm:299
+msgid "Could not create user $username in database"
+msgstr ""
+
+#: lib/Astatistics/Controller/Users.pm:72
+msgid "Invalid login."
+msgstr ""
+
+#: root/src/users/login.tt:32
+msgid "Password"
+msgstr ""
+
+#: lib/Astatistics/Controller/Users.pm:194 lib/Astatistics/Controller/Users.pm:288
+msgid "Passwords do not match"
+msgstr ""
+
+#: lib/Astatistics/Controller/Users.pm:117
+msgid "Permission denied"
+msgstr ""
+
+#: root/src/stats/exec_error.tt:47 root/src/stats/exec_get_params.tt:77 root/src/stats/exec_gp.tt:85 root/src/stats/exec_list.tt:278 root/src/stats/queuelogvirt_list.tt:144 root/src/stats/queuelogvirt_test.tt:94 root/src/stats/queuelogvirt_test_2.tt:95 root/src/stats/show.tt:69 root/src/stats/template_del.tt:89 root/src/stats/template_edit.tt:100 root/src/stats/templates.tt:184
 msgid "Please, login"
 msgstr ""
 
-#. ($name)
-#: lib/Astatistics.pm:130
-msgid "Welcome %1!"
+#: lib/Astatistics/Controller/Users.pm:348
+msgid "Role $role already exists"
+msgstr ""
+
+#: lib/Astatistics/Controller/Users.pm:355
+msgid "Role $role could not be created successfully"
+msgstr ""
+
+#: lib/Astatistics/Controller/Users.pm:352
+msgid "Role $role created successfully"
+msgstr ""
+
+#: lib/Astatistics/Controller/Users.pm:139 lib/Astatistics/Controller/Users.pm:154
+msgid "Role not found"
+msgstr ""
+
+#: lib/Astatistics/Controller/Users.pm:302
+msgid "User $username created successfully"
+msgstr ""
+
+#: lib/Astatistics/Controller/Users.pm:244
+msgid "User could not be deleted"
+msgstr ""
+
+#: lib/Astatistics/Controller/Users.pm:200
+msgid "User data updated"
+msgstr ""
+
+#: lib/Astatistics/Controller/Users.pm:241
+msgid "User deleted but role association could not be deleted"
+msgstr ""
+
+#: lib/Astatistics/Controller/Users.pm:239
+msgid "User deleted successfully"
+msgstr ""
+
+#: lib/Astatistics/Controller/Users.pm:285
+msgid "User with name $username already exists"
+msgstr ""
+
+#: root/src/users/login.tt:29
+msgid "Username"
+msgstr ""
+
+#: lib/Astatistics/Controller/Users.pm:64
+msgid "You are now logged in."
+msgstr ""
+
+#: lib/Astatistics/Controller/Users.pm:82
+msgid "You have been logged out."
 msgstr ""

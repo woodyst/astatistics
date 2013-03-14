@@ -19,6 +19,10 @@
 # See the file COPYING for copying conditions.
 %]
 
+[% MACRO l(text, args) BLOCK;
+	c.localize(text, args);
+END; %]
+
 [% IF c.user_exists %]
 	<form action='[% c.uri_for('/stats/templates') %][% IF parent_path %]/[% parent_path %][% END %]'
 						method="post" accept-charset="utf-8">
@@ -82,5 +86,5 @@
 		<input type="submit" name="go" value="Do not delete, please"/>
 	</form>
 [% ELSE %]
-	<h3>Please, login</h3>
+	<h3>[% l('Please, login') %]</h3>
 [% END %]

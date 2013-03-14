@@ -19,13 +19,17 @@
 # See the file COPYING for copying conditions.
 %]
 
+[% MACRO l(text, args) BLOCK;
+	c.localize(text, args);
+END; %]
+
 [% IF ! c.user_exists %]
 	<form action="[% c.uri_for('/users/login') %]"
 				method="post" accept-charset="utf-8">
-		<label for="username">Username</label>
+		<label for="username">[% l('Username') %]</label>
 		<input type="text" name="username" value="" id="username"/>
 		<br/><br/>
-		<label for="password">Password</label>
+		<label for="password">[% l('Password') %]</label>
 		<input type="password" name="password" value="" id="password"/>
 		<p><input type="submit" value="Login &rarr;"></p>
 	</form>

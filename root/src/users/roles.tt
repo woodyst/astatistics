@@ -19,6 +19,10 @@
 # See the file COPYING for copying conditions.
 %]
 
+[% MACRO l(text, args) BLOCK;
+	c.localize(text, args);
+END; %]
+
 [% IF c.user_exists AND c.check_user_roles('superuser') %]
 	<h3>Roles Administration</h3>
 	<form action="[% c.uri_for('/users/new_role') %]"

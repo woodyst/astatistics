@@ -7,24 +7,108 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2013-03-13 18:20+0100\n"
+"PO-Revision-Date: 2013-03-13 18:43+0100\n"
 "Last-Translator:  <informatica@eurogaran.com>\n"
 "Language-Team: Spanish\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ASCII\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lib/Astatistics.pm:127
-msgid "Guest"
-msgstr "Invitado"
+#: lib/Astatistics/Controller/Users.pm:217
+#: lib/Astatistics/Controller/Users.pm:319
+msgid " but roles could not be added"
+msgstr " pero no puedieron ser añadidos roles"
 
-#: root/src/stats/show.tt:69
+#: lib/Astatistics/Controller/Users.pm:150
+msgid " is a system role so could not be deleted"
+msgstr " es un rol de sistema, por lo que no pudo ser eliminado"
+
+#: lib/Astatistics/Controller/Users.pm:136
+msgid " is a system role so could not be edited"
+msgstr " es un rol de sistema, por lo que no puede ser editado"
+
+#: lib/Astatistics/Controller/Users.pm:299
+msgid "Could not create user $username in database"
+msgstr "No se pudo crear el usuario $username en la base de datos"
+
+#: lib/Astatistics/Controller/Users.pm:72
+msgid "Invalid login."
+msgstr "Login inválido."
+
+#: root/src/users/login.tt:32
+msgid "Password"
+msgstr "Contrase&ntilde;a"
+
+#: lib/Astatistics/Controller/Users.pm:194
+#: lib/Astatistics/Controller/Users.pm:288
+msgid "Passwords do not match"
+msgstr "Las contraseñas no coinciden"
+
+#: lib/Astatistics/Controller/Users.pm:117
+msgid "Permission denied"
+msgstr "Permiso denegado"
+
+#: root/src/stats/exec_error.tt:47 root/src/stats/exec_get_params.tt:77
+#: root/src/stats/exec_gp.tt:85 root/src/stats/exec_list.tt:278
+#: root/src/stats/queuelogvirt_list.tt:144
+#: root/src/stats/queuelogvirt_test.tt:94
+#: root/src/stats/queuelogvirt_test_2.tt:95 root/src/stats/show.tt:69
+#: root/src/stats/template_del.tt:89 root/src/stats/template_edit.tt:100
+#: root/src/stats/templates.tt:184
 msgid "Please, login"
-msgstr "Por favor, acceda al sistema (Login)"
+msgstr "Por favor, ingrese al sistema (Login)"
 
-#. ($name)
-#: lib/Astatistics.pm:130
-msgid "Welcome %1!"
-msgstr "Bienvenido %1!"
+#: lib/Astatistics/Controller/Users.pm:348
+msgid "Role $role already exists"
+msgstr "El rol $role ya existe"
+
+#: lib/Astatistics/Controller/Users.pm:355
+msgid "Role $role could not be created successfully"
+msgstr "El rol $role no pudo ser creado"
+
+#: lib/Astatistics/Controller/Users.pm:352
+msgid "Role $role created successfully"
+msgstr "El rol $role ha sido creado con éxito"
+
+#: lib/Astatistics/Controller/Users.pm:139
+#: lib/Astatistics/Controller/Users.pm:154
+msgid "Role not found"
+msgstr "Rol no encontrado"
+
+#: lib/Astatistics/Controller/Users.pm:302
+msgid "User $username created successfully"
+msgstr "El usuario $username ha sido creado con éxito"
+
+#: lib/Astatistics/Controller/Users.pm:244
+msgid "User could not be deleted"
+msgstr "El usuario no pudo ser borrado"
+
+#: lib/Astatistics/Controller/Users.pm:200
+msgid "User data updated"
+msgstr "Datos de usuario actualizados"
+
+#: lib/Astatistics/Controller/Users.pm:241
+msgid "User deleted but role association could not be deleted"
+msgstr "Usuario borrado pero la asociación de rol no pudo ser borrada"
+
+#: lib/Astatistics/Controller/Users.pm:239
+msgid "User deleted successfully"
+msgstr "Usuario borrado con éxito"
+
+#: lib/Astatistics/Controller/Users.pm:285
+msgid "User with name $username already exists"
+msgstr "Ya existe un usuario con nombre $username"
+
+#: root/src/users/login.tt:29
+msgid "Username"
+msgstr "Usuario"
+
+#: lib/Astatistics/Controller/Users.pm:64
+msgid "You are now logged in."
+msgstr "Ud ya está logado."
+
+#: lib/Astatistics/Controller/Users.pm:82
+msgid "You have been logged out."
+msgstr "Ha sido desconectado del sistema."
