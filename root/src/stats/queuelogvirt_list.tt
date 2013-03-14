@@ -34,13 +34,13 @@ END; %]
 					<form action='[% c.uri_for('/stats/show') %][% IF localpath %]/[% localpath %][% END %]'
 								method="post" accept-charset="utf-8">
 						<input type="hidden" name="localpath" value="[% localpath %]"/>
-						<input type="submit" value="&larr; exit"[% IF level == 1 %] disabled="disabled"[% END %]/>
+						<input type="submit" value="&larr; [% l('Exit') %]"[% IF level == 1 %] disabled="disabled"[% END %]/>
 					</form>
 				</td>
 				<td align="left">
 					<form action='/[% c.request.path %]'
 								method="post" accept-charset="utf-8">
-						<input type="submit" value="Refresh"/>
+						<input type="submit" value="[% l('Refresh') %]"/>
 						[% FOR param IN param_keys %]
 							<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
 						[% END %]
@@ -50,7 +50,7 @@ END; %]
 					<form action='[% localpath %]'
 								method="post" accept-charset="utf-8">
 						<input type="hidden" name="repeat" value="1"/>
-						<input type="submit" value="Repeat"/>
+						<input type="submit" value="[% l('Repeat') %]"/>
 						[% FOR param IN param_keys %]
 							<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
 						[% END %]
@@ -60,7 +60,7 @@ END; %]
 					<form action='[% localpath %]'
 								method="post" accept-charset="utf-8">
 						<input type="hidden" name="pdf_export" value="1"/>
-						<input type="submit" value="PDF Export"/>
+						<input type="submit" value="[% l('PDF Export') %]"/>
 						[% FOR param IN param_keys %]
 							<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
 						[% END %]
@@ -70,7 +70,7 @@ END; %]
 					<form action='[% localpath %]'
 								method="post" accept-charset="utf-8" target="_blank">
 						<input type="hidden" name="csv_export" value="1"/>
-						<input type="submit" value="CSV Export"/>
+						<input type="submit" value="[% l('CSV Export') %]"/>
 						[% FOR param IN param_keys %]
 							<input type="hidden" name="[% param %]" value="[% c.req.params.$param %]"/>
 						[% END %]
@@ -119,7 +119,7 @@ END; %]
 		<table border="1">
 			<tr>
 				[% FOR column IN qlogvirt.columns %]
-					<th>[% column %][% IF column == 'time' %] (converted from epoch)[% END %]</th>
+					<th>[% column %][% IF column == 'time' %] ([% l('converted from epoch') %])[% END %]</th>
 				[% END %]
 			</tr>
 			[% FOR row IN rs %]

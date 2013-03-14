@@ -30,7 +30,7 @@ END; %]
 		<form action='[% c.uri_for('/stats/show') %][% IF parent_dir %]/[% parent_dir %][% END %]'
 					method="post" accept-charset="utf-8">
 			<input type="hidden" name="localpath" value="[% parentlocalpath %]"/>
-			<input type="submit" value="&larr;"[% IF level == 1 %] disabled="disabled"><font color="grey"[% END %]> parent[% IF level == 1 %]</font>[% END %]
+			<input type="submit" value="&larr;"[% IF level == 1 %] disabled="disabled"><font color="grey"[% END %]> [% l('parent') %][% IF level == 1 %]</font>[% END %]
 		</form>
 		</p>
 	[% #END %]
@@ -59,7 +59,7 @@ END; %]
 							<input type="hidden" name="localpath" value="[% localpath %]"/>
 							<input type="hidden" name="name" value="[% stat.name %]"/>
 							<input type="hidden" name="id" value="[% stat.id %]"/>
-							<input type="submit" value="Execute">
+							<input type="submit" value="[% l('Execute') %]">
 				</form></td>
 			</tr>
 		[% END %]

@@ -66,7 +66,7 @@ END; %]
 			<table border="1">
 				<tr>
 					[% FOR column IN qlogvirt.columns %]
-						<th>[% column %][% IF column == 'time' %] (converted from epoch)[% END %]</th>
+						<th>[% column %][% IF column == 'time' %] ([% l('converted from epoch') %])[% END %]</th>
 					[% END %]
 				</tr>
 				[% FOR row IN rs %]
@@ -88,7 +88,7 @@ END; %]
 			<p>[% qlogvirt.msg_html %]</p>
 		[% END %]
 	[% ELSE %]
-		<h3>Permission denied. You must be administrator to access this page.</h3>
+		<h3>[% l('Permission denied. You must be administrator to access this page.') %]</h3>
 	[% END %]
 [% ELSE %]
 	<h3>[% l('Please, login') %]</h3>

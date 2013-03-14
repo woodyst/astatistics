@@ -26,7 +26,7 @@ msgstr " %1 (id %2) borrado con éxito de %3"
 #: lib/Astatistics/Controller/Stats.pm:578
 #: lib/Astatistics/Controller/Stats.pm:729
 msgid " %1 (id %2) updated successfully"
-msgstr "%1 (id %2) actualizado con éxito"
+msgstr " %1 (id %2) actualizado con éxito"
 
 #. ($cut_parent)
 #: lib/Astatistics/Controller/Stats.pm:895

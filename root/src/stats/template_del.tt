@@ -29,9 +29,9 @@ END; %]
 		<input type="hidden" name="cut_parent" value="[% c.req.params.cut_parent %]">
 		<input type="hidden" name="copy" value="[% c.req.params.copy %]">
 		<input type="hidden" name="cut" value="[% c.req.params.cut %]">
-		<input type="submit" name="cancel" value="&larr; Return"/>
+		<input type="submit" name="cancel" value="&larr; [% l('Return') %]"/>
 	</form>
-	<h3>Delete [% IF c.req.params.class == "group" %]Group[% ELSE %]Template[% END %] [% oldname %] in [% IF localpath %][% localpath %][% ELSE %]/[% END %]?</h3>
+	<h3>[% l('Delete') %] [% IF c.req.params.class == "group" %][% l('Group') %][% ELSE %][% l'(Template') %][% END %] [% oldname %] [% l('in') %] [% IF localpath %][% localpath %][% ELSE %]/[% END %]?</h3>
 	<form action='[% c.uri_for('/stats/templates') %][% IF statpath %]/[% statpath %][% END %]/do_delete'
 						method="post" accept-charset="utf-8">
 		<input type="hidden" name="cut_parent" value="[% c.req.params.cut_parent %]">
@@ -40,7 +40,7 @@ END; %]
 		<input type="hidden" name="id" value="[% c.req.params.id %]"/>
 		<input type="hidden" name="oldname" value="[% c.req.params.oldname %]"/>
 		<input type="hidden" name="class" value="[% c.req.params.class %]"/>
-		<input type="submit" name="delete" value="Delete"/>
+		<input type="submit" name="delete" value="[% l('Delete') %]"/>
 	</form>
 	<form action='[% c.uri_for('/stats/templates') %][% IF statpath %]/[% statpath %][% END %]'
 						method="post" accept-charset="utf-8">
@@ -48,8 +48,8 @@ END; %]
 		<input type="hidden" name="copy" value="[% c.req.params.copy %]">
 		<input type="hidden" name="cut" value="[% c.req.params.cut %]">
 		<label for="class">Class:</label>
-		<input type="radio" name="class" value="group"[% IF c.req.params.class == "group" %] checked[% END %]>Group</input>
-		<input type="radio" name="class" value="template"[% IF c.req.params.class == "template" %] checked[% END %]>Template</input>
+		<input type="radio" name="class" value="group"[% IF c.req.params.class == "group" %] checked[% END %]>[% l('Group') %]</input>
+		<input type="radio" name="class" value="template"[% IF c.req.params.class == "template" %] checked[% END %]>[% l('Template') %]</input>
 		<br/>
 		<br/>
 		<label for="name">Name:</label>
@@ -58,17 +58,17 @@ END; %]
 		<input type="hidden" name="id" value="[% c.req.params.id %]" />
 		<br/>
 		<br/>
-		<h4>Next fields only for templates:</h4>
+		<h4>[% l('Next fields only for templates') %]:</h4>
 		<label for="visual">Visual:</label>
-		<input type="radio" name="visual" value="list"[% IF c.req.params.visual == "list" %] checked[% END %]>List</input>
-		<input type="radio" name="visual" value="bars"[% IF c.req.params.visual == "bars" %] checked[% END %]>Bars</input>
-		<input type="radio" name="visual" value="lines"[% IF c.req.params.visual == "lines" %] checked[% END %]>Lines</input>
-		<input type="radio" name="visual" value="area"[% IF c.req.params.visual == "area" %] checked[% END %]>Area</input>
-		<input type="radio" name="visual" value="pie"[% IF c.req.params.visual == "pie" %] checked[% END %]>Pie</input>
-		<input type="radio" name="visual" value="bubble"[% IF c.req.params.visual == "bubble" %] checked[% END %]>Bubble</input>
-		<input type="radio" name="visual" value="point"[% IF c.req.params.visual == "point" %] checked[% END %]>Point</input>
-		<input type="radio" name="visual" value="polararea"[% IF c.req.params.visual == "polararea" %] checked[% END %]>PolarArea</input>
-		<!--input type="radio" name="visual" value="candlestick"[% IF c.req.params.visual == "candlestick" %] checked[% END %]>CandleStick</input-->
+		<input type="radio" name="visual" value="list"[% IF c.req.params.visual == "list" %] checked[% END %]>[% l('List') %]</input>
+		<input type="radio" name="visual" value="bars"[% IF c.req.params.visual == "bars" %] checked[% END %]>[% l('Bars') %]</input>
+		<input type="radio" name="visual" value="lines"[% IF c.req.params.visual == "lines" %] checked[% END %]>[% l('Lines') %]</input>
+		<input type="radio" name="visual" value="area"[% IF c.req.params.visual == "area" %] checked[% END %]>[% l('Area') %]</input>
+		<input type="radio" name="visual" value="pie"[% IF c.req.params.visual == "pie" %] checked[% END %]>[% l('Pie') %]</input>
+		<input type="radio" name="visual" value="bubble"[% IF c.req.params.visual == "bubble" %] checked[% END %]>[% l('Bubble') %]</input>
+		<input type="radio" name="visual" value="point"[% IF c.req.params.visual == "point" %] checked[% END %]>[% l('Point') %]</input>
+		<input type="radio" name="visual" value="polararea"[% IF c.req.params.visual == "polararea" %] checked[% END %]>[% l('PolarArea') %]</input>
+		<!--input type="radio" name="visual" value="candlestick"[% IF c.req.params.visual == "candlestick" %] checked[% END %]>[% l('CandleStick') %]</input-->
 		<br/>
 		<br/>
 		<label for="conditions">Conditions:</label>

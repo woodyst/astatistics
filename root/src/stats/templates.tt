@@ -56,14 +56,14 @@ END; %]
 								<input type="hidden" name="cut_parent" value="[% c.req.params.cut_parent %]">
 								<input type="hidden" name="copy" value="[% group.id %]">
 								<input type="hidden" name="cut" value="">
-								<input type="submit" value="Copy">
+								<input type="submit" value="[% l('Copy') %]">
 					</form></td>
 					<td><form action='[% c.uri_for('/stats/templates') %][% IF statpath %]/[% statpath %][% END %]' method="post" accept-charset="utf-8">
 								<input type="hidden" name="cut_class" value="group">
 								<input type="hidden" name="cut_parent" value="[% parent %]">
 								<input type="hidden" name="copy" value="">
 								<input type="hidden" name="cut" value="[% group.id %]">
-								<input type="submit" value="Cut">
+								<input type="submit" value="[% l('Cut') %]">
 					</form></td>
 					<td><form action='[% c.uri_for('/stats/templates') %][% IF statpath %]/[% statpath %][% END %]/group_edit' method="post" accept-charset="utf-8">
 								<input type="hidden" name="cut_class" value="[% c.req.params.cut_class %]">
@@ -75,7 +75,7 @@ END; %]
 								<input type="hidden" name="name" value="[% group.name %]"/>
 								<input type="hidden" name="class" value="group"/>
 								<input type="hidden" name="id" value="[% group.id %]"/>
-								<input type="submit" value="Edit">
+								<input type="submit" value="[% l('Edit') %]">
 					</form></td>
 					<td><form action='[% c.uri_for('/stats/templates') %][% IF statpath %]/[% statpath %][% END %]/group_up' method="post" accept-charset="utf-8">
 								<input type="hidden" name="cut_class" value="[% c.req.params.cut_class %]">
@@ -111,7 +111,7 @@ END; %]
 			<input type="hidden" name="cut_parent" value="[% c.req.params.cut_parent %]">
 			<input type="hidden" name="copy" value="[% c.req.params.copy %]">
 			<input type="hidden" name="cut" value="[% c.req.params.cut %]">
-			<input type="submit" value="New">
+			<input type="submit" value="[% l('New') %]">
 		</form>
 		</p>
 	<hr/>
@@ -125,14 +125,14 @@ END; %]
 						<input type="hidden" name="cut_parent" value="[% c.req.params.cut_parent %]">
 						<input type="hidden" name="copy" value="[% stat.id %]">
 						<input type="hidden" name="cut" value="">
-						<input type="submit" value="Copy">
+						<input type="submit" value="[% l('Copy') %]">
 			</form></td>
 			<td><form action='[% c.uri_for('/stats/templates') %][% IF statpath %]/[% statpath %][% END %]' method="post" accept-charset="utf-8">
 						<input type="hidden" name="cut_class" value="template">
 						<input type="hidden" name="cut_parent" value="[% parent %]">
 						<input type="hidden" name="copy" value="">
 						<input type="hidden" name="cut" value="[% stat.id %]">
-						<input type="submit" value="Cut">
+						<input type="submit" value="[% l('Cut') %]">
 			</form></td>
 			<td><form action='[% c.uri_for('/stats/templates') %][% IF statpath %]/[% statpath %][% END %]/stat_edit' method="post" accept-charset="utf-8">
 						<input type="hidden" name="cut_class" value="[% c.req.params.cut_class %]">
@@ -143,7 +143,7 @@ END; %]
 						<input type="hidden" name="name" value="[% stat.name %]"/>
 						<input type="hidden" name="class" value="template"/>
 						<input type="hidden" name="id" value="[% stat.id %]"/>
-						<input type="submit" value="Edit">
+						<input type="submit" value="[% l('Edit') %]">
 			</form></td>
 			<td><form action='[% c.uri_for('/stats/templates') %][% IF statpath %]/[% statpath %][% END %]/template_up' method="post" accept-charset="utf-8">
 						<input type="hidden" name="cut_class" value="[% c.req.params.cut_class %]">
@@ -178,7 +178,7 @@ END; %]
 		<input type="hidden" name="copy" value="[% c.req.params.copy %]">
 		<input type="hidden" name="cut" value="[% c.req.params.cut %]">
 		<input type="hidden" name="localpath" value="[% localpath %]/new"/>
-		<input type="submit" value="New">
+		<input type="submit" value="[% l('New') %]">
 	</form>
 [% ELSE %]
 	<h3>[% l('Please, login') %]</h3>
