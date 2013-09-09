@@ -1085,7 +1085,7 @@ sub stat_show_gp :Private {
 				$query_params->{'select'} = $serie;
 				$query_params->{'group_by'} = $serie;
 
-				my $rs = $c->model('Asterisk::'.ucfirst($conditions{'table'}))->search($query, $query_params);
+				my $rs = $c->model('Asterisk::'.ucfirst($conditions{'table'}))->search(\$query, $query_params);
 				my @values;
 				while (my $row = $rs->next) {
 					my $value = $row->$serie;
@@ -1107,12 +1107,12 @@ sub stat_show_gp :Private {
 				$x{$serie}->{$value} = [];
 				$y{$serie}->{$value} = [];
 				if ($serie eq "total") {
-					$rs = $c->model('Asterisk::'.ucfirst($conditions{'table'}))->search($query, $query_params);
+					$rs = $c->model('Asterisk::'.ucfirst($conditions{'table'}))->search(\$query, $query_params);
 				} else {
 					my $query = $query;
 					$query = "$serie = '" . $value . "' and (" . $query . ")";
 					#$c->log->info(Dumper($query));
-					$rs = $c->model('Asterisk::'.ucfirst($conditions{'table'}))->search($query, $query_params);
+					$rs = $c->model('Asterisk::'.ucfirst($conditions{'table'}))->search(\$query, $query_params);
 				}
 		
 				# Generate arrays for GP
@@ -1501,7 +1501,7 @@ sub stat_show_list :Private {
 	for my $word (@table_words) {
 		$table .= ucfirst($word);
 	}
-	$rs = $c->model('Asterisk::'.$table)->search($query, $query_params);
+	$rs = $c->model('Asterisk::'.$table)->search(\$query, $query_params);
 	
 	my $localpath = '/'.$c->request->path;
 
