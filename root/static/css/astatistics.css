@@ -58,6 +58,11 @@ body {
 	top: 20px;
 	left: 600px;
 }
+#logo_eg {
+	position: absolute;
+	top: 12px;
+	left: 720px;
+}
 #contentarea {
 	background-color: #ffffff;
 	color: black;

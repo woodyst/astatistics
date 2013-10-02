@@ -26,6 +26,7 @@ END; %]
 	<body id="AstatisticsBody">
 		<div id="header">
 			<h1>Astatistics</h1>
+			<a id='logo_eg' href="http://www.eurogaran.com"><img src="/static/images/logo_eurogaran.png"/></a>
 			[% IF ! no_logo %]
 				<img id='powered' src="/static/images/btn_88x31_built.png"/>
 			[% END %]
