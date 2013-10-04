@@ -25,7 +25,8 @@ END; %]
 	</head>
 	<body id="AstatisticsBody">
 		<div id="header">
-			<h1>Astatistics</h1>
+			<!--- h1>Astatistics</h1-->
+			<img alt="Astatistics" src="/static/images/logo_astatistics_web.png"/>
 			<a id='logo_eg' href="http://www.eurogaran.com"><img alt="Eurogarán Informática" src="/static/images/logo_eurogaran.png"/></a>
 			[% IF ! no_logo %]
 				<a id='powered' href="http://www.catalystframework.org"><img alt="Powered by Catalyst" src="/static/images/btn_88x31_built.png"/></a>
