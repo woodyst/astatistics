@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Astatistics: Dise&#195;&#177;o y gesti&#195;&#179;n de plantillas y men&#195;&#186;s</TITLE>
-<META NAME="description" CONTENT="Astatistics: Dise&#195;&#177;o y gesti&#195;&#179;n de plantillas y men&#195;&#186;s">
+<TITLE>Acceso a base de datos</TITLE>
+<META NAME="description" CONTENT="Acceso a base de datos">
 <META NAME="keywords" CONTENT="manual_usuario_astatistics">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -19,71 +19,59 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="manual_usuario_astatistics.css">
 
-<LINK REL="next" HREF="node16.html">
 <LINK REL="previous" HREF="node8.html">
-<LINK REL="up" HREF="manual_usuario_astatistics.html">
+<LINK REL="up" HREF="node6.html">
 <LINK REL="next" HREF="node10.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A NAME="tex2html144"
+<A NAME="tex2html156"
   HREF="node10.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="/usr/share/latex2html/icons/next.png"></A> 
-<A NAME="tex2html140"
-  HREF="manual_usuario_astatistics.html">
+<A NAME="tex2html152"
+  HREF="node6.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="/usr/share/latex2html/icons/up.png"></A> 
-<A NAME="tex2html134"
+<A NAME="tex2html148"
   HREF="node8.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="/usr/share/latex2html/icons/prev.png"></A> 
-<A NAME="tex2html142"
+<A NAME="tex2html154"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
  SRC="/usr/share/latex2html/icons/contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html145"
-  HREF="node10.html">Estructura de men&#195;&#186;s</A>
-<B> Up:</B> <A NAME="tex2html141"
-  HREF="manual_usuario_astatistics.html">Manual de usuario</A>
-<B> Previous:</B> <A NAME="tex2html135"
-  HREF="node8.html">Astatistics: Administraci&#195;&#179;n de usuarios</A>
- &nbsp; <B>  <A NAME="tex2html143"
+<B> Next:</B> <A NAME="tex2html157"
+  HREF="node10.html">Deployment</A>
+<B> Up:</B> <A NAME="tex2html153"
+  HREF="node6.html">Instalando requisitos de m&#195;&#179;dulos</A>
+<B> Previous:</B> <A NAME="tex2html149"
+  HREF="node8.html">Instalaci&#195;&#179;n de dependencias en</A>
+ &nbsp; <B>  <A NAME="tex2html155"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A NAME="SECTION00500000000000000000">
-Astatistics: Dise&#195;&#177;o y gesti&#195;&#179;n de plantillas y men&#195;&#186;s</A>
-</H1>
-<BR><HR>
-<!--Table of Child-Links-->
-<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+<H2><A NAME="SECTION00333000000000000000">
+Acceso a base de datos</A>
+</H2>
+Tras estos pasos, y si todo ha ido bien, dispondremos de todas las dependencias de Astatistics instaladas correctamente en el equipo.
 
-<UL CLASS="ChildLinks">
-<LI><A NAME="tex2html146"
-  HREF="node10.html">Estructura de men&#195;&#186;s</A>
-<LI><A NAME="tex2html147"
-  HREF="node11.html">Las plantillas</A>
-<LI><A NAME="tex2html148"
-  HREF="node12.html">Base de datos de Asterisk</A>
-<LI><A NAME="tex2html149"
-  HREF="node13.html">Definici&#195;&#179;n de plantillas y men&#195;&#186;s</A>
-<UL>
-<LI><A NAME="tex2html150"
-  HREF="node14.html">Par&#195;&#161;metros de consulta</A>
-<LI><A NAME="tex2html151"
-  HREF="node15.html">Organizaci&#195;&#179;n de men&#195;&#186;s e informes</A>
-</UL></UL>
-<!--End of Table of Child-Links-->
+<P>
+Para configurar el acceso a datos de Astatistics habr&#195;&#161; que modificar la base de datos, el usuario y la contrase&#195;&#177;a del fichero script/create_asterisk_model.sh y luego ejecutarlo. Con ello el m&#195;&#179;dulo DBIx::Class de PERL configurar&#195;&#161; todos los accesos a la base de datos Asterisk autom&#195;&#161;ticamente.
+
+<P>
+Para probar el correcto funcionamiento de Astatistics podemos lanzar una instancia del servidor de desarrollo utilizando ``$ script/astatistics_server.pl''.
+
+<P>
 <BR><HR>
 <ADDRESS>
 Eduardo García-Mádico Portabella
-2013-09-09
+2013-10-04
 </ADDRESS>
 </BODY>
 </HTML>

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=latex 2013.7.1)  9 SEP 2013 12:06
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=latex 2013.7.1)  4 OCT 2013 14:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -538,176 +538,218 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--122
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
+Overfull \hbox (13.51689pt too wide) in paragraph at lines 119--122
+\OT1/cmr/m/n/12 # apt-get ins-tall wkhtml-topdf xvfb libcatalyst-perl libcataly
+st-modules-perl libgraphics-
+ []
+
+
+Overfull \hbox (21.28487pt too wide) in paragraph at lines 119--122
+\OT1/cmr/m/n/12 primitive-perl libdatetime-format-mysql-perl libclass-csv-perl 
+libchart-clicker-perl libdbd-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+Underfull \hbox (badness 10000) in paragraph at lines 122--125
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
+Overfull \hbox (53.07346pt too wide) in paragraph at lines 122--125
+\OT1/cmr/m/n/12 # cpanp ins-tall Ca-talyst::View::Graphics::Primitive Pa-per::S
+pecs Ca-talyst::View::Wkhtmltopdf 
+ []
+
+
+Overfull \hbox (16.22382pt too wide) in paragraph at lines 126--129
+\OT1/cmr/m/n/12 ser-vi-dor web se re-quie-re un wrap-per pa-ra xvfb-run. Por fa
+-vor, co-pie scripts/wkhtmltopdf-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--129
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
 [6]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 159.
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
+
+ []
+
+[7]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 175.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 159.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 175.
 
-Overfull \hbox (265.4275pt too wide) in paragraph at lines 159--160
+Overfull \hbox (265.4275pt too wide) in paragraph at lines 175--176
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (11.62794pt too wide) in paragraph at lines 160--162
+Overfull \hbox (11.62794pt too wide) in paragraph at lines 176--178
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (68.02785pt too wide) in paragraph at lines 164--165
+Overfull \hbox (68.02785pt too wide) in paragraph at lines 180--181
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[7] [8]
+[8] [9] [10
+
+]
 Cap\'{\i }tulo 3.
 
-Overfull \hbox (0.71841pt too wide) in paragraph at lines 211--212
+Overfull \hbox (0.71841pt too wide) in paragraph at lines 227--228
 []\OT1/cmr/m/n/12 Adem^^Sas de es-tos ro-les de sis-te-ma, cual-quier usua-rio 
 con el rol su-per-user ac-ti-va-do podr^^Sa crear
  []
 
-[9
-
-] [10]
+[11] [12]
 Cap\'{\i }tulo 4.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11
+ [13
 
 ]
-Overfull \hbox (10.17648pt too wide) in paragraph at lines 242--243
+Overfull \hbox (10.17648pt too wide) in paragraph at lines 258--259
 []\OT1/cmr/bx/n/12 queue[]log[]processed\OT1/cmr/m/n/12 : Ta-bla que con-tie-ne
  la mis-ma in-for-ma-ci^^Son que la ta-bla queue[]log
  []
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 272--273
-
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 295--306
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 295--306
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 295--306
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 295--306
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 295--306
-
- []
-
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 306--311
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 311--322
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--311
+Underfull \hbox (badness 10000) in paragraph at lines 311--322
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--313
+Underfull \hbox (badness 10000) in paragraph at lines 311--322
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--313
+Underfull \hbox (badness 10000) in paragraph at lines 311--322
 
  []
 
 
-Overfull \hbox (19.85268pt too wide) in paragraph at lines 319--320
+Underfull \hbox (badness 10000) in paragraph at lines 311--322
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 322--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 322--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--329
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--329
+
+ []
+
+
+Overfull \hbox (19.85268pt too wide) in paragraph at lines 335--336
 [][][][][][][][][][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 321--323
+Underfull \hbox (badness 10000) in paragraph at lines 337--339
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 321--323
+Underfull \hbox (badness 10000) in paragraph at lines 337--339
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--328
+Underfull \hbox (badness 10000) in paragraph at lines 343--344
 
  []
 
 
-Overfull \hbox (25.72792pt too wide) in paragraph at lines 339--340
+Overfull \hbox (25.72792pt too wide) in paragraph at lines 355--356
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[15] [16] [17] [18
+[17] [18] [19] [20
 
 ]
 Cap\'{\i }tulo 5.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19]
-[20] (./manual_usuario_astatistics.aux
+ [21]
+[22] (./manual_usuario_astatistics.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
  4963 strings out of 493474
  65287 string characters out of 3143146
- 140548 words of memory out of 3000000
+ 139548 words of memory out of 3000000
  8198 multiletter control sequences out of 15000+200000
  13310 words of font info for 51 fonts, out of 3000000 for 9000
  965 hyphenation exceptions out of 8191
  32i,7n,35p,730b,1220s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on manual_usuario_astatistics.dvi (24 pages, 51068 bytes).
+Output written on manual_usuario_astatistics.dvi (26 pages, 53804 bytes).

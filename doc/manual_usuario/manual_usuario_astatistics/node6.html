@@ -19,7 +19,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="manual_usuario_astatistics.css">
 
-<LINK REL="next" HREF="node7.html">
+<LINK REL="next" HREF="node10.html">
 <LINK REL="previous" HREF="node5.html">
 <LINK REL="up" HREF="node3.html">
 <LINK REL="next" HREF="node7.html">
@@ -28,30 +28,30 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A NAME="tex2html110"
+<A NAME="tex2html119"
   HREF="node7.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="/usr/share/latex2html/icons/next.png"></A> 
-<A NAME="tex2html106"
+<A NAME="tex2html115"
   HREF="node3.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="/usr/share/latex2html/icons/up.png"></A> 
-<A NAME="tex2html100"
+<A NAME="tex2html109"
   HREF="node5.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="/usr/share/latex2html/icons/prev.png"></A> 
-<A NAME="tex2html108"
+<A NAME="tex2html117"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
  SRC="/usr/share/latex2html/icons/contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html111"
-  HREF="node7.html">Deployment</A>
-<B> Up:</B> <A NAME="tex2html107"
+<B> Next:</B> <A NAME="tex2html120"
+  HREF="node7.html">Instalaci&#195;&#179;n de dependencias en</A>
+<B> Up:</B> <A NAME="tex2html116"
   HREF="node3.html">Instalaci&#195;&#179;n de Astatistics (Administrador</A>
-<B> Previous:</B> <A NAME="tex2html101"
+<B> Previous:</B> <A NAME="tex2html110"
   HREF="node5.html">Configurando MySQL y Asterisk</A>
- &nbsp; <B>  <A NAME="tex2html109"
+ &nbsp; <B>  <A NAME="tex2html118"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -60,78 +60,23 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <H1><A NAME="SECTION00330000000000000000">
 Instalando requisitos de m&#195;&#179;dulos PERL</A>
 </H1>
-Debido a un bug en la &#195;&#186;ltima versi&#195;&#179;n de CPAN de DBIx::Class la instalaci&#195;&#179;n autom&#195;&#161;tica provista por Catalyst no es operativa en esta versi&#195;&#179;n, por lo que habr&#195;&#161; que hacer unos pasos preliminares. En el caso de estar instalando en Debian GNU/Linux Squeeze se puede realizar toda esta preparaci&#195;&#179;n tan solo ejecutando script/install-squeeze.sh con un usuario con permisos de ``sudo'' o bien como usuario root. En caso contrario:
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
 
-<UL>
-<LI>Instalamos la &#195;&#186;ltima versi&#195;&#179;n de CPAN y CPANPLUS. Dependiendo de nuestro sistema PERL se deber&#195;&#173;an de utilizar diferentes instrucciones. Las m&#195;&#161;s comunes para un sistema Debian GNU/Linux son:
-<BR>
-<BR># cpan CPAN
-<BR># cpan CPANPLUS
-<BR>
-<BR>
-Deberemos de responder a las preguntas que se nos hagan seg&#195;&#186;n nuestra conveniencia.
-</LI>
-<LI>Instalamos el m&#195;&#179;dulo Params::Validate:
-<BR>
-<BR># cpan Params::Validate
-</LI>
-<LI>Instalamos Moose:
-<BR>
-<BR># cpan Moose
-</LI>
-<LI>Instalamos el DBIx::Class con opci&#195;&#179;n force para obviar tests que no funcionan en esta versi&#195;&#179;n (la instalaci&#195;&#179;n suele ser completamente funcional, puesto que el error que se produce est&#195;&#161; en el test de acceso a SQLite, pero no en las funciones que testea):
-<BR>
-<BR># cpan -fi DBIx::Class
-</LI>
-<LI>Finalmente podemos arrancar la instalaci&#195;&#179;n autom&#195;&#161;tica de Catalyst:
-<BR>
-<BR>$ perl Makefile.PL build
-<BR># make
-</LI>
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html121"
+  HREF="node7.html">Instalaci&#195;&#179;n de dependencias en Debian Wheezy</A>
+<LI><A NAME="tex2html122"
+  HREF="node8.html">Instalaci&#195;&#179;n de dependencias en Debian Squeeze</A>
+<LI><A NAME="tex2html123"
+  HREF="node9.html">Acceso a base de datos</A>
 </UL>
-
-<P>
-Tras estos pasos, y si todo ha ido bien, dispondremos de todas las dependencias de Astatistics instaladas correctamente en el equipo.
-
-<P>
-Para configurar el acceso a datos de Astatistics habr&#195;&#161; que modificar la base de datos, el usuario y la contrase&#195;&#177;a del fichero script/create_asterisk_model.sh y luego ejecutarlo. Con ello el m&#195;&#179;dulo DBIx::Class de PERL configurar&#195;&#161; todos los accesos a la base de datos Asterisk autom&#195;&#161;ticamente.
-
-<P>
-Para probar el correcto funcionamiento de Astatistics podemos lanzar una instancia del servidor de desarrollo utilizando ``$ script/astatistics_server.pl''.
-
-<P>
-
-<DIV CLASS="navigation"><HR>
-<!--Navigation Panel-->
-<A NAME="tex2html110"
-  HREF="node7.html">
-<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="/usr/share/latex2html/icons/next.png"></A> 
-<A NAME="tex2html106"
-  HREF="node3.html">
-<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
- SRC="/usr/share/latex2html/icons/up.png"></A> 
-<A NAME="tex2html100"
-  HREF="node5.html">
-<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
- SRC="/usr/share/latex2html/icons/prev.png"></A> 
-<A NAME="tex2html108"
-  HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
- SRC="/usr/share/latex2html/icons/contents.png"></A>  
-<BR>
-<B> Next:</B> <A NAME="tex2html111"
-  HREF="node7.html">Deployment</A>
-<B> Up:</B> <A NAME="tex2html107"
-  HREF="node3.html">Instalaci&#195;&#179;n de Astatistics (Administrador</A>
-<B> Previous:</B> <A NAME="tex2html101"
-  HREF="node5.html">Configurando MySQL y Asterisk</A>
- &nbsp; <B>  <A NAME="tex2html109"
-  HREF="node1.html">Contents</A></B> </DIV>
-<!--End of Navigation Panel-->
+<!--End of Table of Child-Links-->
+<BR><HR>
 <ADDRESS>
 Eduardo García-Mádico Portabella
-2013-09-09
+2013-10-04
 </ADDRESS>
 </BODY>
 </HTML>

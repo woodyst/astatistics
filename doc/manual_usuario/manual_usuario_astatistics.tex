@@ -114,7 +114,22 @@ Seguidamente haremos una recarga de la configuración de asterisk de la siguient
 Tras este proceso Asterisk debería de estar volcando ya la información de las llamadas y colas a las tablas creadas en MySQL. Se han incluído, a su vez, tablas de información de estado en tiempo real para la monitorización en vivo y otras facilidades.
 
 \section{Instalando requisitos de módulos PERL}
-Debido a un bug en la última versión de CPAN de DBIx::Class la instalación automática provista por Catalyst no es operativa en esta versión, por lo que habrá que hacer unos pasos preliminares. En el caso de estar instalando en Debian GNU/Linux Squeeze se puede realizar toda esta preparación tan solo ejecutando script/install-squeeze.sh con un usuario con permisos de ``sudo'' o bien como usuario root. En caso contrario:
+\subsection{Instalación de dependencias en Debian Wheezy}
+\begin{itemize}
+\item{Instalar paquetes requeridos:\\
+\\
+\# apt-get install wkhtmltopdf xvfb libcatalyst-perl libcatalyst-modules-perl libgraphics-primitive-perl libdatetime-format-mysql-perl libclass-csv-perl libchart-clicker-perl libdbd-sqlite3-perl}
+\item{Instalar algunos módulos de cpan:\\
+\\
+\# cpanp install Catalyst::View::Graphics::Primitive Paper::Specs Catalyst::View::Wkhtmltopdf}
+
+\item{El binario Wkhtmltopdf requiere acceso a X. Cuando la publicación se realiza en un servidor web se requiere un wrapper para xvfb-run. Por favor, copie scripts/wkhtmltopdf-catalyst a /usr/local/bin y hágalo ejecutable (chmod 755 /usr/local/bin/wkhtmltopdf).\\
+\\
+Si se requiere cambiar la ubicación o nombre del wrapper o utilizar el wkhtmltopdf original abra lib/Astatistics.pm y ajuste el comando a invocar en los ajustes de la configuración de View::Wkhtmltopdf.}
+\end{itemize}
+
+\subsection{Instalación de dependencias en Debian Squeeze}
+Debido a un bug en la última versión de CPAN de DBIx::Class para instalaciones en Debian Squeeze, la instalación automática provista por Catalyst no es operativa en esta versión, por lo que habrá que hacer unos pasos preliminares. En el caso de estar instalando en Debian GNU/Linux Squeeze se puede realizar toda esta preparación tan solo ejecutando script/install-squeeze.sh con un usuario con permisos de ``sudo'' o bien como usuario root. En caso contrario:
 \begin{itemize}
 \item Instalamos la última versión de CPAN y CPANPLUS. Dependiendo de nuestro sistema PERL se deberían de utilizar diferentes instrucciones. Las más comunes para un sistema Debian GNU/Linux son:\\\\\# cpan CPAN\\\# cpan CPANPLUS\\\\Deberemos de responder a las preguntas que se nos hagan según nuestra conveniencia.
 \item Instalamos el módulo Params::Validate:\\\\\# cpan Params::Validate
@@ -123,6 +138,7 @@ Debido a un bug en la última versión de CPAN de DBIx::Class la instalación au
 \item Finalmente podemos arrancar la instalación automática de Catalyst:\\\\\$ perl Makefile.PL build\\\# make
 \end{itemize}
 
+\subsection{Acceso a base de datos}
 Tras estos pasos, y si todo ha ido bien, dispondremos de todas las dependencias de Astatistics instaladas correctamente en el equipo.
 
 Para configurar el acceso a datos de Astatistics habrá que modificar la base de datos, el usuario y la contraseña del fichero script/create\_asterisk\_model.sh y luego ejecutarlo. Con ello el módulo DBIx::Class de PERL configurará todos los accesos a la base de datos Asterisk automáticamente.

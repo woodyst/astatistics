@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Organizaci&#195;&#179;n de men&#195;&#186;s e informes</TITLE>
-<META NAME="description" CONTENT="Organizaci&#195;&#179;n de men&#195;&#186;s e informes">
+<TITLE>Base de datos de Asterisk</TITLE>
+<META NAME="description" CONTENT="Base de datos de Asterisk">
 <META NAME="keywords" CONTENT="manual_usuario_astatistics">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -19,99 +19,108 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="manual_usuario_astatistics.css">
 
+<LINK REL="next" HREF="node16.html">
 <LINK REL="previous" HREF="node14.html">
-<LINK REL="up" HREF="node13.html">
+<LINK REL="up" HREF="node12.html">
 <LINK REL="next" HREF="node16.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A NAME="tex2html220"
+<A NAME="tex2html232"
   HREF="node16.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="/usr/share/latex2html/icons/next.png"></A> 
-<A NAME="tex2html216"
-  HREF="node13.html">
+<A NAME="tex2html228"
+  HREF="node12.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="/usr/share/latex2html/icons/up.png"></A> 
-<A NAME="tex2html212"
+<A NAME="tex2html222"
   HREF="node14.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="/usr/share/latex2html/icons/prev.png"></A> 
-<A NAME="tex2html218"
+<A NAME="tex2html230"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
  SRC="/usr/share/latex2html/icons/contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html221"
-  HREF="node16.html">Astatistics: Visualizaci&#195;&#179;n de informes</A>
-<B> Up:</B> <A NAME="tex2html217"
-  HREF="node13.html">Definici&#195;&#179;n de plantillas y</A>
-<B> Previous:</B> <A NAME="tex2html213"
-  HREF="node14.html">Par&#195;&#161;metros de consulta</A>
- &nbsp; <B>  <A NAME="tex2html219"
+<B> Next:</B> <A NAME="tex2html233"
+  HREF="node16.html">Definici&#195;&#179;n de plantillas y</A>
+<B> Up:</B> <A NAME="tex2html229"
+  HREF="node12.html">Astatistics: Dise&#195;&#177;o y gesti&#195;&#179;n</A>
+<B> Previous:</B> <A NAME="tex2html223"
+  HREF="node14.html">Las plantillas</A>
+ &nbsp; <B>  <A NAME="tex2html231"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H2><A NAME="SECTION00542000000000000000">
-Organizaci&#195;&#179;n de men&#195;&#186;s e informes</A>
-</H2>
-En ``Templates'' un usuario con rol ``superuser'' o un dise&#195;&#177;ador podr&#195;&#161; organizar plantillas y grupos (otros men&#195;&#186;s), moverlos, copiarlos, modificarlos y definir c&#195;&#179;mo se presentar&#195;&#161;n al usuario final.
+<H1><A NAME="SECTION00530000000000000000">
+Base de datos de Asterisk</A>
+</H1>
+La fuente de la que se extrae la informaci&#195;&#179;n para mostrar en los informes es la base de datos de Asterisk anteriormente creada. Se puede visualizar cualquier tipo de informaci&#195;&#179;n sobre dicha base de datos, aunque normalmente se consultar&#195;&#161;n dos tablas:
 
 <P>
-Para ello, en ``Templates'' se muestran los grupos y plantillas en estructura jer&#195;&#161;rquica seg&#195;&#186;n la visualizaci&#195;&#179;n actual, y se muestran botones de operaciones a la derecha de los mismos.
+
+<UL>
+<LI><B>cdr</B>: Esta tabla almacena la informaci&#195;&#179;n de las llamadas. Su estructura se define en el fichero ``/etc/asterisk/cdr_custom.conf''.
+</LI>
+<LI><B>queue_log</B>: Esta tabla almacena los eventos que se suceden relacionados con la gesti&#195;&#179;n de colas de llamadas (queues). Es una tabla especial puesto que tan solo almacena eventos. Para poder consultar estad&#195;&#173;sticas sobre dichos eventos se ha a&#195;&#177;adido una capa l&#195;&#179;gica en Astatistics que provee al dise&#195;&#177;ador de plantillas de la capacidad de consultar eventos l&#195;&#179;gicos como los tiempos de espera de los operadores, la duraci&#195;&#179;n de las llamadas, etc. Para acceder a los datos l&#195;&#179;gicos (virtuales) de dicha tabla se ha de especificar como tabla ``queuelog_virt''.
+</LI>
+</UL>
 
 <P>
-Dicho sistema jer&#195;&#161;rquico funciona de forma similar a la organizaci&#195;&#179;n de ficheros en un dispositivo de almacenamiento, como un disco duro o una memoria USB, donde los grupos ser&#195;&#173;a directorios y las plantillas ser&#195;&#173;an ficheros. Dependiendo del men&#195;&#186; de trabajo (directorio) encontraremos otros grupos (directorios) o plantillas (ficheros), pudiendo acceder a cualquier grupo visible (directorio) o al grupo padre (bajar un nivel). La ruta se muestra bajo la l&#195;&#173;nea horizontal, justo encima de las plantillas del grupo de trabajo (actual). Es similar a la ruta (path) de un directorio UNIX o Linux, o una p&#195;&#161;gina web. Comienza con ``/'' y ser&#195;&#173;a algo similar a ``/grupo1/grupo2/grupo3''.
+Adem&#195;&#161;s de estas dos tablas, en la definici&#195;&#179;n de las tablas de Asterisk se a&#195;&#177;adieron varias tablas cuyos datos se llenan mediante triggers en las dos anteriores, facilitando la consulta de estados en tiempo real y otros datos adicionales:
 
 <P>
-Al usar el bot&#195;&#179;n de flecha hacia la derecha situado tras un grupo accederemos a su contenido, y el nuevo grupo de trabajo se mostrar&#195;&#161; en la ruta. Para subir un nivel (volver al grupo padre) hay que usar el bot&#195;&#179;n de flecha hacia la izquierda situado delante de la palabra ``parent'' (padre).
+
+<UL>
+<LI><B>agent_status</B>: Tabla que informa sobre el estado de los agentes en tiempo real.
+</LI>
+<LI><B>call_status</B>: Tabla que informa sobre el estado de las llamadas en curso.
+</LI>
+<LI><B>queue_log_processed</B>: Tabla que contiene la misma informaci&#195;&#179;n que la tabla queue_log de una forma m&#195;&#161;s ordenada para su consulta directa, as&#195;&#173; como con la marca de tiempo en formato de fecha de la base de datos, para poder hacer ordenaciones.
+</LI>
+</UL>
 
 <P>
-Para mover o duplicar grupos y plantillas en diferentes ubicaciones se usar&#195;&#161;n los botones ``Copy'' y ``Cut''. Se trata de un sistema ``Cut, copy, paste'' (Cortar, copiar, pegar), clipboard o portapapeles, similar a los utilizados en los escritorios convencionales.
-
-<P>
-El portapapeles muestra un di&#195;&#161;logo al principio de cada p&#195;&#161;gina visitada cuando contiene datos. Incluye botones para eliminar el contenido del mismo.
-
-<P>
-Para cambiar la posici&#195;&#179;n en la lista dentro de un grupo se usar&#195;&#161;n los botones con flechas verticales a la derecha de grupos y plantillas. La flecha arriba mueve la plantilla o grupo a la posici&#195;&#179;n superior a la actual, mientras que la flecha abajo la mueve hacia abajo.
+Tambi&#195;&#169;n se dispone de dos tablas ``queue_members'' y ``queue_table'' para el manejo en tiempo real de las colas de llamadas.
 
 <P>
 
 <DIV CLASS="navigation"><HR>
 <!--Navigation Panel-->
-<A NAME="tex2html220"
+<A NAME="tex2html232"
   HREF="node16.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="/usr/share/latex2html/icons/next.png"></A> 
-<A NAME="tex2html216"
-  HREF="node13.html">
+<A NAME="tex2html228"
+  HREF="node12.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="/usr/share/latex2html/icons/up.png"></A> 
-<A NAME="tex2html212"
+<A NAME="tex2html222"
   HREF="node14.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="/usr/share/latex2html/icons/prev.png"></A> 
-<A NAME="tex2html218"
+<A NAME="tex2html230"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
  SRC="/usr/share/latex2html/icons/contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html221"
-  HREF="node16.html">Astatistics: Visualizaci&#195;&#179;n de informes</A>
-<B> Up:</B> <A NAME="tex2html217"
-  HREF="node13.html">Definici&#195;&#179;n de plantillas y</A>
-<B> Previous:</B> <A NAME="tex2html213"
-  HREF="node14.html">Par&#195;&#161;metros de consulta</A>
- &nbsp; <B>  <A NAME="tex2html219"
+<B> Next:</B> <A NAME="tex2html233"
+  HREF="node16.html">Definici&#195;&#179;n de plantillas y</A>
+<B> Up:</B> <A NAME="tex2html229"
+  HREF="node12.html">Astatistics: Dise&#195;&#177;o y gesti&#195;&#179;n</A>
+<B> Previous:</B> <A NAME="tex2html223"
+  HREF="node14.html">Las plantillas</A>
+ &nbsp; <B>  <A NAME="tex2html231"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
 Eduardo García-Mádico Portabella
-2013-09-09
+2013-10-04
 </ADDRESS>
 </BODY>
 </HTML>

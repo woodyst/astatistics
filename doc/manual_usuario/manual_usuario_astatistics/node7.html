@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Deployment</TITLE>
-<META NAME="description" CONTENT="Deployment">
+<TITLE>Instalaci&#195;&#179;n de dependencias en Debian Wheezy</TITLE>
+<META NAME="description" CONTENT="Instalaci&#195;&#179;n de dependencias en Debian Wheezy">
 <META NAME="keywords" CONTENT="manual_usuario_astatistics">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -19,147 +19,71 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="manual_usuario_astatistics.css">
 
+<LINK REL="next" HREF="node8.html">
 <LINK REL="previous" HREF="node6.html">
-<LINK REL="up" HREF="node3.html">
+<LINK REL="up" HREF="node6.html">
 <LINK REL="next" HREF="node8.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A NAME="tex2html120"
+<A NAME="tex2html134"
   HREF="node8.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="/usr/share/latex2html/icons/next.png"></A> 
-<A NAME="tex2html116"
-  HREF="node3.html">
+<A NAME="tex2html130"
+  HREF="node6.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="/usr/share/latex2html/icons/up.png"></A> 
-<A NAME="tex2html112"
+<A NAME="tex2html124"
   HREF="node6.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="/usr/share/latex2html/icons/prev.png"></A> 
-<A NAME="tex2html118"
+<A NAME="tex2html132"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
  SRC="/usr/share/latex2html/icons/contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html121"
-  HREF="node8.html">Astatistics: Administraci&#195;&#179;n de usuarios</A>
-<B> Up:</B> <A NAME="tex2html117"
-  HREF="node3.html">Instalaci&#195;&#179;n de Astatistics (Administrador</A>
-<B> Previous:</B> <A NAME="tex2html113"
+<B> Next:</B> <A NAME="tex2html135"
+  HREF="node8.html">Instalaci&#195;&#179;n de dependencias en</A>
+<B> Up:</B> <A NAME="tex2html131"
   HREF="node6.html">Instalando requisitos de m&#195;&#179;dulos</A>
- &nbsp; <B>  <A NAME="tex2html119"
+<B> Previous:</B> <A NAME="tex2html125"
+  HREF="node6.html">Instalando requisitos de m&#195;&#179;dulos</A>
+ &nbsp; <B>  <A NAME="tex2html133"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A NAME="SECTION00340000000000000000">
-Deployment</A>
-</H1>
-El framework Catalyst puede ser ejecutado con el servidor incorporado, como en el ejemplo anterior, pero dicho servidor est&#195;&#161; dise&#195;&#177;ado para el desarrollo y tiene algunas deficiencias en producci&#195;&#179;n, como que solo puede atender una petici&#195;&#179;n simult&#195;&#161;neamente.
+<H2><A NAME="SECTION00331000000000000000">
+Instalaci&#195;&#179;n de dependencias en Debian Wheezy</A>
+</H2>
 
-<P>
-Para un entorno en producci&#195;&#179;n recomendamos utilizar el servidor Apache con FastCGI que tiene un comportamiento mejor y m&#195;&#161;s r&#195;&#161;pido. A continuaci&#195;&#179;n detallamos los pasos a realizar para configurar Astatistics de esta forma:
-
-<P>
-A&#195;&#177;adir un vhost con la siguiente configuraci&#195;&#179;n en Apache2 (consultar documentaci&#195;&#179;n):
-
-<P>
+<UL>
+<LI>Instalar paquetes requeridos:
 <BR>
-<IMG
- WIDTH="1155" HEIGHT="687" ALIGN="BOTTOM" BORDER="0"
- SRC="img4.png"
- ALT="\begin{lstlisting}
-&lt;VirtualHost 0.0.0.0:80&gt;
-ServerAdmin webmaster@localhost
-\pa...
-...r
-CustomLog /var/log/apache2/access.log combined
-&lt;/VirtualHost&gt;
-\end{lstlisting}">
+<BR># apt-get install wkhtmltopdf xvfb libcatalyst-perl libcatalyst-modules-perl libgraphics-primitive-perl libdatetime-format-mysql-perl libclass-csv-perl libchart-clicker-perl libdbd-sqlite3-perl
+</LI>
+<LI>Instalar algunos m&#195;&#179;dulos de cpan:
 <BR>
+<BR># cpanp install Catalyst::View::Graphics::Primitive Paper::Specs Catalyst::View::Wkhtmltopdf
 
 <P>
-La palabra /path habr&#195;&#161; de ser sustituida por la ruta donde se habr&#195;&#161; ubicado el &#195;&#161;rbol principal de Astatistics, por ejemplo /usr/local/astatistics.
-
-<P>
-En el listado anterior se ha utilizado el nombre de vhost ``astatistics'', por lo que deberemos apuntar nuestro navegador hacia dicho nombre para accederlo. Podemos configurar nuestro DNS incluyendo el nombre escogido o, para acceder desde nuestro sistema local, a&#195;&#177;adir ``astatistics'' al fichero /etc/hosts con nuestra IP local o de loopback (127.0.0.1 en la mayor&#195;&#173;a de los casos).
-
-<P>
-Aseg&#195;&#186;rese de que el directorio que contiene la base de datos de astatistics (SQLite) y el fichero de dicha base de datos (astatistics.db) son accesibles y tienen permiso de escritura por el usuario utilizado por el servidor web (en Debian www-data). En el ejemplo siguiente se hace dando permiso de escritura para el grupo www-data:
-
-<P>
+</LI>
+<LI>El binario Wkhtmltopdf requiere acceso a X. Cuando la publicaci&#195;&#179;n se realiza en un servidor web se requiere un wrapper para xvfb-run. Por favor, copie scripts/wkhtmltopdf-catalyst a /usr/local/bin y h&#195;&#161;galo ejecutable (chmod 755 /usr/local/bin/wkhtmltopdf).
 <BR>
-<IMG
- WIDTH="382" HEIGHT="88" ALIGN="BOTTOM" BORDER="0"
- SRC="img5.png"
- ALT="\begin{lstlisting}
-...">
 <BR>
+Si se requiere cambiar la ubicaci&#195;&#179;n o nombre del wrapper o utilizar el wkhtmltopdf original abra lib/Astatistics.pm y ajuste el comando a invocar en los ajustes de la configuraci&#195;&#179;n de View::Wkhtmltopdf.
+</LI>
+</UL>
 
 <P>
-Para permitir que se ejecute correctamente la exportaci&#195;&#179;n a PDF, el paquete wkhtmltopdf ha de ejecturarse desde un servidor X. Para ello hemos a&#195;&#177;adido un wrapper denominado wkhtmltopdf-catalyst en el directorio script/ que deber&#195;&#173;a de ser copiado a /usr/local/bin:
-
-<P>
-<BR>
-<IMG
- WIDTH="526" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
- SRC="img6.png"
- ALT="\begin{lstlisting}
-...">
-<BR>
-
-<P>
-Dicho script utiliza el binario xvfb-run, por lo que dicho ejecutable deber&#195;&#173;a de estar instalado en el sistema. En debian esto se consigue instalando el paquete xvfb.
-
-<P>
-Tras reiniciar el servidor Apache con ``/etc/init.d/apache2 restart'' el sistema Astatistics deber&#195;&#173;a de ser accesible correctamente, en nuestro ejemplo apuntando el navegador a la direcci&#195;&#179;n ``http://astatistics''.
-
-<P>
-Para propagar la configuraci&#195;&#179;n de nuestra base de datos de Asterisk y hacerla utilizable por Astatistics se habr&#195;&#161; de ajustar y luego ejecutar el script ``script/create_asterisk_model.sh''.
-
-<P>
-Seg&#195;&#186;n la instalaci&#195;&#179;n tambi&#195;&#169;n podr&#195;&#173;a ser necesario regenerar el modelo de la base de datos SQLite de Astatistics revisando y ejecutando el script ``script/create_model.sh''.
-
-<P>
-Tras estos pasos ya se podr&#195;&#161; acceder y probar el sistema Astatistics.
-
-<P>
-
-<DIV CLASS="navigation"><HR>
-<!--Navigation Panel-->
-<A NAME="tex2html120"
-  HREF="node8.html">
-<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="/usr/share/latex2html/icons/next.png"></A> 
-<A NAME="tex2html116"
-  HREF="node3.html">
-<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
- SRC="/usr/share/latex2html/icons/up.png"></A> 
-<A NAME="tex2html112"
-  HREF="node6.html">
-<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
- SRC="/usr/share/latex2html/icons/prev.png"></A> 
-<A NAME="tex2html118"
-  HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
- SRC="/usr/share/latex2html/icons/contents.png"></A>  
-<BR>
-<B> Next:</B> <A NAME="tex2html121"
-  HREF="node8.html">Astatistics: Administraci&#195;&#179;n de usuarios</A>
-<B> Up:</B> <A NAME="tex2html117"
-  HREF="node3.html">Instalaci&#195;&#179;n de Astatistics (Administrador</A>
-<B> Previous:</B> <A NAME="tex2html113"
-  HREF="node6.html">Instalando requisitos de m&#195;&#179;dulos</A>
- &nbsp; <B>  <A NAME="tex2html119"
-  HREF="node1.html">Contents</A></B> </DIV>
-<!--End of Navigation Panel-->
+<BR><HR>
 <ADDRESS>
 Eduardo García-Mádico Portabella
-2013-09-09
+2013-10-04
 </ADDRESS>
 </BODY>
 </HTML>

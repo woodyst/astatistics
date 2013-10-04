@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Astatistics: Visualizaci&#195;&#179;n de informes</TITLE>
-<META NAME="description" CONTENT="Astatistics: Visualizaci&#195;&#179;n de informes">
+<TITLE>Definici&#195;&#179;n de plantillas y men&#195;&#186;s</TITLE>
+<META NAME="description" CONTENT="Definici&#195;&#179;n de plantillas y men&#195;&#186;s">
 <META NAME="keywords" CONTENT="manual_usuario_astatistics">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -19,115 +19,170 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <LINK REL="STYLESHEET" HREF="manual_usuario_astatistics.css">
 
-<LINK REL="next" HREF="node17.html">
-<LINK REL="previous" HREF="node9.html">
-<LINK REL="up" HREF="manual_usuario_astatistics.html">
+<LINK REL="previous" HREF="node15.html">
+<LINK REL="up" HREF="node12.html">
 <LINK REL="next" HREF="node17.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A NAME="tex2html232"
+<A NAME="tex2html242"
   HREF="node17.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="/usr/share/latex2html/icons/next.png"></A> 
-<A NAME="tex2html228"
-  HREF="manual_usuario_astatistics.html">
+<A NAME="tex2html238"
+  HREF="node12.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="/usr/share/latex2html/icons/up.png"></A> 
-<A NAME="tex2html222"
+<A NAME="tex2html234"
   HREF="node15.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="/usr/share/latex2html/icons/prev.png"></A> 
-<A NAME="tex2html230"
+<A NAME="tex2html240"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
  SRC="/usr/share/latex2html/icons/contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html233"
-  HREF="node17.html">About this document ...</A>
-<B> Up:</B> <A NAME="tex2html229"
-  HREF="manual_usuario_astatistics.html">Manual de usuario</A>
-<B> Previous:</B> <A NAME="tex2html223"
-  HREF="node15.html">Organizaci&#195;&#179;n de men&#195;&#186;s e</A>
- &nbsp; <B>  <A NAME="tex2html231"
+<B> Next:</B> <A NAME="tex2html243"
+  HREF="node17.html">Par&#195;&#161;metros de consulta</A>
+<B> Up:</B> <A NAME="tex2html239"
+  HREF="node12.html">Astatistics: Dise&#195;&#177;o y gesti&#195;&#179;n</A>
+<B> Previous:</B> <A NAME="tex2html235"
+  HREF="node15.html">Base de datos de</A>
+ &nbsp; <B>  <A NAME="tex2html241"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A NAME="SECTION00600000000000000000">
-Astatistics: Visualizaci&#195;&#179;n de informes</A>
+<H1><A NAME="SECTION00540000000000000000">
+Definici&#195;&#179;n de plantillas y men&#195;&#186;s</A>
 </H1>
-Esta parte del manual de usuario est&#195;&#161; destinada a los usuarios que deseen visualizar o extraer informes y estad&#195;&#173;sticas previamente dise&#195;&#177;adas por los dise&#195;&#177;adores.
+Una plantilla o men&#195;&#186; tiene los siguientes datos para su definici&#195;&#179;n:
+
+<UL>
+<LI><B>Class</B>: Group o Template, el primero para indicar que se trata de un men&#195;&#186; (grupo de plantillas y men&#195;&#186;s) y el segundo para indicar que se trata de una plantilla.
+</LI>
+<LI><B>Name</B>: Nombre o identificador, que es el texto que saldr&#195;&#161; en la estructura de men&#195;&#186;s para identificar dicho men&#195;&#186; o plantilla.
+</LI>
+<LI><B>Roles</B>: Roles que permiten el acceso a dicha plantilla o men&#195;&#186;. Si un usuario tiene permiso para acceder a cualquiera de los roles marcados podr&#195;&#161; acceder a este &#195;&#173;tem.
+</LI>
+</UL>
 
 <P>
-Tras acceder a Astatistics (v&#195;&#161;lido para cualquier tipo de usuario) se presenta una lista de las plantillas y grupos disponibles en el grupo ra&#195;&#173;z ('/').
+Las plantillas, adem&#195;&#161;s tienen los siguientes datos que no se usan en el caso de men&#195;&#186;s:
+
+<UL>
+<LI><B>Visual</B>: Tipo de visualizaci&#195;&#179;n que se generar&#195;&#161; entre listado, gr&#195;&#161;fico de barras, gr&#195;&#161;fico de l&#195;&#173;neas, gr&#195;&#161;fico de &#195;&#161;reas, gr&#195;&#161;fico circular (queso), gr&#195;&#161;fico de burbujas, gr&#195;&#161;fico de puntos y gr&#195;&#161;fico de &#195;&#161;rea polar.
+</LI>
+<LI><B>Conditions</B>: Dato donde se definen las condiciones para generar el informe, descrito en detalle m&#195;&#161;s adelante. Consta de diferentes par&#195;&#161;metros separados por punto y coma ``;''.
+</LI>
+<LI><B>Format</B>: Par&#195;&#161;metros relacionados con la representaci&#195;&#179;n final del informe, separados con punto y coma ``;''.
+</LI>
+</UL>
 
 <P>
-Tras los grupos se muestra un bot&#195;&#179;n con una flecha hacia la derecha. Dicho bot&#195;&#179;n sirve para acceder al contenido del grupo (entrar).
+Los par&#195;&#161;metros de Conditions y Format se especifican como una serie de asiganciones separadas por punto y coma ``;''. Un ejemplo ser&#195;&#173;a el siguiente:
+<BR>
+<IMG
+ WIDTH="645" HEIGHT="63" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="\begin{lstlisting}
+table=agent_status;
+show=agentId,agentName,agentStatus,timestamp,callid,queue;
+refresh= ...">
+<BR>
 
 <P>
-La flecha hacia la izquierda tras la palabra ``parent'' sirve para acceder al grupo padre (anterior).
+Los par&#195;&#161;metros para Conditions son los siguientes:
+
+<UL>
+<LI><B>table</B>: Tabla que se usar&#195;&#161; para la consulta, tal como se denomina en la base de datos, exceptuando el caso de la tabla virtual queuelog_virt.
+</LI>
+<LI><B>show</B>: Campos de dicha tabla o funciones que se mostrar&#195;&#161;n en el informe. En el caso de gr&#195;&#161;ficas se describen como coordenadas con tipo, campo y nombre, como: ``x:date:calldate:Fecha,y:COUNT:calldate:Llamadas''.
+<BR>
+<BR>
+Se pueden utilizar funciones agregadas de la base de datos sobre los campos de una tabla. Las funciones permitidas sobre tablas reales son las utilizadas en el lenguaje SQL (normalmente MySQL):
+	
+<UL>
+<LI>MAX(): Valor m&#195;&#161;ximo.
+</LI>
+<LI>MIN(): Valor m&#195;&#173;nimo.
+</LI>
+<LI>AVG(): Media aritm&#195;&#169;tica.
+</LI>
+<LI>SUM(): Total de la suma de valores.
+</LI>
+<LI>COUNT(): N&#195;&#186;mero de resultados.
+	
+</LI>
+</UL>
+</LI>
+<LI><B>where</B>: Condiciones que deber&#195;&#161; de cumplir la consulta, en lenguaje SQL (lo que habr&#195;&#173;a en la consulta directa a la base de datos tras el ``where''). Se pueden incluir par&#195;&#161;metros a introducir previamente a la consulta mediante la sintaxis definida m&#195;&#161;s adelante. Se pueden utilizar las mismas funciones agregadas de base de datos que en el campo show.
+</LI>
+<LI><B>order_by</B>: Ordenaci&#195;&#179;n de los resultados escrito en lenguaje SQL (valor de ``order by'' en la consulta real).
+</LI>
+<LI><B>refresh</B>: Valor de refresco en el caso de consultas en tiempo real. Se puede introducir como par&#195;&#161;metro.
+</LI>
+</UL>
 
 <P>
-Tras las plantillas se muestra un bot&#195;&#179;n ``Execute'', que se deber&#195;&#161; de usar para mostrar resultados estad&#195;&#173;sticos de dicha plantilla.
+Los par&#195;&#161;metros para Format son los siguientes:
+
+<UL>
+<LI><B>title</B>: T&#195;&#173;tulo del informe. Puede incluir par&#195;&#161;metros, por ejemplo, fechas.
+</LI>
+<LI><B>rows_per_page</B>: N&#195;&#186;mero de registros a mostrar en cada p&#195;&#161;gina en el caso de listas. Puede tambi&#195;&#169;n definirse como par&#195;&#161;metro con valor por omisi&#195;&#179;n, de forma que el usuario puede modificar la opci&#195;&#179;n al solicitar el informe.
+</LI>
+<LI><B>width / height</B>: Ancho y Alto en el caso de gr&#195;&#161;ficas, por ejemplo: ``width=650; height=350;''.
+</LI>
+</UL>
 
 <P>
-Tras hacer click en ``Execute'' se mostrar&#195;&#161; una pantalla intermedia de introducci&#195;&#179;n de datos variables si los hubiera. En dicha pantalla el bot&#195;&#179;n ``parent'' vuelve al men&#195;&#186; anterior, y el bot&#195;&#179;n ``Go'' lanza la consulta.
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
 
-<P>
-La pantalla de resultados es distinta seg&#195;&#186;n el tipo de estad&#195;&#173;stica.
-
-<P>
-El bot&#195;&#179;n ``Exit'' saldr&#195;&#161; de la p&#195;&#161;gina de resultados y volver&#195;&#161; a la lista anterior a la petici&#195;&#179;n de par&#195;&#161;metros.
-
-<P>
-El bot&#195;&#179;n ``Refresh'' vover&#195;&#161; a lanzar la consulta y mostrar&#195;&#161; los resultados seg&#195;&#186;n los datos actuales (que podr&#195;&#173;an haber variado desde la ejecuci&#195;&#179;n anterior).
-
-<P>
-El bot&#195;&#179;n ``Repeat'' vuelve a solicitar los par&#195;&#161;metros de nuevo para la misma consulta.
-
-<P>
-El bot&#195;&#179;n ``PDF Export'' hace una exportaci&#195;&#179;n a formato PDF del resultado actual. En el caso de listas se mostrar&#195;&#161;n todos los resultados paginados por lo que ser&#195;&#161; necesario repetir la consulta y, dependiendo de lo extensos que sean dichos resultados, puede consumir m&#195;&#161;s tiempo y requerir m&#195;&#161;s recursos generar los resultados (cuando se consulta tan solo una p&#195;&#161;gina la consulta especifica el subconjunto de resultados y se efect&#195;&#186;a m&#195;&#161;s r&#195;&#161;pido la consulta a la base de datos).
-
-<P>
-El bot&#195;&#179;n ``CSV Export'' exportar&#195;&#161; los resultados en formato CSV (implementado solo para visualizaci&#195;&#179;n en formato lista en la versi&#195;&#179;n de Astatistics vigente en el momento de escribir estas l&#195;&#173;neas, aunque se planea posible exportaci&#195;&#179;n a CSV de resultados fuente de una gr&#195;&#161;fica en el futuro. Si se desea dicha opci&#195;&#179;n en versiones que no dispongan de esta funci&#195;&#179;n, tan solo es necesario hacer la misma consulta en formato lista y hacer la exportaci&#195;&#179;n desde ah&#195;&#173;).
-
-<P>
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html244"
+  HREF="node17.html">Par&#195;&#161;metros de consulta</A>
+<LI><A NAME="tex2html245"
+  HREF="node18.html">Organizaci&#195;&#179;n de men&#195;&#186;s e informes</A>
+</UL>
+<!--End of Table of Child-Links-->
 
 <DIV CLASS="navigation"><HR>
 <!--Navigation Panel-->
-<A NAME="tex2html232"
+<A NAME="tex2html242"
   HREF="node17.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
  SRC="/usr/share/latex2html/icons/next.png"></A> 
-<A NAME="tex2html228"
-  HREF="manual_usuario_astatistics.html">
+<A NAME="tex2html238"
+  HREF="node12.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
  SRC="/usr/share/latex2html/icons/up.png"></A> 
-<A NAME="tex2html222"
+<A NAME="tex2html234"
   HREF="node15.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
  SRC="/usr/share/latex2html/icons/prev.png"></A> 
-<A NAME="tex2html230"
+<A NAME="tex2html240"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
  SRC="/usr/share/latex2html/icons/contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html233"
-  HREF="node17.html">About this document ...</A>
-<B> Up:</B> <A NAME="tex2html229"
-  HREF="manual_usuario_astatistics.html">Manual de usuario</A>
-<B> Previous:</B> <A NAME="tex2html223"
-  HREF="node15.html">Organizaci&#195;&#179;n de men&#195;&#186;s e</A>
- &nbsp; <B>  <A NAME="tex2html231"
+<B> Next:</B> <A NAME="tex2html243"
+  HREF="node17.html">Par&#195;&#161;metros de consulta</A>
+<B> Up:</B> <A NAME="tex2html239"
+  HREF="node12.html">Astatistics: Dise&#195;&#177;o y gesti&#195;&#179;n</A>
+<B> Previous:</B> <A NAME="tex2html235"
+  HREF="node15.html">Base de datos de</A>
+ &nbsp; <B>  <A NAME="tex2html241"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
 Eduardo García-Mádico Portabella
-2013-09-09
+2013-10-04
 </ADDRESS>
 </BODY>
 </HTML>
