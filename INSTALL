@@ -1,4 +1,28 @@
+INSTALLATION INSTRUCTIONS
+
+First step is to install some packages and perl modules from CPAN. The second step is creating the database models for Catalyst (see next) and installing a Wkhtmltopdf wrapper. See manual in docs directory for more details as how to deploy with a web server.
+
+-----
+
+Manual installation instructions on Debian Wheezy:
+
+- Install required packages:
+
+	# apt-get install wkhtmltopdf xvfb libcatalyst-perl libcatalyst-modules-perl libgraphics-primitive-perl libdatetime-format-mysql-perl libclass-csv-perl libchart-clicker-perl libdbd-sqlite3-perl
+
+- Install some needed cpan modules:
+
+	# cpanp install Catalyst::View::Graphics::Primitive Paper::Specs Catalyst::View::Wkhtmltopdf
+
+Wkhtmltopdf binary needs X access. When deploying in a web server a wrapper with xvfb-run is needed. Please, copy scripts/wkhtmltopdf-catalyst wrapper to /usr/local/bin and make it executable (chmod 755 /usr/local/bin/wkhtmltopdf).
+
+If you need to change its path or name then open lib/Astatistics.pm and adjust command in View::Wkhtmltopdf settings.
+
+-----
+
 Automatic installation on Debian Squeeze:
+
+In Debian Squeeze there are needed some additional steps because Astatistics need different versions of some packages and cpan modules do not install cleanly due a bug in DBIx::Class and Moose build process. For simplifying installation in this Debian version we have created an automated installation script:
 
 - Do script/install-squeeze.sh
 
@@ -22,3 +46,7 @@ Manual installation instructions on Debian Squeeze:
 - make:
 	$ sudo make
 	This needs to be made as root for dependencies installation.
+
+Finally install wkhtmltopdf wrapper:
+
+Wkhtmltopdf binary needs X access. When deploying in a web server a wrapper with xvfb-run is needed. Please, copy scripts/wkhtmltopdf-catalyst wrapper to /usr/local/bin and make it executable (chmod 755 /usr/local/bin/wkhtmltopdf).

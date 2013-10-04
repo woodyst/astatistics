@@ -1,4 +1,4 @@
-Astatistics 0.01
+Astatistics 0.03
 ----------------
 
 (c) 2011-2013 Eurogarán Informática, S.L. - informatica@eurogaran.com
