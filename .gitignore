@@ -6,3 +6,5 @@ Makefile.old
 script/git_push.sh
 blib
 db/asterisk-mysql-eg.sql
+lib/Astatistics/Model/Asterisk.pm.new
+t/model_Asterisk.t.new
