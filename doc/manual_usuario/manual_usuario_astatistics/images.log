@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=latex 2013.7.1)  9 SEP 2013 12:06
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=latex 2013.7.1)  7 OCT 2013 17:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -443,9 +443,15 @@ latex2htmlLength oddsidemargin=0.0pt
 
 latex2htmlLength evensidemargin=0.0pt
 
-File: artwork/logo_astatistics.ps Graphic file (type eps)
-<artwork/logo_astatistics.ps>
-l2hSize :tex2html_wrap363:178.6675pt::0.0pt::349.0pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 162.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 162.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+l2hSize :tex2html_wrap_inline125:7.75pt::0.0pt::13.85144pt.
 [1
 
 
@@ -455,12 +461,12 @@ LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 4631 strings out of 493474
- 61968 string characters out of 3143146
+ 4669 strings out of 493474
+ 62521 string characters out of 3143146
  123211 words of memory out of 3000000
- 7898 multiletter control sequences out of 15000+200000
- 3938 words of font info for 15 fonts, out of 3000000 for 9000
+ 7920 multiletter control sequences out of 15000+200000
+ 8285 words of font info for 32 fonts, out of 3000000 for 9000
  965 hyphenation exceptions out of 8191
  32i,6n,35p,232b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on images.dvi (1 page, 372 bytes).
+Output written on images.dvi (1 page, 428 bytes).

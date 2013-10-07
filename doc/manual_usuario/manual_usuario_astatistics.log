@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=latex 2013.7.1)  4 OCT 2013 14:54
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=latex 2013.7.1)  7 OCT 2013 18:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -470,12 +470,12 @@ Underfull \vbox (badness 4595) has occurred while \output is active []
 
 [2]
 Cap\'{\i }tulo 1.
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 73.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 91.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 73.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 91.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -488,69 +488,69 @@ Cap\'{\i }tulo 2.
 [3
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
 
  []
 
 
-Overfull \hbox (2.942pt too wide) in paragraph at lines 101--102
+Overfull \hbox (2.942pt too wide) in paragraph at lines 119--120
 \OT1/cmr/m/n/12 $ mysql -u root -ppassword -e "grant all pri-vi-le-ges on as-te
 -risk.* to 'usua-rio'@'localhost' 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--113
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--122
+Underfull \hbox (badness 10000) in paragraph at lines 137--140
 
  []
 
 
-Overfull \hbox (13.51689pt too wide) in paragraph at lines 119--122
+Overfull \hbox (13.51689pt too wide) in paragraph at lines 137--140
 \OT1/cmr/m/n/12 # apt-get ins-tall wkhtml-topdf xvfb libcatalyst-perl libcataly
 st-modules-perl libgraphics-
  []
 
 
-Overfull \hbox (21.28487pt too wide) in paragraph at lines 119--122
+Overfull \hbox (21.28487pt too wide) in paragraph at lines 137--140
 \OT1/cmr/m/n/12 primitive-perl libdatetime-format-mysql-perl libclass-csv-perl 
 libchart-clicker-perl libdbd-
  []
@@ -559,86 +559,66 @@ libchart-clicker-perl libdbd-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5]
-Underfull \hbox (badness 10000) in paragraph at lines 122--125
+Underfull \hbox (badness 10000) in paragraph at lines 140--143
 
  []
 
 
-Overfull \hbox (53.07346pt too wide) in paragraph at lines 122--125
+Overfull \hbox (53.07346pt too wide) in paragraph at lines 140--143
 \OT1/cmr/m/n/12 # cpanp ins-tall Ca-talyst::View::Graphics::Primitive Pa-per::S
 pecs Ca-talyst::View::Wkhtmltopdf 
  []
 
 
-Overfull \hbox (16.22382pt too wide) in paragraph at lines 126--129
+Overfull \hbox (16.22382pt too wide) in paragraph at lines 144--147
 \OT1/cmr/m/n/12 ser-vi-dor web se re-quie-re un wrap-per pa-ra xvfb-run. Por fa
 -vor, co-pie scripts/wkhtmltopdf-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--129
+Underfull \hbox (badness 10000) in paragraph at lines 144--147
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 136--137
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
  []
 
 [7]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 175.
-
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 175.
-
-Overfull \hbox (265.4275pt too wide) in paragraph at lines 175--176
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (11.62794pt too wide) in paragraph at lines 176--178
-[][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (68.02785pt too wide) in paragraph at lines 180--181
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-[8] [9] [10
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 174.
+ [8] [9] [10
 
 ]
 Cap\'{\i }tulo 3.
 
-Overfull \hbox (0.71841pt too wide) in paragraph at lines 227--228
+Overfull \hbox (0.71841pt too wide) in paragraph at lines 245--246
 []\OT1/cmr/m/n/12 Adem^^Sas de es-tos ro-les de sis-te-ma, cual-quier usua-rio 
 con el rol su-per-user ac-ti-va-do podr^^Sa crear
  []
@@ -651,84 +631,83 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [13
 
 ]
-Overfull \hbox (10.17648pt too wide) in paragraph at lines 258--259
+Overfull \hbox (10.17648pt too wide) in paragraph at lines 276--277
 []\OT1/cmr/bx/n/12 queue[]log[]processed\OT1/cmr/m/n/12 : Ta-bla que con-tie-ne
  la mis-ma in-for-ma-ci^^Son que la ta-bla queue[]log
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 288--289
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
 
  []
 
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 311--322
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 308.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 311--322
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 311--322
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 308.
+ [15]
+Underfull \hbox (badness 10000) in paragraph at lines 329--340
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--322
+Underfull \hbox (badness 10000) in paragraph at lines 329--340
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--322
+Underfull \hbox (badness 10000) in paragraph at lines 329--340
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 329--340
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 329--340
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 322--327
+Underfull \hbox (badness 10000) in paragraph at lines 340--345
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--327
+Underfull \hbox (badness 10000) in paragraph at lines 340--345
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--329
+Underfull \hbox (badness 10000) in paragraph at lines 345--347
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--329
+Underfull \hbox (badness 10000) in paragraph at lines 345--347
+
+ []
+
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 348.
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--357
 
  []
 
 
-Overfull \hbox (19.85268pt too wide) in paragraph at lines 335--336
-[][][][][][][][][][][][][][][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 337--339
+Underfull \hbox (badness 10000) in paragraph at lines 355--357
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 337--339
+Underfull \hbox (badness 10000) in paragraph at lines 361--362
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 343--344
-
- []
-
-
-Overfull \hbox (25.72792pt too wide) in paragraph at lines 355--356
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [17] [18] [19] [20
@@ -744,12 +723,12 @@ LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 4963 strings out of 493474
- 65287 string characters out of 3143146
- 139548 words of memory out of 3000000
- 8198 multiletter control sequences out of 15000+200000
- 13310 words of font info for 51 fonts, out of 3000000 for 9000
+ 4969 strings out of 493474
+ 65330 string characters out of 3143146
+ 163548 words of memory out of 3000000
+ 8201 multiletter control sequences out of 15000+200000
+ 14123 words of font info for 55 fonts, out of 3000000 for 9000
  965 hyphenation exceptions out of 8191
- 32i,7n,35p,730b,1220s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,7n,35p,730b,1135s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on manual_usuario_astatistics.dvi (26 pages, 53804 bytes).
+Output written on manual_usuario_astatistics.dvi (26 pages, 56088 bytes).

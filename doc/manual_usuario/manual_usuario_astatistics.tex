@@ -53,6 +53,24 @@
 
 \pagenumbering{roman} \tableofcontents \cleardoublepage \newpage \pagenumbering{arabic}
 
+% Listas código
+\lstset{
+	basicstyle	= \footnotesize,
+	%basicstyle	= \scriptsize,
+	columns		= flexible,
+	keepspaces	= true,
+	keywordstyle	= \bfseries,
+	breaklines	= true,
+	prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+	breakindent	= 0pt,
+	breakautoindent	= false,
+	breakatwhitespace	= true,
+	showspaces	= false,
+	showstringspaces	= false,
+	frame		= single,
+	identifierstyle	= \ttfamily,
+}
+
 \chapter{Introducción}
 Astatistics es un avanzado sistema de informes y estadísticas para Asterisk accesible desde el navegador web diseñado para ser completamente flexible y adaptable.
 
@@ -172,13 +190,13 @@ Añadir un vhost con la siguiente configuración en Apache2 (consultar documenta
 	Alias /tmp /tmp/wkhtmltopdf
 
 	Alias /static /path/Astatistics/root/static
-	FastCgiServer /path/Astatistics/script/astatistics{\_}fastcgi.pl -processes 3 -idle-timeout 120
-	Alias /	/path/Astatistics/script/astatistics{\_}fastcgi.pl/
+	FastCgiServer /path/Astatistics/script/astatistics_fastcgi.pl -processes 3 -idle-timeout 120
+	Alias /	/path/Astatistics/script/astatistics_fastcgi.pl/
 
 	ErrorLog /var/log/apache2/error.log
 
-	\# Possible values include: debug, info, notice, warn, error, crit,
-	\# alert, emerg.
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
 	LogLevel warn
 
 	CustomLog /var/log/apache2/access.log combined
