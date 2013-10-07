@@ -196,14 +196,14 @@ sub BUILD {
 	# - Call Caller: COMPLETEAGENT, COMPLETECALLER, CONNECT, RINGNOANSWER, SYSCOMPAT, TRANSFER
 	
 	my %events_needed_for = (
-														logged_time => [ 'AGENTLOGIN', 'COMPLETEAGENT', 'COMPLETECALLER', 'CONNECT', 'TRANSFER', 'AGENTLOGOFF', 'AGENTCALLBACKLOGOFF' ],
-														wait_time		=> [ 'AGENTLOGIN', 'COMPLETEAGENT', 'COMPLETECALLER', 'CONNECT', 'TRANSFER', 'AGENTLOGOFF', 'AGENTCALLBACKLOGOFF' ],
-														spk_time		=> [ 'COMPLETEAGENT', 'COMPLETECALLER', 'CONNECT', 'AGENTLOGOFF' ],
-														call_duration => [ 'CONNECT', 'COMPLETECALLER', 'COMPLETEAGENT', 'SYSCOMPAT', 'TRANSFER' ],
-														calls				=> [ 'AGENTLOGIN', 'AGENTLOGOFF', 'AGENTCALLBACKLOGOFF', 'COMPLETECALLER', 'COMPLETEAGENT', 'CONNECT', 'TRANSFER' ],
-														callers_wait_time => [ 'ENTERQUEUE', 'CONNECT', 'EXITEMPTY', 'EXITWITHKEY', 'EXITWITHTIMEOUT', 'RINGNOANSWER', 'SYSCOMPAT', 'TRANSFER' ],
-														calls_answered => [ 'CONNECT', 'SYSCOMPAT' ],
-														calls_dropped => [ 'CONNECT', 'EXITEMPTY', 'ENTERQUEUE', 'EXITWITHKEY', 'EXITWITHTIMEOUT', 'RINGNOANSWER', 'SYSCOMPAT' ],
+		logged_time		=> [ 'AGENTLOGIN', 'COMPLETEAGENT', 'COMPLETECALLER', 'CONNECT', 'TRANSFER', 'AGENTLOGOFF', 'AGENTCALLBACKLOGOFF' ],
+		wait_time		=> [ 'AGENTLOGIN', 'COMPLETEAGENT', 'COMPLETECALLER', 'CONNECT', 'TRANSFER', 'AGENTLOGOFF', 'AGENTCALLBACKLOGOFF' ],
+		spk_time		=> [ 'COMPLETEAGENT', 'COMPLETECALLER', 'CONNECT', 'AGENTLOGOFF' ],
+		call_duration => [ 'CONNECT', 'COMPLETECALLER', 'COMPLETEAGENT', 'SYSCOMPAT', 'TRANSFER' ],
+		calls			=> [ 'AGENTLOGIN', 'AGENTLOGOFF', 'AGENTCALLBACKLOGOFF', 'COMPLETECALLER', 'COMPLETEAGENT', 'CONNECT', 'ENTERQUEUE', 'TRANSFER' ],
+		callers_wait_time	=> [ 'ENTERQUEUE', 'CONNECT', 'EXITEMPTY', 'EXITWITHKEY', 'EXITWITHTIMEOUT', 'RINGNOANSWER', 'SYSCOMPAT', 'TRANSFER' ],
+		calls_answered		=> [ 'CONNECT', 'SYSCOMPAT' ],
+		calls_dropped		=> [ 'CONNECT', 'EXITEMPTY', 'ENTERQUEUE', 'EXITWITHKEY', 'EXITWITHTIMEOUT', 'RINGNOANSWER', 'SYSCOMPAT' ],
 	);
 
 	my %events_needed;
@@ -431,7 +431,7 @@ sub BUILD {
 					if (defined $row_event and $row_event eq "ENTERQUEUE") {
 						my $dataval = $row->{"data"};
 						my @dataval = split(/(?<!\\)\|/, $value);
-						if (exists $dataval[1]) {
+						if (exists $dataval[1] and $dataval[1]) {
 							$callids_num{$value} = $dataval[1];
 						}
 					}
