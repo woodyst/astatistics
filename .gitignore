@@ -5,3 +5,4 @@ Makefile.old
 .*.swp
 script/git_push.sh
 blib
+db/asterisk-mysql-eg.sql
