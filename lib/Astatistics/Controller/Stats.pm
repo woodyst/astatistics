@@ -1690,7 +1690,11 @@ sub queuelogvirt_list :Private {
 	my $show = $conditions{show};
 	$params{show} = $show if (defined $show and $show);
 	my $series_by = $conditions{series_by};
-	$params{where} = $conditions{where};
+	if (exists $conditions{where} and $conditions{where}) {
+		$params{where} = $conditions{where};
+	} else {
+		$params{where} = "";
+	}
 	$params{series_by} = $series_by if (defined $series_by and $series_by);
 
 	# date_from y to
