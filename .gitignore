@@ -1,10 +1,12 @@
-Astatistics-0.01.tar.gz
+Astatistics-0.04.tar.gz
+Makefile
 MANIFEST.bak
 Makefile.old
 *~
 .*.swp
 script/git_push.sh
 blib
+inc
 db/asterisk-mysql-eg.sql
 lib/Astatistics/Model/Asterisk.pm.new
 t/model_Asterisk.t.new
