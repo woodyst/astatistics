@@ -49,7 +49,7 @@ use Catalyst qw/
 
 extends 'Catalyst';
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 $VERSION = eval $VERSION;
 
 ## Execute _initialize_after_setup when all application is already loaded
